@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 5 ICT – Week 1 | Systems and Searching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f9fafb; color: #222; line-height: 1.6; }
+    header { background: #2563eb; color: white; padding: 1.5rem; text-align: center; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    .container { max-width: 1000px; margin: auto; padding: 1.5rem; }
+    section { background: white; margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    h2 { color: #1d4ed8; margin-top: 0; }
+    ul { padding-left: 1.2rem; }
+    .example-box { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 0.75rem 1rem; margin: 0.5rem 0; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; }
+    .example-box i { color: #2563eb; }
+    .assessment { margin-top: 1rem; }
+    .question { margin-bottom: 1rem; }
+    button { background: #2563eb; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 0.5rem; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.75rem; text-align: left; }
+    th { background: #f1f5f9; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 5 ICT – Week 1: Systems and Searching</h1>
+    <p><b>Teacher:</b> Marshall Jacob | <b>Date:</b> Monday 17 Sept. 2025 | <b>Duration:</b> 40 minutes</p>
+  </header>
+  <div class="container">
+    <section>
+      <h2>Learning Objectives</h2>
+      <ul>
+        <li>To explain that computers can be connected together to form systems.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can describe that a computer system features inputs, processes, and outputs.</li>
+        <li>✔️ I can explain that computer systems communicate with other devices.</li>
+        <li>✔️ I can explain that systems are built using a number of parts.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Subject Knowledge</h2>
+      <ul>
+        <li>A computer system consists of <b>hardware</b> and <b>software</b>.</li>
+        <li>Systems are networks of devices and components working together.</li>
+        <li>Computers process data and send/receive information through networks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Key Concepts and Skills</h2>
+      <ul>
+        <li>Understanding systems and searching.</li>
+        <li>Recognizing parts of a system.</li>
+        <li>Explaining communication between devices.</li>
+        <li>Collaborative group discussion and explanation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <ul>
+        <li><i class="fa-solid fa-chalkboard"></i> Interactive whiteboard/Projector</li>
+        <li><i class="fa-solid fa-computer"></i> Computers/Tablets</li>
+        <li><i class="fa-solid fa-diagram-project"></i> Diagram of computer system parts</li>
+        <li><i class="fa-solid fa-network-wired"></i> Network map illustrations</li>
+        <li><i class="fa-solid fa-file-lines"></i> Worksheets</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Common Misconceptions</h2>
+      <ul>
+        <li>❌ Computers only work individually.</li>
+        <li>❌ A single device is the same as a system.</li>
+        <li>❌ The internet is the same as a computer.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What is a Computer System?</h2>
+      <p>A <b>computer system</b> is a group of parts that work together to take input, process it, and produce output. A system is made of both <b>hardware</b> (physical parts) and <b>software</b> (programs).</p>
+      <div class="example-box"><i class="fa-solid fa-keyboard"></i> <b>Input:</b> Keyboard, mouse, microphone.</div>
+      <div class="example-box"><i class="fa-solid fa-microchip"></i> <b>Process:</b> The CPU works on the data.</div>
+      <div class="example-box"><i class="fa-solid fa-display"></i> <b>Output:</b> Monitor, speakers, printer.</div>
+    </section>
+
+    <section>
+      <h2>How Do Systems Communicate?</h2>
+      <p>Computer systems can be connected in a <b>network</b> so they can communicate and share information. Examples include:</p>
+      <ul>
+        <li><i class="fa-solid fa-wifi"></i> Wi-Fi networks for sharing internet and files.</li>
+        <li><i class="fa-solid fa-network-wired"></i> Wired networks using cables.</li>
+        <li><i class="fa-solid fa-cloud"></i> Cloud systems for storing and accessing information online.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Practical Activity</h2>
+      <ol>
+        <li>Label the parts of a computer system on a worksheet (input, process, output).</li>
+        <li>In groups, discuss how computers in your school connect to share information.</li>
+        <li>Use a diagram of a network map to explain how devices communicate.</li>
+      </ol>
+    </section>
+
+<section class="assessment">
+  <h2>Assessment – Check Your Understanding</h2>
+
+  <div class="question">
+    <p><b>1. Which of these is a system?</b></p>
+    <button onclick="checkAnswer(this, true)">A group of devices working together</button>
+    <button onclick="checkAnswer(this, false)">A single keyboard</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>2. What are the three main parts of a computer system?</b></p>
+    <button onclick="checkAnswer(this, true)">Input, Process, Output</button>
+    <button onclick="checkAnswer(this, false)">Screen, Keyboard, Mouse</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>3. How do computer systems communicate?</b></p>
+    <button onclick="checkAnswer(this, true)">Through networks like Wi-Fi or cables</button>
+    <button onclick="checkAnswer(this, false)">By working alone</button>
+    <div class="feedback"></div>
+  </div>
+
+  <!-- New Questions -->
+
+  <div class="question">
+    <p><b>4. Which of these is an input device?</b></p>
+    <button onclick="checkAnswer(this, true)">Keyboard</button>
+    <button onclick="checkAnswer(this, false)">Monitor</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>5. What does the CPU mainly do?</b></p>
+    <button onclick="checkAnswer(this, true)">Processes instructions and data</button>
+    <button onclick="checkAnswer(this, false)">Displays pictures on the screen</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>6. Which of these is an output device?</b></p>
+    <button onclick="checkAnswer(this, true)">Printer</button>
+    <button onclick="checkAnswer(this, false)">Mouse</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>7. Why do we connect computers in a network?</b></p>
+    <button onclick="checkAnswer(this, true)">To share information and resources</button>
+    <button onclick="checkAnswer(this, false)">So they can work alone</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>8. Which of these is an example of storage?</b></p>
+    <button onclick="checkAnswer(this, true)">Hard drive</button>
+    <button onclick="checkAnswer(this, false)">Speaker</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>9. Which is true about computer systems?</b></p>
+    <button onclick="checkAnswer(this, true)">They combine hardware and software</button>
+    <button onclick="checkAnswer(this, false)">They are only hardware</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>10. Which of these is an example of a system outside computers?</b></p>
+    <button onclick="checkAnswer(this, true)">A school with teachers and students working together</button>
+    <button onclick="checkAnswer(this, false)">A single notebook</button>
+    <div class="feedback"></div>
+  </div>
+
+</section>
+
+<script>
+function checkAnswer(button, correct) {
+  const feedback = button.parentElement.querySelector('.feedback');
+  if (correct) {
+    feedback.textContent = "✅ Correct! Well done.";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "❌ Not correct. Try again.";
+    feedback.style.color = "red";
+  }
+}
+</script>
+</body>
+</html>

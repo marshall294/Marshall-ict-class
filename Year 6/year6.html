@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Year 6 Student Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn-3d {
+      transform: translateY(-2px);
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 6px 0 #0f172a;
+    }
+    .btn-3d:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #0f172a;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 min-h-screen flex flex-col items-center justify-start p-6 text-white font-sans">
+
+  <!-- Greeting -->
+  <div class="text-center mt-6">
+    <h1 id="greeting" class="text-3xl font-bold drop-shadow-md"></h1>
+    <p class="text-lg mt-2">Welcome to your Year 6 Dashboard</p>
+  </div>
+
+  <!-- Term Selector -->
+  <div class="mt-8">
+    <label for="termSelect" class="text-xl font-semibold">Select Term:</label>
+    <select id="termSelect" class="ml-3 px-4 py-2 rounded-lg text-black font-medium shadow-md">
+      <option value="first">First Term</option>
+      <option value="second">Second Term</option>
+      <option value="third">Third Term</option>
+    </select>
+  </div>
+
+  <!-- Lessons Section -->
+  <div id="lessonsContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-10 w-full max-w-4xl"></div>
+
+  <!-- Feedback Section -->
+  <div class="mt-12 w-full max-w-md bg-white text-black p-6 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-4">Send Feedback</h2>
+    <form action="mailto:marshall12340@gmail.com" method="post" enctype="text/plain" class="flex flex-col gap-4">
+      <input type="text" name="name" placeholder="Your Name" required class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <textarea name="message" placeholder="Your Feedback" rows="4" required class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+      <button type="submit" class="btn-3d bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold">Send</button>
+    </form>
+  </div>
+
+  <script>
+    // Greeting with date and time
+    function updateGreeting() {
+      const greetingEl = document.getElementById("greeting");
+      const hours = new Date().getHours();
+      let greeting = "Hello";
+      if (hours < 12) greeting = "Good Morning 🌅";
+      else if (hours < 18) greeting = "Good Afternoon 🌞";
+      else greeting = "Good Evening 🌙";
+      greetingEl.textContent = `${greeting}, Student!`;
+    }
+    updateGreeting();
+
+    // Lessons buttons generation
+    const lessonsContainer = document.getElementById("lessonsContainer");
+    const termSelect = document.getElementById("termSelect");
+
+    function loadLessons(term) {
+      lessonsContainer.innerHTML = "";
+      for (let i = 1; i <= 12; i++) {
+        const btn = document.createElement("a");
+        btn.href = `${term}-y6w${i}-ict.html`;
+        btn.textContent = `Week ${i}`;
+        btn.className =
+          "btn-3d bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white px-6 py-4 text-center rounded-2xl font-bold hover:scale-105 transform transition-all duration-300 shadow-lg";
+        lessonsContainer.appendChild(btn);
+      }
+    }
+
+    termSelect.addEventListener("change", (e) => {
+      loadLessons(e.target.value);
+    });
+
+    // Initial load
+    loadLessons("first");
+  </script>
+
+</body>
+</html>

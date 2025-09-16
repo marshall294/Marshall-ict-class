@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 2 ICT – Week 1 | Technology Around Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f9fafb; color: #222; line-height: 1.6; }
+    header { background: #2563eb; color: white; padding: 1.5rem; text-align: center; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    .container { max-width: 900px; margin: auto; padding: 1.5rem; }
+    section { background: white; margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    h2 { color: #1d4ed8; margin-top: 0; }
+    ul { padding-left: 1.2rem; }
+    .example-box { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 0.75rem 1rem; margin: 0.5rem 0; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; }
+    .example-box i { color: #2563eb; }
+    .assessment { margin-top: 1rem; }
+    .question { margin-bottom: 1rem; }
+    button { background: #2563eb; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 0.5rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 2 ICT – Week 1: Technology Around Us</h1>
+  </header>
+  <div class="container">
+    <section>
+      <h2>Lesson Objectives</h2>
+      <p>By the end of this lesson, students will be able to:</p>
+      <ul>
+        <li>Recognize the uses of information technology in everyday life.</li>
+        <li>Describe the features of information technology devices.</li>
+        <li>Identify that computers are part of information technology.</li>
+      </ul>
+    </section><section>
+  <h2>Success Criteria</h2>
+  <ul>
+    <li>✔️ I can describe some uses of computers.</li>
+    <li>✔️ I can identify examples of computers.</li>
+    <li>✔️ I can explain that a computer is part of information technology.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What is Information Technology?</h2>
+  <p><strong>Information Technology (IT)</strong> means using computers and digital tools to store, send, and use information. Computers are one of the most common examples of IT.</p>
+  <div class="example-box"><i class="fa-solid fa-computer"></i> A <b>computer</b> helps us type, draw, play games, and connect to the internet.</div>
+  <div class="example-box"><i class="fa-solid fa-mobile-screen-button"></i> A <b>mobile phone</b> helps us talk, text, and browse the internet.</div>
+  <div class="example-box"><i class="fa-solid fa-print"></i> A <b>printer</b> helps us print out our work from a computer.</div>
+  <div class="example-box"><i class="fa-solid fa-tv"></i> A <b>smart TV</b> lets us watch videos and connect to the internet.</div>
+  <div class="example-box"><i class="fa-solid fa-server"></i> A <b>server</b> stores and shares information across networks.</div>
+</section>
+
+<section>
+  <h2>Uses of Computers</h2>
+  <ul>
+    <li><i class="fa-solid fa-school"></i> <b>At School:</b> For learning, typing, showing lessons on a projector.</li>
+    <li><i class="fa-solid fa-house"></i> <b>At Home:</b> For homework, games, video calls, and watching movies.</li>
+    <li><i class="fa-solid fa-building"></i> <b>At Work:</b> For designing, keeping records, sending emails.</li>
+    <li><i class="fa-solid fa-store"></i> <b>In Shops:</b> For scanning items, printing receipts, keeping accounts.</li>
+    <li><i class="fa-solid fa-hospital"></i> <b>In Hospitals:</b> For storing patient information, scanning, and medical machines.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Features of a Computer</h2>
+  <ul>
+    <li>It has a <b>screen</b> to show information.</li>
+    <li>It has <b>input devices</b> like a keyboard and mouse.</li>
+    <li>It can <b>store information</b> for a long time.</li>
+    <li>It can <b>connect to the internet</b> and share information.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Practical Activity</h2>
+  <ol>
+    <li>Look around your classroom. Point to at least 2 examples of computers or IT devices.</li>
+    <li>With your partner, talk about how you use computers at home.</li>
+    <li>Draw and label a picture of a computer showing its parts (screen, keyboard, mouse).</li>
+  </ol>
+</section>
+
+<section class="assessment">
+  <h2>Assessment – Check Your Understanding</h2>
+
+  <div class="question">
+    <p><b>1. Which of these is an example of information technology?</b></p>
+    <button onclick="checkAnswer(this, true)">A computer</button>
+    <button onclick="checkAnswer(this, false)">A chair</button>
+    <button onclick="checkAnswer(this, false)">A stone</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>2. What can we use a computer for?</b></p>
+    <button onclick="checkAnswer(this, true)">To type and learn</button>
+    <button onclick="checkAnswer(this, false)">To cook food</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>3. Is a computer part of information technology?</b></p>
+    <button onclick="checkAnswer(this, true)">Yes</button>
+    <button onclick="checkAnswer(this, false)">No</button>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+  </div>  <script>
+    function checkAnswer(button, correct) {
+      const feedback = button.parentElement.querySelector('.feedback');
+      if (correct) {
+        feedback.textContent = "✅ Correct! Well done.";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = "❌ Not correct. Try again.";
+        feedback.style.color = "red";
+      }
+    }
+  </script></body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marshall ICT Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+    a.button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(145deg, #3a86ff, #0056b3);
+      border-radius: 16px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      box-shadow: 6px 6px 12px rgba(0,0,0,0.4), 
+                  -4px -4px 10px rgba(255,255,255,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    a.button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 8px 8px 18px rgba(0,0,0,0.5), 
+                  -6px -6px 12px rgba(255,255,255,0.15);
+      background: linear-gradient(145deg, #4cc9f0, #4361ee);
+    }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+      a.button {
+        font-size: 1rem;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Marshall ICT Class Dashboard</h1>
+  <div class="grid">
+    <a class="button" href="year1.html">Year 1</a>
+    <a class="button" href="year2.html">Year 2</a>
+    <a class="button" href="year3.html">Year 3</a>
+    <a class="button" href="year4.html">Year 4</a>
+    <a class="button" href="year5.html">Year 5</a>
+    <a class="button" href="year6.html">Year 6</a>
+    <a class="button" href="year7.html">Year 7</a>
+    <a class="button" href="year8.html">Year 8</a>
+    <a class="button" href="year9.html">Year 9</a>
+    <a class="button" href="year10.html">Year 10</a>
+    <a class="button" href="year11.html">Year 11</a>
+    <a class="button" href="year12.html">Year 12</a>
+  </div>
+</body>
+</html>

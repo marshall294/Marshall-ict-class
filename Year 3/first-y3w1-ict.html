@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 3 ICT – Week 1 | Connecting Computers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f9fafb; color: #222; line-height: 1.6; }
+    header { background: #2563eb; color: white; padding: 1.5rem; text-align: center; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    .container { max-width: 900px; margin: auto; padding: 1.5rem; }
+    section { background: white; margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    h2 { color: #1d4ed8; margin-top: 0; }
+    ul { padding-left: 1.2rem; }
+    .example-box { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 0.75rem 1rem; margin: 0.5rem 0; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; }
+    .example-box i { color: #2563eb; }
+    .assessment { margin-top: 1rem; }
+    .question { margin-bottom: 1rem; }
+    button { background: #2563eb; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 0.5rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 3 ICT – Week 1: Connecting Computers</h1>
+  </header>
+  <div class="container">
+    <section>
+      <h2>Lesson Objectives</h2>
+      <p>By the end of this lesson, students will be able to:</p>
+      <ul>
+        <li>Explain how digital devices function.</li>
+        <li>Understand the idea of input, process, and output.</li>
+        <li>Give examples of how computers connect and share information.</li>
+      </ul>
+    </section><section>
+  <h2>Success Criteria</h2>
+  <ul>
+    <li>✔️ I can explain that digital devices accept <b>input</b>.</li>
+    <li>✔️ I can explain that digital devices produce <b>output</b>.</li>
+    <li>✔️ I can follow the <b>input → process → output</b> cycle.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How Do Digital Devices Work?</h2>
+  <p>A <b>digital device</b> is any machine that uses numbers (0s and 1s) to work, like computers, phones, and tablets. Every digital device follows three main steps:</p>
+  <ul>
+    <li><b>Input:</b> Getting data or instructions (example: typing on a keyboard, clicking a mouse, touching a screen).</li>
+    <li><b>Process:</b> The computer thinks and works on the input (example: calculating, running a program).</li>
+    <li><b>Output:</b> Showing results (example: displaying text on screen, printing a page, playing a sound).</li>
+  </ul>
+
+  <div class="example-box"><i class="fa-solid fa-keyboard"></i> Typing on a <b>keyboard</b> (input) → computer processes the letters → text appears on the <b>screen</b> (output).</div>
+  <div class="example-box"><i class="fa-solid fa-microphone"></i> Speaking into a <b>microphone</b> (input) → device processes the sound → music waveform shown on screen (output).</div>
+  <div class="example-box"><i class="fa-solid fa-camera"></i> Pressing the <b>camera button</b> (input) → phone processes the photo → picture is shown on screen (output).</div>
+</section>
+
+<section>
+  <h2>Connecting Computers</h2>
+  <p>Digital devices can be connected together to share information. This connection can be through:</p>
+  <ul>
+    <li><i class="fa-solid fa-wifi"></i> <b>Wi-Fi:</b> Wireless connection to share internet and files.</li>
+    <li><i class="fa-solid fa-network-wired"></i> <b>Cables:</b> Computers can connect with wires.</li>
+    <li><i class="fa-solid fa-cloud"></i> <b>Cloud:</b> Information stored online that devices can access.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Practical Activity</h2>
+  <ol>
+    <li>Identify one input and one output device in your classroom.</li>
+    <li>Draw a diagram showing input → process → output for using a computer.</li>
+    <li>Work in pairs to explain how two computers can share information (for example, through Wi-Fi).</li>
+  </ol>
+</section>
+
+<section class="assessment">
+  <h2>Assessment – Check Your Understanding</h2>
+
+  <div class="question">
+    <p><b>1. Which one is an input device?</b></p>
+    <button onclick="checkAnswer(this, true)">Keyboard</button>
+    <button onclick="checkAnswer(this, false)">Printer</button>
+    <button onclick="checkAnswer(this, false)">Monitor</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>2. What is the output when you type on a computer?</b></p>
+    <button onclick="checkAnswer(this, true)">Letters appear on the screen</button>
+    <button onclick="checkAnswer(this, false)">Computer mouse moves</button>
+    <div class="feedback"></div>
+  </div>
+
+  <div class="question">
+    <p><b>3. Which of these shows the correct order?</b></p>
+    <button onclick="checkAnswer(this, true)">Input → Process → Output</button>
+    <button onclick="checkAnswer(this, false)">Output → Input → Process</button>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+  </div>  <script>
+    function checkAnswer(button, correct) {
+      const feedback = button.parentElement.querySelector('.feedback');
+      if (correct) {
+        feedback.textContent = "✅ Correct! Well done.";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = "❌ Not correct. Try again.";
+        feedback.style.color = "red";
+      }
+    }
+  </script></body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://marshall-ict-class.vercel.app/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.marshall-ict-class.vercel.app"
+        }
+      ],
+      "permanent": true
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 3 Computing — Week 2 | Input and Output Devices</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    h1 { font-size: 28px; margin-bottom: 5px; }
+    h2 { color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.08); }
+    ul, ol { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 20px; border-radius: 12px; }
+    button { background: #2563eb; color: white; padding: 8px 14px; border: none; border-radius: 6px; margin: 4px 4px; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 3 Computing — Week 2</h1>
+    <p><strong>Topic:</strong> Input and Output Devices | <strong>Date:</strong> Week 2</p>
+    <p><strong>Objective:</strong> Students will learn to identify input and output devices.</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>At the end of the lesson, students should be able to identify and classify input and output devices, describe a simple process, and design a digital device.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can classify input and output devices correctly.</li>
+        <li>✔️ I can describe a simple input–process–output system.</li>
+        <li>✔️ I can design a basic digital device that uses input and output.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes and Explanations</h2>
+      <p><strong>What are input devices?</strong><br>
+      Input devices are tools we use to give instructions or data to a computer. They allow us to “put information in.” Examples include: keyboard, mouse, microphone, scanner, and touchscreen.</p>
+
+      <p><strong>What are output devices?</strong><br>
+      Output devices are tools the computer uses to send information back to us. They allow us to “get information out.” Examples include: monitor, printer, speakers, and headphones.</p>
+
+      <p><strong>The Input–Process–Output Model:</strong><br>
+      - <em>Input:</em> You press keys on a keyboard.<br>
+      - <em>Process:</em> The computer understands the letters.<br>
+      - <em>Output:</em> The letters appear on the screen.</p>
+
+      <p><strong>Real-life examples:</strong></p>
+      <ul>
+        <li>In a cinema, a <strong>projector</strong> is an output device showing a movie, while the <strong>remote control</strong> is an input device.</li>
+        <li>A <strong>bank ATM</strong> uses a keypad (input), processes your request, then gives you money or shows your balance on screen (output).</li>
+        <li>A <strong>digital camera</strong> takes pictures (input), processes them, and then displays them on the screen (output).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li>Every digital system has input, process, and output.</li>
+        <li>Some devices (like touchscreens) can be both input and output.</li>
+        <li>Understanding input and output helps us design new technology.</li>
+      </ul>
+    </div>
+
+    <div class="card assessment">
+      <h2>Quick Check (10 Questions)</h2>
+
+      <p><strong>Q1:</strong> Which of these is an input device?<br>
+        <button onclick="checkAnswer(1, 'A')">A. Keyboard</button>
+        <button onclick="checkAnswer(1, 'B')">B. Monitor</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> Which device shows pictures and videos?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Monitor</button>
+        <button onclick="checkAnswer(2, 'B')">B. Mouse</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> A microphone is used to:<br>
+        <button onclick="checkAnswer(3, 'A')">A. Record sound</button>
+        <button onclick="checkAnswer(3, 'B')">B. Print documents</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> Which of these is an output device?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Speakers</button>
+        <button onclick="checkAnswer(4, 'B')">B. Keyboard</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> What happens after input in a computer system?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Processing</button>
+        <button onclick="checkAnswer(5, 'B')">B. Output</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> Which device prints out information on paper?<br>
+        <button onclick="checkAnswer(6, 'A')">A. Printer</button>
+        <button onclick="checkAnswer(6, 'B')">B. Scanner</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> A touchscreen is special because:<br>
+        <button onclick="checkAnswer(7, 'A')">A. It is both input and output</button>
+        <button onclick="checkAnswer(7, 'B')">B. It only gives sound</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> The mouse is used to:<br>
+        <button onclick="checkAnswer(8, 'A')">A. Move the pointer and click</button>
+        <button onclick="checkAnswer(8, 'B')">B. Show movies</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+
+      <p><strong>Q9:</strong> Which of these is NOT an input device?<br>
+        <button onclick="checkAnswer(9, 'A')">A. Scanner</button>
+        <button onclick="checkAnswer(9, 'B')">B. Projector</button>
+        <div id="feedback9" class="feedback"></div>
+      </p>
+
+      <p><strong>Q10:</strong> Which process is correct?<br>
+        <button onclick="checkAnswer(10, 'A')">A. Input → Process → Output</button>
+        <button onclick="checkAnswer(10, 'B')">B. Output → Input → Process</button>
+        <div id="feedback10" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function checkAnswer(q, ans) {
+      const answers = {
+        1: 'A',
+        2: 'A',
+        3: 'A',
+        4: 'A',
+        5: 'A',
+        6: 'A',
+        7: 'A',
+        8: 'A',
+        9: 'B',
+        10: 'A'
+      };
+      const feedbackEl = document.getElementById("feedback" + q);
+      if (answers[q] === ans) {
+        feedbackEl.innerText = "✅ Correct!";
+        feedbackEl.style.color = "green";
+      } else {
+        feedbackEl.innerText = "❌ Try again.";
+        feedbackEl.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

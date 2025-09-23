@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Year 1 ICT - Week 2: Technology Around Us</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f9faff; margin:0; padding:0; color:#222; line-height:1.7; }
+    header { background:#0056b3; color:white; text-align:center; padding:25px; }
+    h1 { font-size:28px; margin:10px 0; }
+    h2 { color:#0056b3; margin-top:0; }
+    .container { max-width:1000px; margin:20px auto; padding:20px; background:white; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+    .card { background:#fdfdfd; border:1px solid #ddd; border-radius:10px; padding:20px; margin:20px 0; }
+    ul { margin-left:20px; }
+    .icon { font-size:20px; margin-right:6px; }
+    button { margin:5px; padding:8px 14px; border:none; border-radius:6px; background:#0056b3; color:white; cursor:pointer; }
+    button:hover { background:#003f80; }
+    .feedback { margin-top:5px; font-weight:bold; }
+    .correct { color:green; }
+    .wrong { color:red; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>📘 Year 1 ICT - Week 2</h1>
+  <p><strong>Topic:</strong> Technology Around Us - Computers and Their Parts</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>🎯 Learning Objective</h2>
+    <p>By the end of this lesson, you should be able to <strong>identify a computer and its main parts</strong>, and explain how to use them.</p>
+  </div>
+
+  <div class="card">
+    <h2>✅ Success Criteria</h2>
+    <ul>
+      <li>I can <strong>name the main parts of a computer</strong>.</li>
+      <li>I can <strong>switch on and log into a computer</strong>.</li>
+      <li>I can <strong>use a mouse to click and drag</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💡 Notes and Detailed Explanations</h2>
+    <p>A <strong>computer</strong> is an electronic machine that receives data (input), processes it, and gives us information (output). Computers are used all over the world in schools, offices, homes, hospitals, airports, and almost every area of life. Understanding the basic parts of a computer helps us to use it properly.</p>
+    
+    <h3>Main Parts of a Computer:</h3>
+    <ul>
+      <li>🖥️ <strong>Monitor</strong>: The monitor is the screen of the computer. It shows text, pictures, and videos. It is an <em>output device</em> because it displays what the computer is doing. Example: when you type your name, the letters appear on the monitor.</li>
+      
+      <li>⌨️ <strong>Keyboard</strong>: The keyboard is used to type letters, numbers, and symbols into the computer. It is an <em>input device</em> because it sends information into the computer. Example: when you press the “A” key, the computer receives the letter “A”.</li>
+      
+      <li>🖱️ <strong>Mouse</strong>: The mouse helps us move the arrow (cursor) on the screen, click on items, open files, and drag objects. It is also an <em>input device</em>. Example: dragging a picture from one side of the screen to another.</li>
+      
+      <li>💾 <strong>CPU (Central Processing Unit) / System Unit</strong>: This is the brain of the computer. It processes all the information and controls what happens. Without the CPU, the monitor, keyboard, and mouse cannot work properly.</li>
+    </ul>
+
+    <h3>Switching On and Logging In:</h3>
+    <p>To use a computer, press the <strong>power button</strong>. After starting, some computers ask you to <strong>log in</strong> by clicking your name or typing a password. This keeps your work safe and private.</p>
+    
+    <h3>Using the Mouse:</h3>
+    <ul>
+      <li><strong>Click</strong>: Press the left button once to select something.</li>
+      <li><strong>Double-click</strong>: Press the left button twice quickly to open something.</li>
+      <li><strong>Drag</strong>: Hold the left button and move the mouse to move an object.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🌍 Real-Life Examples</h2>
+    <ul>
+      <li>At <strong>school</strong>, we use computers to learn new topics, draw pictures, and play learning games.</li>
+      <li>At <strong>home</strong>, people use computers to watch movies, talk to family online, or do homework.</li>
+      <li>In <strong>hospitals</strong>, doctors use computers to check patient records and machines connected to computers to save lives.</li>
+      <li>At <strong>airports</strong>, computers help in booking flights and checking passenger tickets.</li>
+    </ul>
+  </div>
+
+  <div class="card assessment">
+    <h2>📝 Quick Check (10 Questions)</h2>
+
+    <p><strong>Q1:</strong> Which part shows text and pictures?<br>
+      <button onclick="checkAnswer(1, 'A')">A. Monitor</button>
+      <button onclick="checkAnswer(1, 'B')">B. Keyboard</button>
+      <span id="feedback1" class="feedback"></span>
+    </p>
+
+    <p><strong>Q2:</strong> Which part is called the brain of the computer?<br>
+      <button onclick="checkAnswer(2, 'A')">A. CPU</button>
+      <button onclick="checkAnswer(2, 'B')">B. Mouse</button>
+      <span id="feedback2" class="feedback"></span>
+    </p>
+
+    <p><strong>Q3:</strong> Which part is used to type numbers?<br>
+      <button onclick="checkAnswer(3, 'A')">A. Keyboard</button>
+      <button onclick="checkAnswer(3, 'B')">B. Monitor</button>
+      <span id="feedback3" class="feedback"></span>
+    </p>
+
+    <p><strong>Q4:</strong> Which part helps you move the cursor?<br>
+      <button onclick="checkAnswer(4, 'A')">A. CPU</button>
+      <button onclick="checkAnswer(4, 'B')">B. Mouse</button>
+      <span id="feedback4" class="feedback"></span>
+    </p>
+
+    <p><strong>Q5:</strong> What do we press to turn on a computer?<br>
+      <button onclick="checkAnswer(5, 'A')">A. Power button</button>
+      <button onclick="checkAnswer(5, 'B')">B. Space bar</button>
+      <span id="feedback5" class="feedback"></span>
+    </p>
+
+    <p><strong>Q6:</strong> The monitor is an example of what kind of device?<br>
+      <button onclick="checkAnswer(6, 'A')">A. Input device</button>
+      <button onclick="checkAnswer(6, 'B')">B. Output device</button>
+      <span id="feedback6" class="feedback"></span>
+    </p>
+
+    <p><strong>Q7:</strong> Which action means pressing the mouse button twice quickly?<br>
+      <button onclick="checkAnswer(7, 'A')">A. Drag</button>
+      <button onclick="checkAnswer(7, 'B')">B. Double-click</button>
+      <span id="feedback7" class="feedback"></span>
+    </p>
+
+    <p><strong>Q8:</strong> What do we call all the parts (monitor, mouse, keyboard, CPU) together?<br>
+      <button onclick="checkAnswer(8, 'A')">A. A system unit</button>
+      <button onclick="checkAnswer(8, 'B')">B. A computer</button>
+      <span id="feedback8" class="feedback"></span>
+    </p>
+
+    <p><strong>Q9:</strong> Why do some computers ask for a password when logging in?<br>
+      <button onclick="checkAnswer(9, 'A')">A. To keep work safe</button>
+      <button onclick="checkAnswer(9, 'B')">B. To make the computer faster</button>
+      <span id="feedback9" class="feedback"></span>
+    </p>
+
+    <p><strong>Q10:</strong> Which part do you use to write letters on the screen?<br>
+      <button onclick="checkAnswer(10, 'A')">A. Keyboard</button>
+      <button onclick="checkAnswer(10, 'B')">B. Monitor</button>
+      <span id="feedback10" class="feedback"></span>
+    </p>
+  </div>
+</div>
+
+<script>
+  const answers = {
+    1:'A', 2:'A', 3:'A', 4:'B', 5:'A',
+    6:'B', 7:'B', 8:'B', 9:'A', 10:'A'
+  };
+  function checkAnswer(q, ans) {
+    const feedback = document.getElementById('feedback'+q);
+    if (answers[q] === ans) {
+      feedback.innerHTML = "✅ Correct!";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.innerHTML = "❌ Try again.";
+      feedback.className = "feedback wrong";
+    }
+  }
+</script>
+</body>
+</html>

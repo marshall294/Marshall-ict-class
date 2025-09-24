@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 5 — Week 2 | Systems & Searching — Role of Computer Systems</title>
+  <style>
+    /* Base layout & typography */
+    body { font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; background:#f7fafc; color:#172033; line-height:1.6; }
+    header { background:#0f172a; color:#ffffff; padding:18px 12px; text-align:center; }
+    header .title { display:block; font-size:28px; font-weight:700; color:#2563eb; margin:2px 0; } /* blue H1 (distinct from header bg) */
+    header .meta { color:#cfe7ff; font-size:14px; margin:4px 0; }
+
+    section { max-width:980px; margin:18px auto; padding:14px; }
+    .card { background:#ffffff; padding:18px; margin:14px 0; border-radius:10px; box-shadow:0 8px 20px rgba(10,20,30,0.06); }
+    h2 { color:#059669; font-size:20px; margin-top:0; } /* green H2 */
+    h3 { color:#0b5fbd; margin-bottom:6px; }
+    p, li { font-size:15px; }
+    ul { margin-left:20px; }
+
+    /* highlight boxes */
+    .example { background:#f0fdf4; border-left:6px solid #34d399; padding:10px 12px; border-radius:6px; margin:10px 0; }
+    .note { background:#eef2ff; border-left:6px solid #60a5fa; padding:10px 12px; border-radius:6px; margin:10px 0; }
+
+    /* table */
+    table { width:100%; border-collapse:collapse; margin-top:12px; }
+    th, td { border:1px solid #e6eefc; padding:8px; text-align:left; }
+    th { background:#f1f5f9; }
+
+    /* assessment */
+    .assessment { background:#fff; padding:16px; border-radius:10px; }
+    .question { margin-bottom:16px; }
+    .answers button { background:#2563eb; color:#fff; border:0; padding:8px 12px; margin:6px 6px 6px 0; border-radius:8px; cursor:pointer; }
+    .answers button:hover { background:#1e40af; }
+    .feedback { display:block; margin-top:8px; font-weight:700; }
+    .feedback.correct { color:#12733a; }
+    .feedback.incorrect { color:#9b1c1c; }
+
+    /* design challenge rubric */
+    .rubric { display:grid; grid-template-columns: 1fr 200px; gap:12px; align-items:start; }
+    .rubric .criteria { padding:8px; background:#fbfbff; border-radius:6px; border:1px solid #e6eefc; }
+    .rubric .score { background:#fff; padding:8px; border-radius:6px; border:1px solid #e6eefc; text-align:center; font-weight:700; }
+
+    /* responsive */
+    @media (max-width:700px){
+      header .title { font-size:20px; }
+      .rubric { grid-template-columns: 1fr; }
+      .answers button { width:100%; display:block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="title">Year 5 — Week 2</span>
+    <div class="meta"><strong>Topic:</strong> Systems & Searching — Role of Computer Systems | <strong>Teacher:</strong> Marshall Jacob</div>
+    <div class="meta"><strong>Duration:</strong> 40 minutes</div>
+  </header>
+
+  <section>
+    <!-- Objective & Success -->
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>By the end of this lesson students will <strong>recognise the role of computer systems</strong> in personal, organisational and societal contexts and be able to analyse, evaluate and suggest improvements for real-world systems.</p>
+
+      <h3>Success criteria (I can…)</h3>
+      <ul>
+        <li>Explain the benefits of a given computer system clearly and with examples.</li>
+        <li>Identify and categorise tasks that a computer system manages.</li>
+        <li>Point out the human roles in a computer system and explain why they are needed.</li>
+      </ul>
+    </div>
+
+    <!-- Detailed conceptual explanations -->
+    <div class="card">
+      <h2>What is a Computer System? (Detailed)</h2>
+      <p>A <strong>computer system</strong> is a combination of hardware, software, data, procedures and people that work together to perform tasks and solve problems. Systems vary in size from a simple point-of-sale till to a national hospital record system.</p>
+
+      <h3>Components (with classroom-friendly definitions)</h3>
+      <ul>
+        <li><strong>Hardware:</strong> Physical devices (computers, servers, scanners, barcode readers).</li>
+        <li><strong>Software:</strong> Programs and applications (databases, web apps, operating systems).</li>
+        <li><strong>Data:</strong> Information the system stores and processes (student records, inventory, measurements).</li>
+        <li><strong>Users / Human element:</strong> People who interact with the system (end users, administrators, developers).</li>
+        <li><strong>Procedures & policies:</strong> Rules about how the system is used (login procedures, backup schedules, privacy policies).</li>
+      </ul>
+
+      <div class="example">
+        <strong>Example system: School management system</strong><br>
+        Hardware: school server, teacher laptops, printers<br>
+        Software: gradebook app, timetable app<br>
+        Data: student grades, attendance records<br>
+        Human roles: teachers (enter grades), admin (run backups), IT support (maintain servers)
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Why Computer Systems Matter — Benefits & Limitations</h2>
+      <h3>Benefits (use these in exam answers)</h3>
+      <ul>
+        <li><strong>Speed:</strong> Process large amounts of data quickly (e.g., marking tests, searching records).</li>
+        <li><strong>Accuracy:</strong> Reduce repeated manual errors (automatic calculations, validated inputs).</li>
+        <li><strong>Storage & retrieval:</strong> Save data that can be searched and shared instantly.</li>
+        <li><strong>Automation:</strong> Routine tasks can run automatically (sending reminders, batch reports).</li>
+      </ul>
+
+      <h3>Limitations / Risks (also useful for critical answers)</h3>
+      <ul>
+        <li><strong>Security & privacy:</strong> Sensitive data must be protected or it can be leaked.</li>
+        <li><strong>Dependency:</strong> Over-reliance can cause breakdowns if the system fails (downtime).</li>
+        <li><strong>Cost & maintenance:</strong> Systems need updates, staff and money to keep running.</li>
+      </ul>
+
+      <div class="note">
+        <strong>Exam tip:</strong> When asked for advantages, always add one limitation and a short suggestion to improve (this shows critical thinking).
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How to Analyse a Computer System — Simple Framework</h2>
+      <ol>
+        <li><strong>Purpose:</strong> What is the system supposed to do? (e.g., record attendance)</li>
+        <li><strong>Users:</strong> Who uses it? (teachers, parents, admin)</li>
+        <li><strong>Inputs & Outputs:</strong> What information enters and what results are produced?</li>
+        <li><strong>Strengths:</strong> What does it do well?</li>
+        <li><strong>Weaknesses:</strong> Where does it fail or risk exist?</li>
+        <li><strong>Improvements:</strong> What changes would make it better?</li>
+      </ol>
+
+      <div class="example">
+        <strong>Example quick analysis (library system):</strong> Purpose: lend books and track returns. Users: librarian, students. Inputs: scanner reads barcode. Outputs: loan receipt, overdue alerts. Strength: fast checkout. Weakness: if barcode broken, manual entry needed. Improvement: mobile app for students to reserve books.
+      </div>
+    </div>
+
+    <!-- Design challenge & rubric -->
+    <div class="card">
+      <h2>Design Challenge (practical / exam-style task)</h2>
+      <p><strong>Task:</strong> Design a simple computer system to help the school track lost property.</p>
+      <p>Include:</p>
+      <ul>
+        <li>Purpose & users</li>
+        <li>Hardware & software required</li>
+        <li>Data fields to store (item name, date found, finder, location)</li>
+        <li>How the system would be used each day (brief process)</li>
+      </ul>
+
+      <h3>Rubric (how teachers / examiners mark it)</h3>
+      <div class="rubric" role="table">
+        <div class="criteria">
+          <strong>Purpose & users (10)</strong><br>Clear statement who uses it and why.
+        </div>
+        <div class="score"> /10 </div>
+
+        <div class="criteria">
+          <strong>Hardware & software (8)</strong><br>Appropriate devices and programs named.
+        </div>
+        <div class="score"> /8 </div>
+
+        <div class="criteria">
+          <strong>Data design (8)</strong><br>Relevant fields and privacy considered.
+        </div>
+        <div class="score"> /8 </div>
+
+        <div class="criteria">
+          <strong>Process & usability (6)</strong><br>Easy steps for daily use.
+        </div>
+        <div class="score"> /6 </div>
+
+        <div class="criteria">
+          <strong>Improvements & security (8)</strong><br>Ideas for backups, access control.
+        </div>
+        <div class="score"> /8 </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Model exam-style answers (use as templates)</h2>
+
+      <h3>Short answer (2–3 lines)</h3>
+      <p><strong>Q:</strong> Give two benefits of a school records system.<br>
+      <strong>Model:</strong> It stores student information safely and lets teachers access results quickly, saving time. It also reduces mistakes from manual records.</p>
+
+      <h3>Longer answer (exam paragraph)</h3>
+      <p><strong>Q:</strong> Explain how a hospital patient-record system benefits staff and patients.<br>
+      <strong>Model:</strong> A hospital patient-record system allows staff to access medical histories and test results instantly, which speeds up diagnosis and treatment (point & reason). For example, during emergencies doctors can see allergies immediately and avoid dangerous drugs (example). However, to protect privacy the system must use strong passwords and encryption (evaluation & improvement).</p>
+    </div>
+
+    <!-- Advanced Quick Check (10 questions) -->
+    <div class="card assessment" aria-live="polite">
+      <h2>Quick Check — advanced & critical thinking (10 questions)</h2>
+
+      <!-- Each question has 3 options A/B/C to increase complexity -->
+      <div class="question">
+        <p><strong>Q1:</strong> A hospital system returns a patient's history in seconds. Which describes the main benefit for care?</p>
+        <div class="answers">
+          <button onclick="answer(1,'A')">A. Faster, more accurate treatment because staff access records quickly</button>
+          <button onclick="answer(1,'B')">B. It removes the need for nurses</button>
+          <button onclick="answer(1,'C')">C. It increases paperwork</button>
+        </div>
+        <span id="fb1" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q2:</strong> A school wants tablets for tests. The primary implementation concern for fairness is:</p>
+        <div class="answers">
+          <button onclick="answer(2,'A')">A. That some pupils may not be used to typing under time pressure</button>
+          <button onclick="answer(2,'B')">B. That tablets look modern</button>
+          <button onclick="answer(2,'C')">C. That tablets are always cheaper than paper</button>
+        </div>
+        <span id="fb2" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q3:</strong> Which is the best task to automate in a school administrative system?</p>
+        <div class="answers">
+          <button onclick="answer(3,'A')">A. Sorting and validating incoming student applications by criteria</button>
+          <button onclick="answer(3,'B')">B. Making final decisions on admissions (no human input)</button>
+          <button onclick="answer(3,'C')">C. Telling classrooms what to wear</button>
+        </div>
+        <span id="fb3" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q4:</strong> You design a library system for young pupils. Which feature is top priority?</p>
+        <div class="answers">
+          <button onclick="answer(4,'A')">A. Simple, clear interface with large buttons and pictures</button>
+          <button onclick="answer(4,'B')">B. Complex advanced search with many filters</button>
+          <button onclick="answer(4,'C')">C. Hidden menus for expert librarians only</button>
+        </div>
+        <span id="fb4" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q5:</strong> A system holds student grades (sensitive). Best combination to secure data?</p>
+        <div class="answers">
+          <button onclick="answer(5,'A')">A. Regular backups only</button>
+          <button onclick="answer(5,'B')">B. Strong passwords only</button>
+          <button onclick="answer(5,'C')">C. Encryption, access control, backups and logs</button>
+        </div>
+        <span id="fb5" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q6:</strong> Which statement best describes the human element?</p>
+        <div class="answers">
+          <button onclick="answer(6,'A')">A. Humans interpret results, make decisions and maintain the system</button>
+          <button onclick="answer(6,'B')">B. Humans are no longer needed once a system exists</button>
+          <button onclick="answer(6,'C')">C. Humans only create the hardware</button>
+        </div>
+        <span id="fb6" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q7:</strong> Compared to a local server, cloud storage mainly offers:</p>
+        <div class="answers">
+          <button onclick="answer(7,'A')">A. Better scalability and easier remote access</button>
+          <button onclick="answer(7,'B')">B. Guaranteed lower cost in every case</button>
+          <button onclick="answer(7,'C')">C. No need to worry about security</button>
+        </div>
+        <span id="fb7" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q8:</strong> A school printer fails repeatedly. The best first step to troubleshoot is:</p>
+        <div class="answers">
+          <button onclick="answer(8,'A')">A. Check network connection, drivers and paper jams</button>
+          <button onclick="answer(8,'B')">B. Replace every teacher's login</button>
+          <button onclick="answer(8,'C')">C. Immediately purchase a new printer</button>
+        </div>
+        <span id="fb8" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q9:</strong> Is this ethical? A school sells anonymised test data to improve teaching. Best choice:</p>
+        <div class="answers">
+          <button onclick="answer(9,'A')">A. Acceptable if data is truly anonymised and parents are informed</button>
+          <button onclick="answer(9,'B')">B. Always acceptable—no safeguards needed</button>
+          <button onclick="answer(9,'C')">C. Never acceptable under any condition</button>
+        </div>
+        <span id="fb9" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+      <div class="question">
+        <p><strong>Q10:</strong> After launching an online exam system teachers report slow responses. Best improvement approach:</p>
+        <div class="answers">
+          <button onclick="answer(10,'A')">A. Ask teachers to reduce the number of students taking tests</button>
+          <button onclick="answer(10,'B')">B. Analyse server logs, find the bottleneck and optimise (e.g., caching or scaling)</button>
+          <button onclick="answer(10,'C')">C. Remove important features so it becomes faster</button>
+        </div>
+        <span id="fb10" class="feedback" role="status" aria-atomic="true"></span>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <h2>Exam tips & how to write high-quality answers</h2>
+      <ul>
+        <li>Structure: <strong>Point → Reason → Example → Evaluation.</strong></li>
+        <li>When asked to 'explain', always add one short evaluation or improvement suggestion.</li>
+        <li>Use specific examples (hospital, bank, school) and name a component or process.</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    /* Correct answers & explanations */
+    const correct = {
+      1: 'A',  2: 'B',  3: 'A',  4: 'A',  5: 'C',
+      6: 'A',  7: 'A',  8: 'A',  9: 'A', 10: 'B'
+    };
+
+    const explain = {
+      1: {
+        good: 'Faster access to records allows quicker diagnosis and reduces errors—this directly improves patient care.',
+        bad: 'Systems do not replace clinical judgement; nurses and doctors remain essential.'
+      },
+      2: {
+        good: 'Fairness includes test conditions and equal familiarity — students unused to tablets may be disadvantaged.',
+        bad: 'Modern look or cost alone are not the main fairness issues.'
+      },
+      3: {
+        good: 'Automation is ideal for repetitive data sorting and validation; human judgement should remain for final decisions.',
+        bad: 'Final decisions require ethical and personal judgement which automation should not fully replace.'
+      },
+      4: {
+        good: 'For young users, usability and clear visuals reduce errors and make the system accessible.',
+        bad: 'Complex filters or hidden menus make the system hard for children.'
+      },
+      5: {
+        good: 'Strong security uses a combination: encryption, access control, regular backups and logs—defence in depth.',
+        bad: 'A single measure alone (backups or passwords) is not sufficient.'
+      },
+      6: {
+        good: 'Humans provide context, make ethical decisions, fix problems and manage systems—computers assist but do not replace judgement.',
+        bad: 'Systems without human supervision often fail in ambiguous situations.'
+      },
+      7: {
+        good: 'Cloud storage scales and allows access from many places but can involve costs and security planning.',
+        bad: 'Cloud is not always cheaper in every case and still requires security measures.'
+      },
+      8: {
+        good: 'Troubleshooting step-by-step (drivers, network, jams) avoids unnecessary replacement and identifies the real cause.',
+        bad: 'Replacing hardware immediately may be wasteful without diagnosis.'
+      },
+      9: {
+        good: 'Anonymised data can be acceptable if anonymisation is robust and stakeholders (parents) informed; transparency matters.',
+        bad: 'Selling raw personal data without safeguards is unethical.'
+      },
+      10: {
+        good: 'Investigating logs and finding bottlenecks allows targeted optimisation (scaling servers, caching) rather than blunt fixes.',
+        bad: 'Reducing users or removing features are not good first responses.'
+      }
+    };
+
+    function answer(q, choice) {
+      const fb = document.getElementById('fb' + q);
+      if (!fb) return;
+      if (choice === correct[q]) {
+        fb.textContent = '✅ Correct — ' + explain[q].good;
+        fb.className = 'feedback correct';
+      } else {
+        fb.textContent = '❌ Not correct — ' + explain[q].bad + ' (Better: ' + explain[q].good + ')';
+        fb.className = 'feedback incorrect';
+      }
+      fb.setAttribute('aria-live','polite');
+    }
+  </script>
+</body>
+</html>

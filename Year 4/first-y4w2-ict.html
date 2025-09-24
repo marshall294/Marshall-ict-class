@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 4 Computing — Week 2 | The Internet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+    header { background: #0d9488; color: #fff; padding: 20px; text-align: center; }
+    h1 { font-size: 28px; margin-bottom: 5px; color: #ffffff; }
+    h2 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.08); }
+    ul, ol { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 20px; border-radius: 12px; }
+    button { background: #0d9488; color: white; padding: 8px 14px; border: none; border-radius: 6px; margin: 4px 4px; cursor: pointer; }
+    button:hover { background: #0f766e; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 4 Computing — Week 2</h1>
+    <p><strong>Topic:</strong> The Internet | <strong>Date:</strong> Week 2</p>
+    <p><strong>Objective:</strong> Students will recognise how networked devices make up the internet.</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>At the end of the lesson, students should be able to explain what networked devices are, how they connect, and how they work together to form the internet.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can describe networked devices and how they connect.</li>
+        <li>✔️ I can explain that the internet provides many different services.</li>
+        <li>✔️ I can recognise that the World Wide Web contains websites and web pages.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes and Explanations</h2>
+      <p><strong>What are networked devices?</strong><br>
+      Networked devices are machines like computers, tablets, smartphones, printers, and servers that are connected together so they can share information. They connect through cables, Wi-Fi, or satellites.</p>
+
+      <p><strong>How do they connect?</strong><br>
+      - A <em>router</em> or <em>modem</em> helps connect devices to the internet.<br>
+      - Devices send and receive information in the form of <strong>data packets</strong>.<br>
+      - These packets travel across networks all over the world.</p>
+
+      <p><strong>What is the internet?</strong><br>
+      The internet is a <strong>network of networks</strong>. It connects millions of devices worldwide so people can share information, communicate, and access services.</p>
+
+      <p><strong>Services of the internet:</strong></p>
+      <ul>
+        <li>Email – send and receive messages instantly.</li>
+        <li>World Wide Web (WWW) – a collection of websites and web pages.</li>
+        <li>Online video and music – streaming platforms like YouTube and Spotify.</li>
+        <li>Cloud storage – saving files online using Google Drive or Dropbox.</li>
+        <li>Social media – sharing posts and chatting with friends worldwide.</li>
+      </ul>
+
+      <p><strong>The World Wide Web (WWW):</strong><br>
+      The WWW is part of the internet. It is made up of websites and web pages linked together using hyperlinks. To visit a website, you type its address (URL) into a web browser.</p>
+
+      <p><strong>Real-life example:</strong><br>
+      When you search for a song on YouTube:<br>
+      - Your device (networked device) sends a request to YouTube’s server.<br>
+      - The internet carries this request in data packets.<br>
+      - The server responds by sending back the video data.<br>
+      - The video appears on your screen through the World Wide Web.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li>Networked devices are connected machines that share information.</li>
+        <li>The internet is a global network of networks.</li>
+        <li>The internet provides services like email, websites, and cloud storage.</li>
+        <li>The World Wide Web is made up of websites and web pages.</li>
+      </ul>
+    </div>
+
+    <div class="card assessment">
+      <h2>Quick Check (10 Questions)</h2>
+
+      <p><strong>Q1:</strong> What are networked devices?<br>
+        <button onclick="checkAnswer(1, 'A')">A. Devices connected together to share data</button>
+        <button onclick="checkAnswer(1, 'B')">B. Devices that work alone</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> Which device connects a computer to the internet?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Router</button>
+        <button onclick="checkAnswer(2, 'B')">B. Printer</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> Data travels on the internet in:<br>
+        <button onclick="checkAnswer(3, 'A')">A. Packets</button>
+        <button onclick="checkAnswer(3, 'B')">B. Large chunks</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> What is the internet?<br>
+        <button onclick="checkAnswer(4, 'A')">A. A network of networks</button>
+        <button onclick="checkAnswer(4, 'B')">B. A single computer</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> Which of these is a service provided by the internet?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Email</button>
+        <button onclick="checkAnswer(5, 'B')">B. Keyboard typing</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> What does WWW stand for?<br>
+        <button onclick="checkAnswer(6, 'A')">A. World Wide Web</button>
+        <button onclick="checkAnswer(6, 'B')">B. Wireless Wide Web</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> The WWW is made of:<br>
+        <button onclick="checkAnswer(7, 'A')">A. Websites and web pages</button>
+        <button onclick="checkAnswer(7, 'B')">B. Computer keyboards</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> Which is an example of cloud storage?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Google Drive</button>
+        <button onclick="checkAnswer(8, 'B')">B. Headphones</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+
+      <p><strong>Q9:</strong> Which of these is NOT an internet service?<br>
+        <button onclick="checkAnswer(9, 'A')">A. Email</button>
+        <button onclick="checkAnswer(9, 'B')">B. Water supply</button>
+        <div id="feedback9" class="feedback"></div>
+      </p>
+
+      <p><strong>Q10:</strong> To visit a website, you type its address into:<br>
+        <button onclick="checkAnswer(10, 'A')">A. A web browser</button>
+        <button onclick="checkAnswer(10, 'B')">B. A microphone</button>
+        <div id="feedback10" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function checkAnswer(q, ans) {
+      const answers = {
+        1: 'A',
+        2: 'A',
+        3: 'A',
+        4: 'A',
+        5: 'A',
+        6: 'A',
+        7: 'A',
+        8: 'A',
+        9: 'B',
+        10: 'A'
+      };
+      const feedbackEl = document.getElementById("feedback" + q);
+      if (answers[q] === ans) {
+        feedbackEl.innerText = "✅ Correct!";
+        feedbackEl.style.color = "green";
+      } else {
+        feedbackEl.innerText = "❌ Try again.";
+        feedbackEl.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

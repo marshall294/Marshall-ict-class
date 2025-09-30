@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 2 ICT — Week 3 | IT Around Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    header { background: #16a34a; color: #fff; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 5px 0; font-size: 16px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h2 { color: #14532d; margin-top: 0; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 20px; border-radius: 12px; }
+    button { background: #16a34a; color: white; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; margin: 4px 6px; }
+    button:hover { background: #166534; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 2 ICT — Autumn Term Week 3</h1>
+    <p><strong>Topic:</strong> IT Around Us | <strong>Teacher:</strong> Marshall Jacob</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To identify information technology beyond school.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can find examples of information technology.</li>
+        <li>✔️ I can sort IT by where it is found.</li>
+        <li>✔️ I can talk about uses of information technology.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes & Explanations</h2>
+      <p><strong>Information Technology (IT)</strong> means using computers and digital tools to collect, store, and share information. IT is not only in schools — it is everywhere in our daily lives.</p>
+      <p><strong>Examples of IT beyond school:</strong></p>
+      <ul>
+        <li>🏥 In hospitals: doctors use computers to check patient records and machines to scan the body.</li>
+        <li>🏦 In banks: ATMs and computer systems help people withdraw money and keep accounts safe.</li>
+        <li>🛍️ In supermarkets: barcode scanners and digital payment machines are used at checkouts.</li>
+        <li>✈️ In airports: computers help manage flight schedules and digital screens show boarding times.</li>
+        <li>🏠 At home: smart TVs, smartphones, and tablets help families watch, learn, and communicate.</li>
+      </ul>
+      <p><strong>Sorting IT:</strong> IT can be grouped by places where it is found — like school, home, hospital, bank, or shop.</p>
+      <p><strong>Why IT is useful:</strong></p>
+      <ul>
+        <li>It makes work faster and easier.</li>
+        <li>It helps people share information quickly.</li>
+        <li>It keeps records safe and organised.</li>
+      </ul>
+      <p><em>Real-life example:</em> Without IT, a doctor would write all patient details on paper. With IT, all records are stored on a computer and can be found quickly.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>IT (Information Technology):</strong> Using digital tools like computers, tablets, and machines to handle information.</li>
+        <li><strong>ATM:</strong> A machine at the bank that lets people take money or check balances.</li>
+        <li><strong>Scanner:</strong> A device that reads barcodes or documents.</li>
+        <li><strong>Sorting IT:</strong> Grouping IT devices by where they are used or what they are used for.</li>
+      </ul>
+    </div>
+
+    <div class="card assessment">
+      <h2>Quick Check</h2>
+
+      <p><strong>Q1:</strong> What does IT stand for?<br>
+        <button onclick="checkAnswer(1, 'A')">A. Information Technology</button>
+        <button onclick="checkAnswer(1, 'B')">B. International Travel</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> Which is an example of IT in a hospital?<br>
+        <button onclick="checkAnswer(2, 'A')">A. A doctor writing on paper</button>
+        <button onclick="checkAnswer(2, 'B')">B. A scanning machine</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> What does an ATM do?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Gives money from bank accounts</button>
+        <button onclick="checkAnswer(3, 'B')">B. Prints storybooks</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> Where can you find barcode scanners?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Supermarkets</button>
+        <button onclick="checkAnswer(4, 'B')">B. Classrooms</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> Why do airports use computers?<br>
+        <button onclick="checkAnswer(5, 'A')">A. To manage flights and show information</button>
+        <button onclick="checkAnswer(5, 'B')">B. To make sandwiches</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> Which of these is IT at home?<br>
+        <button onclick="checkAnswer(6, 'A')">A. Smart TV</button>
+        <button onclick="checkAnswer(6, 'B')">B. Wooden chair</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> Sorting IT means?<br>
+        <button onclick="checkAnswer(7, 'A')">A. Grouping IT by where or how it is used</button>
+        <button onclick="checkAnswer(7, 'B')">B. Throwing IT tools away</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> Why is IT important?<br>
+        <button onclick="checkAnswer(8, 'A')">A. It makes work faster and easier</button>
+        <button onclick="checkAnswer(8, 'B')">B. It makes books heavier</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+
+      <p><strong>Q9:</strong> Which of these shows IT in a bank?<br>
+        <button onclick="checkAnswer(9, 'A')">A. ATM machine</button>
+        <button onclick="checkAnswer(9, 'B')">B. Blackboard</button>
+        <div id="feedback9" class="feedback"></div>
+      </p>
+
+      <p><strong>Q10:</strong> How does IT help doctors?<br>
+        <button onclick="checkAnswer(10, 'A')">A. Stores patient records safely</button>
+        <button onclick="checkAnswer(10, 'B')">B. Gives them free food</button>
+        <div id="feedback10" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+<script>
+function checkAnswer(q, ans) {
+  const answers = {
+    1: 'A',
+    2: 'B',
+    3: 'A',
+    4: 'A',
+    5: 'A',
+    6: 'A',
+    7: 'A',
+    8: 'A',
+    9: 'A',
+    10: 'A'
+  };
+  const feedbackEl = document.getElementById('feedback' + q);
+  if (answers[q] === ans) {
+    feedbackEl.innerText = "✅ Correct!";
+    feedbackEl.style.color = "green";
+  } else {
+    feedbackEl.innerText = "❌ Try again.";
+    feedbackEl.style.color = "red";
+  }
+}
+</script>
+</body>
+</html>

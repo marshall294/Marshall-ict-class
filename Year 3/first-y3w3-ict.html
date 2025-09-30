@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 3 ICT — Week 3 | Connecting Computers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 5px 0; font-size: 16px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h2 { color: #1e3a8a; margin-top: 0; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 20px; border-radius: 12px; }
+    button { background: #2563eb; color: white; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; margin: 4px 6px; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 3 ICT — Autumn Term Week 3</h1>
+    <p><strong>Topic:</strong> Connecting Computers | <strong>Teacher:</strong> Marshall Jacob</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To recognise how digital devices can change the way we work.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can explain how I use digital devices for different activities.</li>
+        <li>✔️ I can recognise similarities between using digital devices and non-digital tools.</li>
+        <li>✔️ I can suggest differences between using digital devices and non-digital tools.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes & Explanations</h2>
+      <p>Computers and digital devices are all around us. They help us work, learn, and communicate more quickly and efficiently. A <strong>digital device</strong> is an electronic machine that processes information. Examples include laptops, tablets, and smartphones.</p>
+      <ul>
+        <li><strong>How devices change work:</strong> Writing a report on a computer is faster and easier to edit than using pen and paper.</li>
+        <li><strong>Similarities:</strong> A digital calculator and a normal calculator both help solve math problems.</li>
+        <li><strong>Differences:</strong> Sending an email on a computer is faster than posting a handwritten letter.</li>
+      </ul>
+      <p><strong>Real-life examples:</strong></p>
+      <ul>
+        <li>A teacher prepares lesson notes with a laptop instead of handwriting them in books.</li>
+        <li>Students research using the internet instead of only reading from printed books.</li>
+        <li>Workers attend online meetings instead of traveling long distances.</li>
+      </ul>
+      <p>Digital devices save time, improve accuracy, and connect us to people around the world.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Digital Device:</strong> An electronic tool that processes information (e.g., computer, tablet).</li>
+        <li><strong>Non-Digital Tool:</strong> A traditional tool without electronics (e.g., books, pens, abacus).</li>
+        <li><strong>Efficiency:</strong> Doing tasks faster and with less effort using technology.</li>
+        <li><strong>Connectivity:</strong> The ability of devices to link together and share information.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Quick Check</h2>
+
+      <p><strong>Q1:</strong> What is a digital device?<br>
+        <button onclick="checkAnswer(1, 'A')">A. A machine that processes information</button>
+        <button onclick="checkAnswer(1, 'B')">B. A wooden pencil</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> Which of these is a non-digital tool?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Abacus</button>
+        <button onclick="checkAnswer(2, 'B')">B. Smartphone</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> What is one similarity between a digital and non-digital tool?<br>
+        <button onclick="checkAnswer(3, 'A')">A. They both help us complete tasks</button>
+        <button onclick="checkAnswer(3, 'B')">B. Only digital tools are useful</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> Which is faster for sending a message?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Email</button>
+        <button onclick="checkAnswer(4, 'B')">B. Handwritten letter</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> Why do people prefer digital devices for writing documents?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Easier to edit and share</button>
+        <button onclick="checkAnswer(5, 'B')">B. They look more colorful</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> Which of these is an advantage of digital devices?<br>
+        <button onclick="checkAnswer(6, 'A')">A. They save time</button>
+        <button onclick="checkAnswer(6, 'B')">B. They always need electricity</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> A student solving math with a calculator is using?<br>
+        <button onclick="checkAnswer(7, 'A')">A. A digital device</button>
+        <button onclick="checkAnswer(7, 'B')">B. A ballpoint pen</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> What does connectivity mean?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Devices linking and sharing information</button>
+        <button onclick="checkAnswer(8, 'B')">B. Writing with a pen</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+
+      <p><strong>Q9:</strong> Which example shows a digital device changing work?<br>
+        <button onclick="checkAnswer(9, 'A')">A. Teacher writing lesson on laptop</button>
+        <button onclick="checkAnswer(9, 'B')">B. Student copying notes into notebook</button>
+        <div id="feedback9" class="feedback"></div>
+      </p>
+
+      <p><strong>Q10:</strong> Why are digital devices important in today’s world?<br>
+        <button onclick="checkAnswer(10, 'A')">A. They make tasks easier and faster</button>
+        <button onclick="checkAnswer(10, 'B')">B. They replace books completely</button>
+        <div id="feedback10" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+<script>
+function checkAnswer(q, ans) {
+  const answers = {
+    1: 'A',
+    2: 'A',
+    3: 'A',
+    4: 'A',
+    5: 'A',
+    6: 'A',
+    7: 'A',
+    8: 'A',
+    9: 'A',
+    10: 'A'
+  };
+  const feedbackEl = document.getElementById('feedback' + q);
+  if (answers[q] === ans) {
+    feedbackEl.innerText = "✅ Correct!";
+    feedbackEl.style.color = "green";
+  } else {
+    feedbackEl.innerText = "❌ Try again.";
+    feedbackEl.style.color = "red";
+  }
+}
+</script>
+</body>
+</html>

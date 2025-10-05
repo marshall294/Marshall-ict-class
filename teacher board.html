@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Whiteboard - Real-Time Speech</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 { color: #2f3640; }
+    #whiteboard {
+      width: 90%;
+      height: 60vh;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 20px;
+      font-size: 1.5em;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+    button {
+      padding: 12px 20px;
+      margin-top: 15px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 8px;
+      background: #0984e3;
+      color: white;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎙️ Teacher Voice Whiteboard</h1>
+  <div id="whiteboard"></div>
+  <button id="startBtn">Start Speaking</button>
+  <p id="linkDisplay"></p>
+
+  <script type="module">
+    // ====== Firebase Setup ======
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAFsHg9fK6IDnHbuxmBleEfIIfVGsuLDik",
+      authDomain: "profile-b825d.firebaseapp.com",
+      projectId: "profile-b825d",
+      storageBucket: "profile-b825d.firebasestorage.app",
+      messagingSenderId: "925276859161",
+      appId: "1:925276859161:web:194c60f6dbd9f1ef8bf388"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // ====== Generate Unique Session ID ======
+    const sessionId = Math.random().toString(36).substr(2, 9);
+    document.getElementById("linkDisplay").innerHTML =
+      `Share this link with students:<br><a href="student.html?id=${sessionId}" target="_blank">student.html?id=${sessionId}</a>`;
+
+    const whiteboard = document.getElementById("whiteboard");
+    const startBtn = document.getElementById("startBtn");
+
+    // ====== Speech Recognition ======
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = "en-US";
+
+    let finalTranscript = "";
+
+    recognition.onresult = async (event) => {
+      let interim = "";
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          finalTranscript += transcript + " ";
+        } else {
+          interim += transcript;
+        }
+      }
+      whiteboard.innerText = finalTranscript + interim;
+      await setDoc(doc(db, "whiteboards", sessionId), { text: finalTranscript + interim });
+    };
+
+    startBtn.onclick = () => {
+      recognition.start();
+      startBtn.disabled = true;
+      startBtn.innerText = "Listening...";
+    };
+
+    recognition.onend = () => {
+      startBtn.disabled = false;
+      startBtn.innerText = "Start Speaking";
+    };
+  </script>
+</body>
+</html>

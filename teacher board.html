@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teacher Whiteboard - Real-Time Speech</title>
+  <title>Teacher Whiteboard - Real-Time Speech & Drawing</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,46 +12,75 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      height: 100vh;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      height: 100vh;
     }
-    h1 { color: #2f3640; }
-    #whiteboard {
+    h1 { color: #2f3640; margin: 10px; }
+    #canvasContainer {
+      position: relative;
       width: 90%;
       height: 60vh;
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      padding: 20px;
-      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      cursor: crosshair;
+    }
+    #whiteboardText {
+      width: 90%;
+      min-height: 10vh;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 15px;
+      font-size: 1.3em;
       overflow-y: auto;
       white-space: pre-wrap;
+      margin-bottom: 10px;
+    }
+    #controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
     }
     button {
-      padding: 12px 20px;
-      margin-top: 15px;
-      font-size: 1.1em;
+      padding: 10px 18px;
+      font-size: 1em;
       border: none;
       border-radius: 8px;
       background: #0984e3;
       color: white;
       cursor: pointer;
     }
-    button:disabled {
-      background: gray;
-      cursor: not-allowed;
+    button:disabled { background: gray; }
+    input[type="color"], input[type="range"] {
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>🎙️ Teacher Voice Whiteboard</h1>
-  <div id="whiteboard"></div>
-  <button id="startBtn">Start Speaking</button>
+  <h1>🎙️ Teacher Voice + Drawing Whiteboard</h1>
+  <div id="canvasContainer">
+    <canvas id="drawCanvas"></canvas>
+  </div>
+
+  <div id="controls">
+    <button id="startBtn">🎤 Start Speaking</button>
+    <button id="clearCanvas">🧽 Clear</button>
+    <label>✏️ Color: <input type="color" id="colorPicker" value="#000000"></label>
+    <label>🪶 Size: <input type="range" id="sizePicker" min="1" max="10" value="3"></label>
+  </div>
+
+  <div id="whiteboardText"></div>
   <p id="linkDisplay"></p>
 
   <script type="module">
-    // ====== Firebase Setup ======
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
@@ -69,13 +96,71 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // ====== Generate Unique Session ID ======
     const sessionId = Math.random().toString(36).substr(2, 9);
-    document.getElementById("linkDisplay").innerHTML =
-      `Share this link with students:<br><a href="student.html?id=${sessionId}" target="_blank">student.html?id=${sessionId}</a>`;
-
-    const whiteboard = document.getElementById("whiteboard");
+    const whiteboardText = document.getElementById("whiteboardText");
     const startBtn = document.getElementById("startBtn");
+    const clearBtn = document.getElementById("clearCanvas");
+    const colorPicker = document.getElementById("colorPicker");
+    const sizePicker = document.getElementById("sizePicker");
+    const linkDisplay = document.getElementById("linkDisplay");
+    const canvas = document.getElementById("drawCanvas");
+    const ctx = canvas.getContext("2d");
+
+    linkDisplay.innerHTML = `Share this link with students:<br>
+      <a href="student.html?id=${sessionId}" target="_blank">student.html?id=${sessionId}</a>`;
+
+    // Resize canvas dynamically
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Drawing logic
+    let drawing = false;
+    let drawData = [];
+    function startDraw(e) {
+      drawing = true;
+      draw(e);
+    }
+    function endDraw() {
+      drawing = false;
+      ctx.beginPath();
+      saveDrawing();
+    }
+    function draw(e) {
+      if (!drawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      ctx.lineWidth = sizePicker.value;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = colorPicker.value;
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      drawData.push({ x, y, color: ctx.strokeStyle, size: ctx.lineWidth });
+    }
+
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mouseup", endDraw);
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseleave", endDraw);
+
+    async function saveDrawing() {
+      await setDoc(doc(db, "whiteboards", sessionId), {
+        text: whiteboardText.innerText,
+        drawing: drawData
+      });
+    }
+
+    clearBtn.onclick = async () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawData = [];
+      await saveDrawing();
+    };
 
     // ====== Speech Recognition ======
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -83,7 +168,6 @@
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = "en-US";
-
     let finalTranscript = "";
 
     recognition.onresult = async (event) => {
@@ -96,16 +180,18 @@
           interim += transcript;
         }
       }
-      whiteboard.innerText = finalTranscript + interim;
-      await setDoc(doc(db, "whiteboards", sessionId), { text: finalTranscript + interim });
+      whiteboardText.innerText = finalTranscript + interim;
+      await setDoc(doc(db, "whiteboards", sessionId), {
+        text: finalTranscript + interim,
+        drawing: drawData
+      });
     };
 
     startBtn.onclick = () => {
       recognition.start();
       startBtn.disabled = true;
-      startBtn.innerText = "Listening...";
+      startBtn.innerText = "🎤 Listening...";
     };
-
     recognition.onend = () => {
       startBtn.disabled = false;
       startBtn.innerText = "Start Speaking";

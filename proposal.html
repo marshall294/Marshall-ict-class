@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vision Towers 🗼 LTD - Official Website</title>
+
+  <link rel="icon" href="vision-logo.jpg" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f8f9fa; margin: 0; padding: 0; }
+    header { background: linear-gradient(135deg, #007bff, #6f42c1); color: white; text-align: center; padding: 80px 20px 60px; }
+    .logo-frame {
+      width: 140px; height: 140px; background: white; border-radius: 50%;
+      margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 5px solid rgba(255,255,255,0.3);
+      transform: perspective(1000px) rotateY(10deg);
+    }
+    .logo-frame img { width: 90%; border-radius: 50%; }
+    header h1 { font-size: 2.5rem; font-weight: 700; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+    section { padding: 60px 0; }
+    footer { background: #212529; color: white; text-align: center; padding: 20px; font-size: 0.95rem; }
+    form { background: #fff; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo-frame">
+    <img src="vision-logo.jpg" alt="Vision Towers Logo">
+  </div>
+  <h1>Welcome to Vision Towers 🗼 LTD</h1>
+  <p>Building Strong Digital Foundations for the Future</p>
+</header>
+
+<!-- About -->
+<section class="container text-center">
+  <h2 class="mb-3 fw-bold">About Us</h2>
+  <p class="lead">
+    Vision Towers LTD is a forward-thinking company focused on delivering top-notch web, mobile,
+    and digital transformation services. We help organizations grow through technology innovation
+    and smart digital strategies.
+  </p>
+</section>
+
+<!-- Services -->
+<section class="container">
+  <h2 class="text-center mb-4 fw-bold">Our Core Services</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="https://source.unsplash.com/600x400/?website,design" class="card-img-top" alt="Web Design">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Website Design & Development</h5>
+          <p>We build visually appealing, fast, and responsive websites that reflect your brand and connect with your audience effectively.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="https://source.unsplash.com/600x400/?app,technology" class="card-img-top" alt="App Development">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Mobile App Development</h5>
+          <p>Our experts craft user-friendly mobile applications for Android and iOS to help scale your business reach.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="https://source.unsplash.com/600x400/?server,cloud" class="card-img-top" alt="Cloud Service">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Cloud Solutions</h5>
+          <p>We integrate and manage cloud platforms to ensure your data and operations run smoothly and securely.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Registration -->
+<section class="container my-5">
+  <h2 class="text-center fw-bold mb-3">Register Your Interest</h2>
+  <p class="text-center">Please fill in the form below to stay updated with Vision Towers LTD.</p>
+  <form id="guestForm" class="mx-auto p-4" style="max-width: 600px;">
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email Address</label>
+      <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+    </div>
+    <input type="hidden" id="autoLocation">
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+  <p id="responseMsg" class="text-center mt-3 fw-bold"></p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vision Towers 🗼 LTD | All Rights Reserved</p>
+</footer>
+
+<script>
+  // ✅ Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAFsHg9fK6IDnHbuxmBleEfIIfVGsuLDik",
+    authDomain: "profile-b825d.firebaseapp.com",
+    projectId: "profile-b825d",
+    storageBucket: "profile-b825d.appspot.com",
+    messagingSenderId: "925276859161",
+    appId: "1:925276859161:web:194c60f6dbd9f1ef8bf388"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const rtdb = firebase.database();
+
+  const form = document.getElementById("guestForm");
+  const responseMsg = document.getElementById("responseMsg");
+  const autoLocationInput = document.getElementById("autoLocation");
+
+  // 🌍 Auto Detect Location (hidden but stored)
+  async function detectLocation() {
+    try {
+      const res = await fetch("https://ipapi.co/json/");
+      const data = await res.json();
+      autoLocationInput.value = `${data.city}, ${data.region}, ${data.country_name}`;
+    } catch (e) {
+      autoLocationInput.value = "Unknown Location";
+    }
+  }
+  detectLocation();
+
+  // 👁️ Visitor Counter
+  const visitorRef = rtdb.ref("visitors/count");
+  visitorRef.once("value", (snapshot) => {
+    if (!snapshot.exists()) visitorRef.set(1);
+    else visitorRef.transaction(count => (count || 0) + 1);
+  });
+
+  // 📝 Handle Form Submission
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    await detectLocation();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const location = autoLocationInput.value;
+
+    if (!name || !email || !phone) return;
+
+    try {
+      await db.collection("guests").add({
+        name, email, phone, location,
+        timestamp: new Date().toISOString()
+      });
+      responseMsg.textContent = "✅ Registration successful! Thank you for connecting with Vision Towers LTD.";
+      responseMsg.className = "text-success text-center mt-3 fw-bold";
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      responseMsg.textContent = "❌ Something went wrong. Please try again.";
+      responseMsg.className = "text-danger text-center mt-3 fw-bold";
+    }
+  });
+</script>
+
+</body>
+</html>

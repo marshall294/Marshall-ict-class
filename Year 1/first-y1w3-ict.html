@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 1 ICT — Week 3 | Using a Mouse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 5px 0; font-size: 16px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h2 { color: #1e3a8a; margin-top: 0; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    button { background: #2563eb; color: white; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; margin: 4px 6px; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 1 ICT — Autumn Term Week 3</h1>
+    <p><strong>Topic:</strong> Computing Systems and Networks – Technology Around Us | <strong>Teacher:</strong> Marshall Jacob</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To use a mouse in different ways.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can click and drag to make objects on a screen.</li>
+        <li>✔️ I can use a mouse to create a picture.</li>
+        <li>✔️ I can use a mouse to open a program.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes & Explanations</h2>
+      <p>A <strong>computer mouse</strong> is a small device that helps you control what happens on the screen. It usually has two buttons and sometimes a wheel in the middle.</p>
+      <ul>
+        <li><strong>Clicking:</strong> Pressing the left button selects or opens something on the screen.</li>
+        <li><strong>Double-clicking:</strong> Press the button twice quickly to open a program or file.</li>
+        <li><strong>Dragging:</strong> Hold the button down and move the mouse to drag objects around.</li>
+      </ul>
+      <p><strong>Real-life examples:</strong></p>
+      <ul>
+        <li>Using the mouse to open “Paint” on the computer.</li>
+        <li>Clicking to choose colours and drawing shapes in Paint.</li>
+        <li>Dragging icons to arrange them neatly on the desktop.</li>
+      </ul>
+      <p>The mouse helps us interact with the computer easily — like a hand guiding what we want to do on the screen.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Mouse:</strong> A hand-held device used to move the pointer and select things on a computer screen.</li>
+        <li><strong>Pointer:</strong> The arrow on the screen that moves when you move the mouse.</li>
+        <li><strong>Click:</strong> Pressing a button on the mouse to make a selection or open a program.</li>
+        <li><strong>Drag:</strong> Holding down a mouse button to move an object on the screen.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Quick Check</h2>
+
+      <p><strong>Q1:</strong> What is a mouse used for?<br>
+        <button onclick="checkAnswer(1, 'A')">A. To control and select things on the computer</button>
+        <button onclick="checkAnswer(1, 'B')">B. To listen to music</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> What happens when you click once on an icon?<br>
+        <button onclick="checkAnswer(2, 'A')">A. It selects the icon</button>
+        <button onclick="checkAnswer(2, 'B')">B. It deletes the icon</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> What does “dragging” mean?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Holding the mouse button to move an item</button>
+        <button onclick="checkAnswer(3, 'B')">B. Pressing the keyboard keys</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> Which part of the computer do you use with your hand to move the pointer?<br>
+        <button onclick="checkAnswer(4, 'A')">A. The mouse</button>
+        <button onclick="checkAnswer(4, 'B')">B. The monitor</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> What do you use to open a program?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Double-click the mouse button</button>
+        <button onclick="checkAnswer(5, 'B')">B. Hit the screen</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> What is the small arrow on the screen called?<br>
+        <button onclick="checkAnswer(6, 'A')">A. Pointer</button>
+        <button onclick="checkAnswer(6, 'B')">B. Arrow key</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> Which of these can you do with a mouse?<br>
+        <button onclick="checkAnswer(7, 'A')">A. Draw pictures in Paint</button>
+        <button onclick="checkAnswer(7, 'B')">B. Print papers</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> What is the first step to move an object on the screen?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Click and hold the mouse button</button>
+        <button onclick="checkAnswer(8, 'B')">B. Type on the keyboard</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+
+      <p><strong>Q9:</strong> Why is a mouse important when using a computer?<br>
+        <button onclick="checkAnswer(9, 'A')">A. It helps us control what happens on the screen</button>
+        <button onclick="checkAnswer(9, 'B')">B. It helps the computer sleep</button>
+        <div id="feedback9" class="feedback"></div>
+      </p>
+
+      <p><strong>Q10:</strong> Which action uses a mouse?<br>
+        <button onclick="checkAnswer(10, 'A')">A. Opening Paint and drawing</button>
+        <button onclick="checkAnswer(10, 'B')">B. Singing into the computer</button>
+        <div id="feedback10" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+<script>
+function checkAnswer(q, ans) {
+  const answers = {
+    1: 'A',
+    2: 'A',
+    3: 'A',
+    4: 'A',
+    5: 'A',
+    6: 'A',
+    7: 'A',
+    8: 'A',
+    9: 'A',
+    10: 'A'
+  };
+  const feedbackEl = document.getElementById('feedback' + q);
+  if (answers[q] === ans) {
+    feedbackEl.innerText = "✅ Correct!";
+    feedbackEl.style.color = "green";
+  } else {
+    feedbackEl.innerText = "❌ Try again.";
+    feedbackEl.style.color = "red";
+  }
+}
+</script>
+</body>
+</html>

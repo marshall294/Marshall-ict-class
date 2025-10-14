@@ -1,0 +1,216 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Year 4 Computing – Week 4 | The Internet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    header {
+      background: #0ea5e9;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    h1, h2, h3 { color: #075985; }
+    section { padding: 20px; max-width: 950px; margin: auto; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    ul { margin-left: 20px; }
+    .example-box {
+      background: #f0f9ff;
+      border-left: 5px solid #0ea5e9;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+    .teacher-notes {
+      background: #fef9c3;
+      border-left: 5px solid #eab308;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+    button {
+      background: #0ea5e9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      margin: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #0284c7; }
+    .feedback {
+      font-weight: 600;
+      margin-left: 8px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 4 Computing — Week 4</h1>
+    <p><strong>Topic:</strong> Computing Systems and Networks – The Internet</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 45 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To describe how content can be added and accessed on the World Wide Web (WWW).</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can explain that internet services can be used to create content online.</li>
+        <li>✔️ I can explain what media can be found on websites.</li>
+        <li>✔️ I can recognise that I can add content to the WWW.</li>
+      </ul>
+    </div>
+
+    <div class="card teacher-notes">
+      <h2>Teacher Notes — Lesson Flow</h2>
+      <ol>
+        <li><strong>Starter (5 mins):</strong> Ask: “What can you do on the Internet?” Brainstorm ideas like watching videos, reading news, playing games, and posting pictures.</li>
+        <li><strong>Main Activity (15 mins):</strong> Show how websites display content like text, images, audio, and videos. Let pupils explore a child-friendly website.</li>
+        <li><strong>Mini Lesson (10 mins):</strong> Explain how content is created — e.g., uploading photos, writing blogs, or posting class work online.</li>
+        <li><strong>Discussion (10 mins):</strong> Why is it important to be careful about what we post online?</li>
+        <li><strong>Assessment (5 mins):</strong> Pupils complete the quick quiz below.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Internet:</strong> A global network that connects computers all over the world.</li>
+        <li><strong>World Wide Web (WWW):</strong> A collection of information accessed through the Internet.</li>
+        <li><strong>Website:</strong> A place on the web where information like text, images, and videos can be found.</li>
+        <li><strong>Media:</strong> Content such as pictures, videos, and text.</li>
+        <li><strong>Online Content:</strong> Information that people can upload or share on the Internet.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Examples of Online Content</h2>
+      <div class="example-box">
+        <strong>Example 1:</strong> Posting a photo on a class blog.
+      </div>
+      <div class="example-box">
+        <strong>Example 2:</strong> Adding a video to a learning platform.
+      </div>
+      <div class="example-box">
+        <strong>Example 3:</strong> Writing and sharing a story online.
+      </div>
+      <div class="example-box">
+        <strong>Example 4:</strong> Accessing a school website to find homework instructions.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tips for Safe and Smart Sharing</h2>
+      <ul>
+        <li>🌐 Only share information that is safe and appropriate.</li>
+        <li>📸 Ask permission before posting pictures of others.</li>
+        <li>🔐 Use secure websites and trusted platforms.</li>
+        <li>👀 Remember, anything posted online can be seen by many people.</li>
+        <li>🧠 Think before you post!</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Assessment — Check Your Understanding</h2>
+
+      <p><strong>Q1:</strong> What is the Internet?<br>
+        <button onclick="checkAnswer(1, 'A')">A. A global network of computers</button>
+        <button onclick="checkAnswer(1, 'B')">B. A TV channel</button>
+        <span id="feedback1" class="feedback"></span>
+      </p>
+
+      <p><strong>Q2:</strong> What is the WWW?<br>
+        <button onclick="checkAnswer(2, 'A')">A. A collection of information on the Internet</button>
+        <button onclick="checkAnswer(2, 'B')">B. A computer game</button>
+        <span id="feedback2" class="feedback"></span>
+      </p>
+
+      <p><strong>Q3:</strong> Which of these is media?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Text, images, videos</button>
+        <button onclick="checkAnswer(3, 'B')">B. A calculator</button>
+        <span id="feedback3" class="feedback"></span>
+      </p>
+
+      <p><strong>Q4:</strong> Can you add content to the WWW?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Yes, by posting or uploading</button>
+        <button onclick="checkAnswer(4, 'B')">B. No, only computers can do it</button>
+        <span id="feedback4" class="feedback"></span>
+      </p>
+
+      <p><strong>Q5:</strong> Why should you be careful when posting online?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Because many people can see what you post</button>
+        <button onclick="checkAnswer(5, 'B')">B. Because no one will ever see it</button>
+        <span id="feedback5" class="feedback"></span>
+      </p>
+
+      <p><strong>Q6:</strong> Which is an example of online content?<br>
+        <button onclick="checkAnswer(6, 'A')">A. A class photo on the school website</button>
+        <button onclick="checkAnswer(6, 'B')">B. A note in a notebook</button>
+        <span id="feedback6" class="feedback"></span>
+      </p>
+
+      <p><strong>Q7:</strong> What is a website?<br>
+        <button onclick="checkAnswer(7, 'A')">A. A place on the Internet with information</button>
+        <button onclick="checkAnswer(7, 'B')">B. A video game console</button>
+        <span id="feedback7" class="feedback"></span>
+      </p>
+
+      <p><strong>Q8:</strong> What is one way to stay safe online?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Think before posting</button>
+        <button onclick="checkAnswer(8, 'B')">B. Post anything you want</button>
+        <span id="feedback8" class="feedback"></span>
+      </p>
+
+      <p><strong>Q9:</strong> What can be found on websites?<br>
+        <button onclick="checkAnswer(9, 'A')">A. Media like text, pictures, videos</button>
+        <button onclick="checkAnswer(9, 'B')">B. Only numbers</button>
+        <span id="feedback9" class="feedback"></span>
+      </p>
+
+      <p><strong>Q10:</strong> What should you always do before posting online?<br>
+        <button onclick="checkAnswer(10, 'A')">A. Think and check if it’s safe</button>
+        <button onclick="checkAnswer(10, 'B')">B. Post it quickly</button>
+        <span id="feedback10" class="feedback"></span>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function checkAnswer(q, ans) {
+      const correct = {
+        1: 'A', 2: 'A', 3: 'A', 4: 'A', 5: 'A',
+        6: 'A', 7: 'A', 8: 'A', 9: 'A', 10: 'A'
+      };
+      const feedback = document.getElementById('feedback' + q);
+      if (correct[q] === ans) {
+        feedback.innerHTML = "✅ Correct!";
+        feedback.style.color = "green";
+      } else {
+        feedback.innerHTML = "❌ Try again.";
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

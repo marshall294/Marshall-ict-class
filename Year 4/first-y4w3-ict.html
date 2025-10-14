@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 4 Computing — Week 3 | The World Wide Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h1, h2, h3 { color: #1e3a8a; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 20px; border-radius: 12px; }
+    button { background: #2563eb; color: white; padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; margin: 4px 2px; }
+    button:hover { background: #1e40af; }
+    strong { color: #1e40af; }
+    .feedback { margin-top: 8px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 4 Computing — Week 3</h1>
+    <p><strong>Topic:</strong> The Internet – The World Wide Web | <strong>Date:</strong> Monday 7 Oct. 2025</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 40 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To outline how websites can be shared via the World Wide Web (WWW) and understand how we access and view information online.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can describe how to access websites on the WWW.</li>
+        <li>✔️ I can describe where websites are stored when uploaded to the WWW.</li>
+        <li>✔️ I can explain the types of media that can be shared on the WWW.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Key Notes and Definitions</h2>
+      <ul>
+        <li><strong>World Wide Web (WWW):</strong> A collection of web pages that you can access using the internet.</li>
+        <li><strong>Website:</strong> A group of connected web pages created by people or organizations.</li>
+        <li><strong>Web Server:</strong> A computer that stores websites and sends them to your device when requested.</li>
+        <li><strong>Web Browser:</strong> A program (like Chrome, Safari, or Edge) used to view websites.</li>
+        <li><strong>URL (Uniform Resource Locator):</strong> The unique address of a website, e.g., <em>https://www.bbc.co.uk</em>.</li>
+        <li><strong>Hyperlink:</strong> A piece of text or image that you can click to open another webpage.</li>
+        <li><strong>Media:</strong> The different forms of content shared online — text, images, videos, sounds, and animations.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>How the World Wide Web Works</h2>
+      <p>When you type a website address (URL) into your browser, your computer sends a request through the internet to a <strong>web server</strong>. The server then sends back the website’s files, such as text, pictures, or videos, which your browser displays on your screen.</p>
+      <p>Example: When you type <strong>www.nationalgeographic.com</strong>, the request travels to the web server storing National Geographic’s website, which sends back all the content for you to see.</p>
+    </div>
+
+    <div class="card">
+      <h2>Where Are Websites Stored?</h2>
+      <p>Websites are stored on <strong>web servers</strong>. These are special computers that stay online 24/7, allowing anyone in the world to access the sites at any time. Big companies may have their own servers, while smaller websites use hosting services that rent out space on shared servers.</p>
+    </div>
+
+    <div class="card">
+      <h2>What Can Be Shared on the WWW?</h2>
+      <ul>
+        <li><strong>Text:</strong> Articles, blogs, and stories.</li>
+        <li><strong>Images:</strong> Photos and illustrations.</li>
+        <li><strong>Videos:</strong> Educational clips, movies, and animations.</li>
+        <li><strong>Sound:</strong> Music, podcasts, and sound effects.</li>
+        <li><strong>Interactive media:</strong> Games and quizzes that respond to user input.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Examples and Activities</h2>
+      <ul>
+        <li>Visit <b>www.kids.nationalgeographic.com</b> — What kinds of media are used on the site?</li>
+        <li>Find a website that uses both video and text to teach something new.</li>
+        <li>Draw a simple diagram showing your computer, the web browser, the web server, and how they connect.</li>
+      </ul>
+    </div>
+
+    <div class="card assessment">
+      <h2>Quick Assessment</h2>
+
+      <p><strong>Q1:</strong> What is the World Wide Web?<br>
+        <button onclick="checkAnswer(1, 'A')">A. A collection of websites on the internet</button>
+        <button onclick="checkAnswer(1, 'B')">B. A single large computer</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> Where are websites stored?<br>
+        <button onclick="checkAnswer(2, 'A')">A. On web servers</button>
+        <button onclick="checkAnswer(2, 'B')">B. On your keyboard</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> Which tool do you use to access websites?<br>
+        <button onclick="checkAnswer(3, 'A')">A. A web browser</button>
+        <button onclick="checkAnswer(3, 'B')">B. A printer</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> What does URL stand for?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Uniform Resource Locator</button>
+        <button onclick="checkAnswer(4, 'B')">B. Universal Reading Link</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> Which of the following can be shared on the WWW?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Text, images, and videos</button>
+        <button onclick="checkAnswer(5, 'B')">B. Only text</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> What is a hyperlink used for?<br>
+        <button onclick="checkAnswer(6, 'A')">A. To connect to another webpage</button>
+        <button onclick="checkAnswer(6, 'B')">B. To print a page</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> What happens when you type a web address into your browser?<br>
+        <button onclick="checkAnswer(7, 'A')">A. Your computer requests the website from a server</button>
+        <button onclick="checkAnswer(7, 'B')">B. Your computer creates a new website</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> Which of these is NOT a type of media shared on the WWW?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Smell</button>
+        <button onclick="checkAnswer(8, 'B')">B. Video</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+  <script>
+  function checkAnswer(q, ans) {
+    const answers = {
+      1: 'A',
+      2: 'A',
+      3: 'A',
+      4: 'A',
+      5: 'A',
+      6: 'A',
+      7: 'A',
+      8: 'A'
+    };
+    const feedbackEl = document.getElementById('feedback' + q);
+    if (answers[q] === ans) {
+      feedbackEl.innerHTML = "✅ Correct!";
+      feedbackEl.style.color = "green";
+    } else {
+      feedbackEl.innerHTML = "❌ Try again.";
+      feedbackEl.style.color = "red";
+    }
+  }
+  </script>
+
+</body>
+</html>

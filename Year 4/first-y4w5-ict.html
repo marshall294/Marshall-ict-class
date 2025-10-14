@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Year 4 Computing – The Internet (Week 5)</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f8fb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    section {
+      background: white;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0077cc;
+    }
+    .objective, .criteria {
+      background: #e8f4ff;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .question {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 4px solid #0077cc;
+    }
+    .feedback {
+      display: none;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .correct {
+      background: #d4edda;
+      color: #155724;
+    }
+    .incorrect {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    button {
+      background: #0077cc;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Year 4 Computing – Week 5: The Internet 🌍
+  </header>
+
+  <section>
+    <h2>Lesson Title:</h2>
+    <p><strong>To Recognise How the Content of the WWW is Created by People</strong></p>
+
+    <h3>🎯 Learning Objectives</h3>
+    <div class="objective">
+      <ul>
+        <li>Explain that there are rules to protect online content</li>
+        <li>Explain that websites and their content are created by people</li>
+        <li>Suggest who owns the content found on websites</li>
+      </ul>
+    </div>
+
+    <h3>1️⃣ What is the World Wide Web (WWW)?</h3>
+    <p>The <strong>World Wide Web</strong> (WWW) is a collection of websites and web pages that you can access using the <strong>internet</strong>.  
+    It’s like a huge library, but instead of books, it has web pages full of text, pictures, and videos.</p>
+
+    <blockquote>💡 The <strong>internet</strong> connects computers around the world, and the <strong>WWW</strong> is one of its main services.</blockquote>
+
+    <h3>2️⃣ Who Creates the Content on the WWW?</h3>
+    <p>Every website is created by people:</p>
+    <ul>
+      <li>👩‍💼 Companies – like Google, Apple, or BBC</li>
+      <li>🧑‍🏫 Schools and organisations – to share learning materials</li>
+      <li>🧑‍🎨 Individuals – bloggers, YouTubers, or designers</li>
+    </ul>
+    <p>Everything you see online (texts, pictures, videos) was <strong>made or uploaded by someone</strong>.</p>
+
+    <h3>3️⃣ Rules to Protect Online Content</h3>
+    <p>When someone creates something online, it becomes their <strong>intellectual property</strong>.</p>
+    <ul>
+      <li><strong>Copyright law:</strong> Protects people’s work from being copied without permission.</li>
+      <li><strong>Creative Commons:</strong> Lets people share their work while controlling how it’s used.</li>
+      <li><strong>Fair Use:</strong> Allows small parts of a work to be used for education or news.</li>
+    </ul>
+
+    <blockquote>🚫 Copying a picture or article without permission is <strong>not allowed</strong>.<br>
+    ✅ Always create your own work or use <em>free-to-use</em> content.</blockquote>
+
+    <h3>4️⃣ Who Owns Online Content?</h3>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;">
+      <tr style="background:#e8f4ff;">
+        <th>Type of Content</th><th>Who Owns It</th><th>Example</th>
+      </tr>
+      <tr><td>YouTube video</td><td>The uploader</td><td>A music creator owns their video</td></tr>
+      <tr><td>School website</td><td>The school</td><td>Your school’s website</td></tr>
+      <tr><td>Wikipedia page</td><td>Shared ownership</td><td>Page edited by many people</td></tr>
+      <tr><td>Company website</td><td>The company</td><td>Apple owns apple.com</td></tr>
+    </table>
+
+    <h3>🧩 Example</h3>
+    <p>If you find a photo online that you want to use for a school project:</p>
+    <ol>
+      <li>Check if it’s copyrighted.</li>
+      <li>Ask for permission or use free-to-use images.</li>
+      <li>Give credit to the creator if required.</li>
+    </ol>
+
+    <hr>
+
+    <h2>💬 Interactive Quiz</h2>
+
+    <div class="question">
+      <p><strong>1. Who creates the content on websites?</strong></p>
+      <button onclick="showFeedback(this, true)">People ✅</button>
+      <button onclick="showFeedback(this, false)">Robots 🤖</button>
+      <button onclick="showFeedback(this, false)">Computers automatically 💻</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>2. What rule protects people’s work online?</strong></p>
+      <button onclick="showFeedback(this, true)">Copyright 📝</button>
+      <button onclick="showFeedback(this, false)">Firewall 🔥</button>
+      <button onclick="showFeedback(this, false)">Antivirus 🛡️</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>3. If you want to use a photo from a website, what should you do?</strong></p>
+      <button onclick="showFeedback(this, false)">Copy it directly ❌</button>
+      <button onclick="showFeedback(this, true)">Ask permission or use free images ✅</button>
+      <button onclick="showFeedback(this, false)">Change its color 🎨</button>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <p><strong>4. Who owns the photos and videos on Instagram?</strong></p>
+      <button onclick="showFeedback(this, false)">The company 📱</button>
+      <button onclick="showFeedback(this, true)">The person who posted them ✅</button>
+      <button onclick="showFeedback(this, false)">Everyone 🌍</button>
+      <div class="feedback"></div>
+    </div>
+
+    <h3>📝 Activity</h3>
+    <p>Create a mini-website plan:
+      <ul>
+        <li>Choose a topic (e.g. pets, games, space).</li>
+        <li>List 3 pages you’d include.</li>
+        <li>Decide who would own your content (you, your teacher, or the public).</li>
+      </ul>
+    </p>
+
+    <h3>✅ Success Criteria</h3>
+    <div class="criteria">
+      <ul>
+        <li>I can explain that there are rules to protect content.</li>
+        <li>I can explain that websites are created by people.</li>
+        <li>I can suggest who owns the content on websites.</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    function showFeedback(button, isCorrect) {
+      const feedbackDiv = button.parentElement.querySelector(".feedback");
+      if (isCorrect) {
+        feedbackDiv.innerHTML = "<div class='correct'><strong>✅ Correct!</strong> Great job! You understand this part.</div>";
+      } else {
+        feedbackDiv.innerHTML = "<div class='incorrect'><strong>❌ Try Again.</strong> Think carefully — check your notes above.</div>";
+      }
+      feedbackDiv.style.display = "block";
+    }
+  </script>
+</body>
+</html>

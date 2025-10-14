@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 3 Computing — Week 5 | Connecting Computers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    section { padding: 20px; max-width: 950px; margin: auto; }
+    h1, h2, h3 { color: #1e3a8a; }
+    .card { background: #fff; padding: 25px; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 25px; border-radius: 12px; }
+    button { background: #2563eb; color: white; padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; margin: 4px; }
+    button:hover { background: #1e40af; }
+    strong { color: #1e40af; }
+    img { width: 100%; border-radius: 10px; margin-top: 15px; }
+    .example-box { background: #f9fafb; border-left: 5px solid #2563eb; padding: 10px 15px; margin: 10px 0; border-radius: 6px; }
+    .teacher-notes { background: #fef9c3; border-left: 5px solid #eab308; padding: 10px 15px; border-radius: 6px; }
+    .feedback { font-weight: 600; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 3 Computing — Week 5</h1>
+    <p><strong>Topic:</strong> Computing Systems and Networks – Connecting Computers</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 40 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To explore how digital devices can be connected and to understand how information can move from one device to another within a network.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can demonstrate how information can be passed between devices.</li>
+        <li>✔️ I can explain the role of a switch, server, and wireless access point in a network.</li>
+        <li>✔️ I can recognise that a computer network is made up of many connected devices.</li>
+      </ul>
+    </div>
+
+    <div class="card teacher-notes">
+      <h2>Teacher Notes (Step-by-Step Guide)</h2>
+      <ol>
+        <li><strong>Step 1 — Introduction (5 mins):</strong> Ask pupils, “How do our school computers talk to each other?” Discuss answers.</li>
+        <li><strong>Step 2 — Explanation (10 mins):</strong> Show examples of wired and wireless connections using images or classroom equipment.</li>
+        <li><strong>Step 3 — Demonstration (10 mins):</strong> Let pupils act out being devices — passing “data packets” between each other via a “switch” (student).</li>
+        <li><strong>Step 4 — Exploration (10 mins):</strong> Display the diagram and discuss how each part (switch, server, WAP) helps devices connect.</li>
+        <li><strong>Step 5 — Assessment (5 mins):</strong> Pupils answer interactive questions and review feedback immediately.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Key Notes and Definitions</h2>
+      <ul>
+        <li><strong>Digital Device:</strong> A piece of electronic equipment that can store, process, or send data (e.g., laptop, smartphone, tablet).</li>
+        <li><strong>Network:</strong> A group of devices linked together to share information, such as files or internet access.</li>
+        <li><strong>Switch:</strong> A device that connects computers within a local network (LAN) and sends data to the right place.</li>
+        <li><strong>Server:</strong> A special computer that stores and manages files for others to access.</li>
+        <li><strong>Wireless Access Point (WAP):</strong> Lets devices connect to the network wirelessly via Wi-Fi.</li>
+        <li><strong>Router:</strong> Connects the local network to the wider internet.</li>
+      </ul>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Network_diagram.svg" alt="Basic Network Diagram">
+    </div>
+
+    <div class="card">
+      <h2>How Devices Connect in a Network</h2>
+      <p>Devices in a network are connected using either <strong>cables</strong> or <strong>Wi-Fi</strong>. Each device has a unique address (like a name) so information knows where to go. The switch controls data flow inside the network, while the server stores shared information. The router connects the network to the internet.</p>
+
+      <div class="example-box"><strong>Example 1:</strong> In the school ICT lab, computers share a printer and internet connection through a switch.</div>
+      <div class="example-box"><strong>Example 2:</strong> At home, phones, tablets, and TVs connect wirelessly to a router using Wi-Fi.</div>
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Home_network_diagram.svg" alt="Home Network Example">
+    </div>
+
+    <div class="card">
+      <h2>Why Connecting Devices Matters</h2>
+      <ul>
+        <li>To share resources like printers and files.</li>
+        <li>To access the internet and cloud storage.</li>
+        <li>To allow teamwork through shared folders.</li>
+        <li>To communicate quickly through email and messaging.</li>
+      </ul>
+      <div class="example-box"><strong>Fun Fact:</strong> Without networks, every computer would need its own printer and internet line!</div>
+    </div>
+
+    <div class="card assessment">
+      <h2>Quick Assessment</h2>
+
+      <p><strong>Q1:</strong> What is a computer network?<br>
+        <button onclick="checkAnswer(1, 'A')">A. A group of connected devices</button>
+        <button onclick="checkAnswer(1, 'B')">B. A single computer</button>
+        <span id="feedback1" class="feedback"></span>
+      </p>
+
+      <p><strong>Q2:</strong> What does a switch do?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Connects computers together</button>
+        <button onclick="checkAnswer(2, 'B')">B. Plays music</button>
+        <span id="feedback2" class="feedback"></span>
+      </p>
+
+      <p><strong>Q3:</strong> What is the role of a server?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Stores and shares files</button>
+        <button onclick="checkAnswer(3, 'B')">B. Displays pictures</button>
+        <span id="feedback3" class="feedback"></span>
+      </p>
+
+      <p><strong>Q4:</strong> What does a wireless access point do?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Connects devices wirelessly</button>
+        <button onclick="checkAnswer(4, 'B')">B. Stores books</button>
+        <span id="feedback4" class="feedback"></span>
+      </p>
+
+      <p><strong>Q5:</strong> Which device connects your home to the internet?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Router</button>
+        <button onclick="checkAnswer(5, 'B')">B. Keyboard</button>
+        <span id="feedback5" class="feedback"></span>
+      </p>
+
+      <p><strong>Q6:</strong> What is an example of wireless connection?<br>
+        <button onclick="checkAnswer(6, 'A')">A. Wi-Fi</button>
+        <button onclick="checkAnswer(6, 'B')">B. Cable</button>
+        <span id="feedback6" class="feedback"></span>
+      </p>
+
+      <p><strong>Q7:</strong> Why do we connect computers in a network?<br>
+        <button onclick="checkAnswer(7, 'A')">A. To share resources</button>
+        <button onclick="checkAnswer(7, 'B')">B. To make them heavy</button>
+        <span id="feedback7" class="feedback"></span>
+      </p>
+
+      <p><strong>Q8:</strong> Which of these is a network device?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Switch</button>
+        <button onclick="checkAnswer(8, 'B')">B. Chair</button>
+        <span id="feedback8" class="feedback"></span>
+      </p>
+
+      <p><strong>Q9:</strong> What happens if a computer is not connected to a network?<br>
+        <button onclick="checkAnswer(9, 'A')">A. It cannot share or communicate</button>
+        <button onclick="checkAnswer(9, 'B')">B. It becomes faster</button>
+        <span id="feedback9" class="feedback"></span>
+      </p>
+
+      <p><strong>Q10:</strong> Which is true about a server?<br>
+        <button onclick="checkAnswer(10, 'A')">A. It helps other devices by providing data</button>
+        <button onclick="checkAnswer(10, 'B')">B. It is used for typing only</button>
+        <span id="feedback10" class="feedback"></span>
+      </p>
+
+    </div>
+  </section>
+
+  <script>
+  function checkAnswer(q, ans) {
+    const answers = {
+      1: 'A', 2: 'A', 3: 'A', 4: 'A', 5: 'A',
+      6: 'A', 7: 'A', 8: 'A', 9: 'A', 10: 'A'
+    };
+    const feedback = document.getElementById(`feedback${q}`);
+    if (answers[q] === ans) {
+      feedback.innerHTML = "✅ Correct!";
+      feedback.style.color = "green";
+    } else {
+      feedback.innerHTML = "❌ Try again.";
+      feedback.style.color = "red";
+    }
+  }
+  </script>
+
+</body>
+</html>

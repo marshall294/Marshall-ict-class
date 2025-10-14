@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 5 Computing — Week 4 | Systems and Searching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h1, h2, h3 { color: #1e3a8a; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    .assessment { background: #f1f5f9; padding: 20px; border-radius: 12px; }
+    button { background: #2563eb; color: white; padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; margin: 4px 2px; }
+    button:hover { background: #1e40af; }
+    strong { color: #1e40af; }
+    .feedback { margin-top: 8px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 5 Computing — Week 4</h1>
+    <p><strong>Topic:</strong> Systems and Searching | <strong>Date:</strong> Monday 21 Oct. 2025</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 40 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To describe how search engines select results and understand the process of indexing and ranking web pages.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can explain why we need tools to find things online.</li>
+        <li>✔️ I can recognise the role of <strong>web crawlers</strong> in creating an index.</li>
+        <li>✔️ I can relate a <strong>search term</strong> to how the search engine’s index is used.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Key Notes and Definitions</h2>
+      <ul>
+        <li><strong>Search Engine:</strong> A website that helps people find information online, such as Google, Bing, or Yahoo.</li>
+        <li><strong>Web Crawler:</strong> A program used by search engines to scan and collect information from websites automatically.</li>
+        <li><strong>Index:</strong> A huge list of all the pages that a search engine knows about, like a library catalogue.</li>
+        <li><strong>Search Term:</strong> The word or phrase you type into a search bar to find information.</li>
+        <li><strong>Ranking:</strong> The order that search results appear in — the most relevant results show up first.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>How Search Engines Work</h2>
+      <p>Search engines use special software called <b>web crawlers</b> to visit websites and gather data. This data is stored in a massive <b>index</b>. When you type a <b>search term</b>, the search engine looks through its index — not the whole internet — to find the most relevant pages. It then <b>ranks</b> them so the best matches appear first.</p>
+      <p>For example, if you search for <i>“solar system facts”</i>, the engine will look for pages that contain those words, are trustworthy, and are most often visited by others.</p>
+    </div>
+
+    <div class="card">
+      <h2>Why Do We Need Search Engines?</h2>
+      <ul>
+        <li>The internet has <b>billions of websites</b> — finding one manually would take forever!</li>
+        <li>Search engines organise this information for quick access.</li>
+        <li>They use algorithms to show results that best match your search words.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Common Misconceptions</h2>
+      <ul>
+        <li>❌ <b>Search engines search the whole internet directly.</b> — In truth, they search their own <b>index</b> built by web crawlers.</li>
+        <li>❌ <b>All search results are equally reliable.</b> — Some may be false or biased, so we must check sources.</li>
+        <li>❌ <b>Web crawlers are humans.</b> — They are automated computer programs.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Examples and Activities</h2>
+      <ul>
+        <li>Compare Google and Bing results for <b>"climate change for kids"</b>. Which gives clearer answers?</li>
+        <li>Try searching <b>"fastest land animal"</b> — How does the search engine choose which site to show first?</li>
+        <li>Discuss: Why do some websites appear higher in results than others?</li>
+      </ul>
+    </div>
+
+    <div class="card assessment">
+      <h2>Quick Assessment</h2>
+
+      <p><strong>Q1:</strong> What does a web crawler do?<br>
+        <button onclick="checkAnswer(1, 'A')">A. It scans websites and collects information</button>
+        <button onclick="checkAnswer(1, 'B')">B. It deletes old web pages</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> What is an index used for?<br>
+        <button onclick="checkAnswer(2, 'A')">A. To store all the websites a search engine knows about</button>
+        <button onclick="checkAnswer(2, 'B')">B. To block unsafe websites</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> Why do we need search engines?<br>
+        <button onclick="checkAnswer(3, 'A')">A. To find information quickly and easily</button>
+        <button onclick="checkAnswer(3, 'B')">B. To play online games</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> What determines which results appear first?<br>
+        <button onclick="checkAnswer(4, 'A')">A. The ranking system</button>
+        <button onclick="checkAnswer(4, 'B')">B. Random selection</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> What is a search term?<br>
+        <button onclick="checkAnswer(5, 'A')">A. The word or phrase you type into the search box</button>
+        <button onclick="checkAnswer(5, 'B')">B. The link you click in results</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> Who runs web crawlers?<br>
+        <button onclick="checkAnswer(6, 'A')">A. Search engines</button>
+        <button onclick="checkAnswer(6, 'B')">B. Users who browse the web</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> Why might two search engines show different results?<br>
+        <button onclick="checkAnswer(7, 'A')">A. They use different indexes and ranking methods</button>
+        <button onclick="checkAnswer(7, 'B')">B. Because one makes mistakes</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> What is the first step in a search engine’s process?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Crawling and indexing web pages</button>
+        <button onclick="checkAnswer(8, 'B')">B. Showing random websites</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+  <script>
+  function checkAnswer(q, ans) {
+    const answers = {
+      1: 'A',
+      2: 'A',
+      3: 'A',
+      4: 'A',
+      5: 'A',
+      6: 'A',
+      7: 'A',
+      8: 'A'
+    };
+    const feedbackEl = document.getElementById('feedback' + q);
+    if (answers[q] === ans) {
+      feedbackEl.innerHTML = "✅ Correct!";
+      feedbackEl.style.color = "green";
+    } else {
+      feedbackEl.innerHTML = "❌ Try again.";
+      feedbackEl.style.color = "red";
+    }
+  }
+  </script>
+
+</body>
+</html>

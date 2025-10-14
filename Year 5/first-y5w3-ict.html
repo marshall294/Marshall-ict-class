@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Year 5 Computing – Week 3 | Systems and Searching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    header {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    h1, h2, h3 { color: #1e3a8a; }
+    section { padding: 20px; max-width: 950px; margin: auto; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    ul { margin-left: 20px; }
+    .example-box {
+      background: #f1f5f9;
+      border-left: 5px solid #3b82f6;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+    .teacher-notes {
+      background: #fef9c3;
+      border-left: 5px solid #eab308;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      margin: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #1d4ed8; }
+    .feedback {
+      font-weight: 600;
+      margin-left: 8px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 5 Computing — Week 3</h1>
+    <p><strong>Topic:</strong> Computing Systems and Networks – Systems and Searching</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 45 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To experiment with search engines and understand how to refine searches to find accurate information.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can compare results from different search engines.</li>
+        <li>✔️ I can make use of a web search to find specific information.</li>
+        <li>✔️ I can refine my web search to get better results.</li>
+      </ul>
+    </div>
+
+    <div class="card teacher-notes">
+      <h2>Teacher Notes — Lesson Flow</h2>
+      <ol>
+        <li><strong>Starter (5 mins):</strong> Ask pupils: “How do you find information online?” Discuss search engines (Google, Bing, DuckDuckGo, etc.).</li>
+        <li><strong>Main Activity (15 mins):</strong> Let students search for the same topic on two search engines (e.g., “Who invented the computer?”). Compare results.</li>
+        <li><strong>Mini Lesson (10 mins):</strong> Teach how to use <b>keywords</b> and <b>quotation marks</b> to refine searches. Example: <code>"ancient Egyptian pyramids"</code>.</li>
+        <li><strong>Discussion (10 mins):</strong> Why are some results better than others? What makes a website trustworthy?</li>
+        <li><strong>Assessment (5 mins):</strong> Complete quiz below with instant feedback.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Search Engine:</strong> A program that searches the web for information (e.g., Google, Bing).</li>
+        <li><strong>Keywords:</strong> Important words you type into a search box to find information quickly.</li>
+        <li><strong>Refining a Search:</strong> Adjusting or narrowing down your search terms to get more accurate results.</li>
+        <li><strong>Algorithm:</strong> The set of rules a search engine uses to decide which results to show first.</li>
+        <li><strong>Sponsored Results:</strong> Ads that appear at the top of search results — not always the best or most accurate information.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Examples of Search Refinement</h2>
+      <div class="example-box">
+        <strong>Example 1:</strong> Instead of searching <em>“animals”</em>, search for <em>“African savanna animals”</em> for more specific results.
+      </div>
+      <div class="example-box">
+        <strong>Example 2:</strong> Use quotation marks to find exact phrases: <code>"Thomas Edison light bulb"</code>.
+      </div>
+      <div class="example-box">
+        <strong>Example 3:</strong> Add filters like “site:.gov” or “site:.edu” to find trustworthy sources.
+      </div>
+      <div class="example-box">
+        <strong>Example 4:</strong> Compare <em>Google</em> and <em>DuckDuckGo</em> results — notice differences in ranking and presentation.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tips for Smart Searching</h2>
+      <ul>
+        <li>🔍 Use specific words — “solar system facts for kids” is better than just “space.”</li>
+        <li>💡 Check more than one website for accuracy.</li>
+        <li>🧠 Ignore the top ads — look for reliable, educational sources.</li>
+        <li>🛑 Think before you click! Some links might be unsafe or misleading.</li>
+        <li>📖 Always read the short description under the link before opening it.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Assessment — Check Your Understanding</h2>
+
+      <p><strong>Q1:</strong> What is a search engine?<br>
+        <button onclick="checkAnswer(1, 'A')">A. A tool that finds information on the web</button>
+        <button onclick="checkAnswer(1, 'B')">B. A type of car engine</button>
+        <span id="feedback1" class="feedback"></span>
+      </p>
+
+      <p><strong>Q2:</strong> Which of these is a search engine?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Google</button>
+        <button onclick="checkAnswer(2, 'B')">B. Facebook</button>
+        <span id="feedback2" class="feedback"></span>
+      </p>
+
+      <p><strong>Q3:</strong> What does refining a search mean?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Making your search more specific</button>
+        <button onclick="checkAnswer(3, 'B')">B. Typing random words</button>
+        <span id="feedback3" class="feedback"></span>
+      </p>
+
+      <p><strong>Q4:</strong> Which search would give better results for finding facts about planets?<br>
+        <button onclick="checkAnswer(4, 'A')">A. "Planets in our solar system"</button>
+        <button onclick="checkAnswer(4, 'B')">B. Planets</button>
+        <span id="feedback4" class="feedback"></span>
+      </p>
+
+      <p><strong>Q5:</strong> Why should we check more than one website?<br>
+        <button onclick="checkAnswer(5, 'A')">A. To make sure the information is accurate</button>
+        <button onclick="checkAnswer(5, 'B')">B. To waste time</button>
+        <span id="feedback5" class="feedback"></span>
+      </p>
+
+      <p><strong>Q6:</strong> What is a keyword?<br>
+        <button onclick="checkAnswer(6, 'A')">A. A main word that helps you find what you need</button>
+        <button onclick="checkAnswer(6, 'B')">B. Any random word</button>
+        <span id="feedback6" class="feedback"></span>
+      </p>
+
+      <p><strong>Q7:</strong> Which of these can help make your search more reliable?<br>
+        <button onclick="checkAnswer(7, 'A')">A. Using “site:.edu” or “site:.gov”</button>
+        <button onclick="checkAnswer(7, 'B')">B. Clicking any link</button>
+        <span id="feedback7" class="feedback"></span>
+      </p>
+
+      <p><strong>Q8:</strong> Why do search engines show different results?<br>
+        <button onclick="checkAnswer(8, 'A')">A. They use different algorithms</button>
+        <button onclick="checkAnswer(8, 'B')">B. They copy from each other</button>
+        <span id="feedback8" class="feedback"></span>
+      </p>
+
+      <p><strong>Q9:</strong> What are sponsored results?<br>
+        <button onclick="checkAnswer(9, 'A')">A. Ads that appear at the top of search pages</button>
+        <button onclick="checkAnswer(9, 'B')">B. Hidden links</button>
+        <span id="feedback9" class="feedback"></span>
+      </p>
+
+      <p><strong>Q10:</strong> What should you do before clicking a search result?<br>
+        <button onclick="checkAnswer(10, 'A')">A. Read the short description below the link</button>
+        <button onclick="checkAnswer(10, 'B')">B. Click the first one you see</button>
+        <span id="feedback10" class="feedback"></span>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function checkAnswer(q, ans) {
+      const correct = {
+        1: 'A', 2: 'A', 3: 'A', 4: 'A', 5: 'A',
+        6: 'A', 7: 'A', 8: 'A', 9: 'A', 10: 'A'
+      };
+      const feedback = document.getElementById('feedback' + q);
+      if (correct[q] === ans) {
+        feedback.innerHTML = "✅ Correct!";
+        feedback.style.color = "green";
+      } else {
+        feedback.innerHTML = "❌ Try again.";
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

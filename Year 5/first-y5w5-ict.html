@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Year 5 Computing – Week 5 | Systems and Searching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    header {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    h1, h2, h3 { color: #1e3a8a; }
+    section { padding: 20px; max-width: 950px; margin: auto; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    ul { margin-left: 20px; }
+    .example-box {
+      background: #f1f5f9;
+      border-left: 5px solid #3b82f6;
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+    .teacher-notes {
+      background: #fef9c3;
+      border-left: 5px solid #eab308;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      margin: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #1d4ed8; }
+    .feedback {
+      font-weight: 600;
+      margin-left: 8px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 5 Computing — Week 5</h1>
+    <p><strong>Topic:</strong> Computing Systems and Networks – Systems and Searching</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 45 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To explain how search results are ranked and understand how search engines use rules to decide the order of results.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can explain that a search engine follows rules to rank results.</li>
+        <li>✔️ I can give examples of criteria used by search engines to rank results.</li>
+        <li>✔️ I can order a list by rank.</li>
+      </ul>
+    </div>
+
+    <div class="card teacher-notes">
+      <h2>Teacher Notes — Lesson Flow</h2>
+      <ol>
+        <li><strong>Starter (5 mins):</strong> Ask pupils: “Why do some websites show up first when you search?” Introduce the idea of ranking.</li>
+        <li><strong>Main Activity (15 mins):</strong> Show how search engines decide ranking (e.g., relevance, popularity, keywords). Use a practical search example like “best rainforest facts for kids.”</li>
+        <li><strong>Mini Lesson (10 mins):</strong> Demonstrate how certain pages get higher ranks due to trusted sources, keywords, and freshness of information.</li>
+        <li><strong>Sorting Activity (10 mins):</strong> Give students example search results and ask them to order them by rank (most relevant first).</li>
+        <li><strong>Assessment (5 mins):</strong> Complete the quiz below with instant feedback.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Ranking:</strong> The order in which search results are shown.</li>
+        <li><strong>Relevance:</strong> How closely the search result matches what was searched for.</li>
+        <li><strong>Trustworthiness:</strong> Websites from reliable sources are ranked higher.</li>
+        <li><strong>Popularity:</strong> Pages that are visited often may be ranked higher.</li>
+        <li><strong>Algorithm:</strong> A set of rules that search engines follow to rank results.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Examples of Ranking</h2>
+      <div class="example-box">
+        <strong>Example 1:</strong> A website from a trusted educational source may appear first when searching for “rainforest facts”.
+      </div>
+      <div class="example-box">
+        <strong>Example 2:</strong> A page with lots of relevant keywords like “rainforest”, “Amazon”, and “plants” may rank higher.
+      </div>
+      <div class="example-box">
+        <strong>Example 3:</strong> Newer or updated information can make a page rank higher.
+      </div>
+      <div class="example-box">
+        <strong>Example 4:</strong> Sponsored ads may appear at the top — these are paid placements, not ranked by relevance.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tips for Understanding Ranking</h2>
+      <ul>
+        <li>🔝 Top results are not always the best — some are sponsored ads.</li>
+        <li>🧭 Trusted, well-known sources usually rank higher.</li>
+        <li>📆 New and regularly updated content often ranks better.</li>
+        <li>🔍 Keywords in your search affect the ranking order.</li>
+        <li>🧠 Understanding ranking helps you choose better links.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Assessment — Check Your Understanding</h2>
+
+      <p><strong>Q1:</strong> What does “ranking” mean in search results?<br>
+        <button onclick="checkAnswer(1, 'A')">A. The order in which search results appear</button>
+        <button onclick="checkAnswer(1, 'B')">B. The colors of the links</button>
+        <span id="feedback1" class="feedback"></span>
+      </p>
+
+      <p><strong>Q2:</strong> Which of these can make a website rank higher?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Relevance and trustworthiness</button>
+        <button onclick="checkAnswer(2, 'B')">B. Random colors</button>
+        <span id="feedback2" class="feedback"></span>
+      </p>
+
+      <p><strong>Q3:</strong> What is an algorithm?<br>
+        <button onclick="checkAnswer(3, 'A')">A. A set of rules the search engine follows</button>
+        <button onclick="checkAnswer(3, 'B')">B. A kind of dance</button>
+        <span id="feedback3" class="feedback"></span>
+      </p>
+
+      <p><strong>Q4:</strong> Why do trusted websites often appear at the top?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Because they are reliable sources</button>
+        <button onclick="checkAnswer(4, 'B')">B. Because they are colorful</button>
+        <span id="feedback4" class="feedback"></span>
+      </p>
+
+      <p><strong>Q5:</strong> What is a sponsored result?<br>
+        <button onclick="checkAnswer(5, 'A')">A. An ad that appears at the top</button>
+        <button onclick="checkAnswer(5, 'B')">B. A hidden result</button>
+        <span id="feedback5" class="feedback"></span>
+      </p>
+
+      <p><strong>Q6:</strong> What role do keywords play in ranking?<br>
+        <button onclick="checkAnswer(6, 'A')">A. They help the engine decide what’s relevant</button>
+        <button onclick="checkAnswer(6, 'B')">B. They change the color of the link</button>
+        <span id="feedback6" class="feedback"></span>
+      </p>
+
+      <p><strong>Q7:</strong> Why should students understand ranking?<br>
+        <button onclick="checkAnswer(7, 'A')">A. To choose better and more accurate links</button>
+        <button onclick="checkAnswer(7, 'B')">B. To make websites look nice</button>
+        <span id="feedback7" class="feedback"></span>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function checkAnswer(q, ans) {
+      const correct = {
+        1: 'A', 2: 'A', 3: 'A', 4: 'A', 5: 'A',
+        6: 'A', 7: 'A'
+      };
+      const feedback = document.getElementById('feedback' + q);
+      if (correct[q] === ans) {
+        feedback.innerHTML = "✅ Correct!";
+        feedback.style.color = "green";
+      } else {
+        feedback.innerHTML = "❌ Try again.";
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

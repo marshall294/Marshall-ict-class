@@ -1,214 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Year 2 Computing – Week 5 | IT Around Us</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Year 2 Week 5 - IT Around Us | ORLI International Academy</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: #f7faff;
+      color: #333;
       margin: 0;
       padding: 0;
-      background-color: #f8fafc;
-      color: #1e293b;
-      line-height: 1.7;
+      line-height: 1.6;
     }
+
     header {
-      background: #0284c7;
+      background: #4a90e2;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 15px 10px;
+      font-size: 1.3em;
+      font-weight: bold;
     }
-    h1, h2, h3 { color: #0f172a; }
-    section { padding: 20px; max-width: 950px; margin: auto; }
-    .card {
+
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
       background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 20px;
     }
-    ul { margin-left: 20px; }
-    .example-box {
-      background: #f1f5f9;
-      border-left: 5px solid #0ea5e9;
-      padding: 10px 15px;
-      margin: 10px 0;
-      border-radius: 6px;
+
+    h2 {
+      color: #4a90e2;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 5px;
     }
-    .teacher-notes {
-      background: #fef9c3;
-      border-left: 5px solid #eab308;
-      padding: 10px 15px;
-      border-radius: 6px;
+
+    .objectives, .criteria, .activity, .assessment {
+      margin-bottom: 20px;
     }
+
+    .question {
+      margin-bottom: 20px;
+      background: #f1f7ff;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
     button {
-      background: #0284c7;
+      background: #4a90e2;
       color: white;
       border: none;
-      border-radius: 8px;
-      padding: 8px 15px;
-      margin: 4px;
+      padding: 8px 14px;
+      border-radius: 6px;
       cursor: pointer;
+      margin-top: 10px;
+      font-size: 1em;
     }
-    button:hover { background: #0369a1; }
+
+    button:hover {
+      background: #3578c9;
+    }
+
     .feedback {
-      font-weight: 600;
-      margin-left: 8px;
-      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Year 2 Computing — Week 5</h1>
-    <p><strong>Topic:</strong> Computing Systems and Networks – IT Around Us</p>
-    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 40 minutes</p>
-  </header>
 
-  <section>
-    <div class="card">
-      <h2>Learning Objective</h2>
-      <p>To explain how to use information technology safely.</p>
+<header>
+  🖥️ Year 2 Week 5 – Computing Systems and Networks: IT Around Us
+</header>
+
+<section>
+  <h2>🎯 Lesson Objectives</h2>
+  <ul>
+    <li>I can list different uses of information technology.</li>
+    <li>I can say how rules can help keep me safe.</li>
+    <li>I can talk about different rules for using IT.</li>
+  </ul>
+
+  <h2>🌟 Success Criteria</h2>
+  <ul>
+    <li>I can name examples of IT in school and at home.</li>
+    <li>I can explain why rules are important when using technology.</li>
+    <li>I can describe how to stay safe online.</li>
+  </ul>
+
+  <h2>💡 Starter Activity</h2>
+  <p>Think about your day — where do you use computers or devices? At school, home, or maybe when watching cartoons or playing games?</p>
+  <p>Examples of IT devices: 📱 mobile phone, 💻 laptop, 🖨️ printer, 📺 smart TV, 🎮 game console.</p>
+
+  <h2>🧠 Main Teaching</h2>
+  <ul>
+    <li><b>At school:</b> Using computers to learn and take pictures of work.</li>
+    <li><b>At home:</b> Watching movies or calling family.</li>
+    <li><b>In the community:</b> Using ATMs, hospital records, and online shops.</li>
+  </ul>
+
+  <p>We follow rules when using IT to stay safe — like not sharing passwords, asking an adult before going online, and being kind online.</p>
+
+  <h2>🧩 Assessment – Check Your Understanding</h2>
+
+  <div class="assessment">
+    <div class="question">
+      <p><b>1️⃣ Which of these is a use of IT?</b></p>
+      <button onclick="checkAnswer(this, 'wrong')">A) Drawing with a pencil</button><br>
+      <button onclick="checkAnswer(this, 'correct')">B) Watching a movie on a tablet</button><br>
+      <button onclick="checkAnswer(this, 'wrong')">C) Running outside</button>
+      <p class="feedback"></p>
     </div>
 
-    <div class="card">
-      <h2>Success Criteria</h2>
-      <ul>
-        <li>✔️ I can list different uses of information technology.</li>
-        <li>✔️ I can say how rules can help keep me safe.</li>
-        <li>✔️ I can talk about different rules for using IT.</li>
-      </ul>
+    <div class="question">
+      <p><b>2️⃣ Why do we have rules for using IT?</b></p>
+      <button onclick="checkAnswer(this, 'wrong')">A) To make it boring</button><br>
+      <button onclick="checkAnswer(this, 'correct')">B) To help us stay safe</button><br>
+      <button onclick="checkAnswer(this, 'wrong')">C) To stop us from learning</button>
+      <p class="feedback"></p>
     </div>
 
-    <div class="card teacher-notes">
-      <h2>Teacher Notes — Step-by-Step Guide</h2>
-      <ol>
-        <li><strong>Step 1 – Starter (5 mins):</strong> Ask pupils, “Where do you see computers or technology around you every day?” Write their answers (TV, phones, smartboards, etc.).</li>
-        <li><strong>Step 2 – Main Lesson (10 mins):</strong> Discuss what information technology (IT) means — devices we use to collect, store, and share information.</li>
-        <li><strong>Step 3 – Activity (10 mins):</strong> Show pictures of technology in different places (school, shops, homes). Let pupils match devices to where they’re used.</li>
-        <li><strong>Step 4 – Discussion (10 mins):</strong> Talk about safety rules: never share passwords, be kind online, ask an adult for help.</li>
-        <li><strong>Step 5 – Review (5 mins):</strong> Pupils complete quiz questions with instant feedback.</li>
-      </ol>
+    <div class="question">
+      <p><b>3️⃣ What should you do if a stranger messages you online?</b></p>
+      <button onclick="checkAnswer(this, 'wrong')">A) Reply to them</button><br>
+      <button onclick="checkAnswer(this, 'correct')">B) Ignore and tell an adult</button><br>
+      <button onclick="checkAnswer(this, 'wrong')">C) Share your photo</button>
+      <p class="feedback"></p>
     </div>
 
-    <div class="card">
-      <h2>Key Notes</h2>
-      <ul>
-        <li><strong>Information Technology (IT)</strong> means using computers or digital devices to work with information — for example, using a tablet to watch videos, or a computer to write.</li>
-        <li>We use IT at <strong>home</strong> (smart TVs, tablets), <strong>school</strong> (interactive boards, laptops), and in the <strong>community</strong> (cash machines, traffic lights).</li>
-        <li><strong>Safety Rules</strong> help keep us and our information safe while using IT.</li>
-      </ul>
-
-      <div class="example-box"><strong>Example 1:</strong> We use a computer in school to type stories or learn maths.</div>
-      <div class="example-box"><strong>Example 2:</strong> We use tablets to watch learning videos at home.</div>
-      <div class="example-box"><strong>Example 3:</strong> The teacher uses an interactive whiteboard to show lessons.</div>
+    <div class="question">
+      <p><b>4️⃣ Which is a safe IT rule?</b></p>
+      <button onclick="checkAnswer(this, 'wrong')">A) Share your password with friends</button><br>
+      <button onclick="checkAnswer(this, 'correct')">B) Use websites your teacher approves</button><br>
+      <button onclick="checkAnswer(this, 'wrong')">C) Click every link you see</button>
+      <p class="feedback"></p>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>Rules for Safe IT Use</h2>
-      <ul>
-        <li>👩‍🏫 Always ask an adult before going online.</li>
-        <li>🔐 Never share your password or personal details.</li>
-        <li>💬 Be kind and respectful to others online.</li>
-        <li>🛑 Tell an adult if something makes you feel upset or worried.</li>
-        <li>⏰ Take breaks — don’t use screens for too long.</li>
-      </ul>
-      <div class="example-box"><strong>Fun Fact:</strong> The first computer “rule” was to never switch off the teacher’s computer!</div>
-    </div>
+  <h2>🎨 Extension / Homework</h2>
+  <p>Create a <b>poster</b> titled <i>"My IT Safety Rules"</i> showing 3–5 ways to use technology safely (with drawings and short sentences).</p>
+</section>
 
-    <div class="card">
-      <h2>Examples of IT Around Us</h2>
-      <ul>
-        <li>🏫 Schools: computers, printers, smartboards</li>
-        <li>🏥 Hospitals: X-ray machines, tablets for patient info</li>
-        <li>🏠 Homes: TVs, phones, microwaves</li>
-        <li>🛒 Shops: barcode scanners, tills</li>
-        <li>🚗 Transport: traffic lights, GPS navigation</li>
-      </ul>
-    </div>
+<footer>
+  © ORLI International Academy | Year 2 ICT – Week 5 | Designed for classroom & self-learning
+</footer>
 
-    <div class="card">
-      <h2>Assessment — Check Your Understanding</h2>
-
-      <p><strong>Q1:</strong> What does IT stand for?<br>
-        <button onclick="checkAnswer(1, 'A')">A. Information Technology</button>
-        <button onclick="checkAnswer(1, 'B')">B. Ice Tea</button>
-        <span id="feedback1" class="feedback"></span>
-      </p>
-
-      <p><strong>Q2:</strong> Which of these is an example of IT?<br>
-        <button onclick="checkAnswer(2, 'A')">A. A tablet used for learning</button>
-        <button onclick="checkAnswer(2, 'B')">B. A pencil</button>
-        <span id="feedback2" class="feedback"></span>
-      </p>
-
-      <p><strong>Q3:</strong> Where can we find IT in school?<br>
-        <button onclick="checkAnswer(3, 'A')">A. On the smartboard and computers</button>
-        <button onclick="checkAnswer(3, 'B')">B. In the garden</button>
-        <span id="feedback3" class="feedback"></span>
-      </p>
-
-      <p><strong>Q4:</strong> What should you do if something online makes you sad?<br>
-        <button onclick="checkAnswer(4, 'A')">A. Tell an adult</button>
-        <button onclick="checkAnswer(4, 'B')">B. Keep it a secret</button>
-        <span id="feedback4" class="feedback"></span>
-      </p>
-
-      <p><strong>Q5:</strong> Which is a good IT rule?<br>
-        <button onclick="checkAnswer(5, 'A')">A. Never share your password</button>
-        <button onclick="checkAnswer(5, 'B')">B. Share passwords with friends</button>
-        <span id="feedback5" class="feedback"></span>
-      </p>
-
-      <p><strong>Q6:</strong> Why are rules important when using IT?<br>
-        <button onclick="checkAnswer(6, 'A')">A. They help keep us safe</button>
-        <button onclick="checkAnswer(6, 'B')">B. They make it boring</button>
-        <span id="feedback6" class="feedback"></span>
-      </p>
-
-      <p><strong>Q7:</strong> Which device helps you learn online?<br>
-        <button onclick="checkAnswer(7, 'A')">A. Laptop</button>
-        <button onclick="checkAnswer(7, 'B')">B. Spoon</button>
-        <span id="feedback7" class="feedback"></span>
-      </p>
-
-      <p><strong>Q8:</strong> Where might you see IT in a shop?<br>
-        <button onclick="checkAnswer(8, 'A')">A. On the cash register</button>
-        <button onclick="checkAnswer(8, 'B')">B. On the floor</button>
-        <span id="feedback8" class="feedback"></span>
-      </p>
-
-      <p><strong>Q9:</strong> What should you do if someone online is unkind?<br>
-        <button onclick="checkAnswer(9, 'A')">A. Tell a teacher or parent</button>
-        <button onclick="checkAnswer(9, 'B')">B. Be unkind back</button>
-        <span id="feedback9" class="feedback"></span>
-      </p>
-
-      <p><strong>Q10:</strong> What should you never share online?<br>
-        <button onclick="checkAnswer(10, 'A')">A. Your name and password</button>
-        <button onclick="checkAnswer(10, 'B')">B. Your favourite colour</button>
-        <span id="feedback10" class="feedback"></span>
-      </p>
-    </div>
-  </section>
-
-  <script>
-    function checkAnswer(q, ans) {
-      const correct = {
-        1: 'A', 2: 'A', 3: 'A', 4: 'A', 5: 'A',
-        6: 'A', 7: 'A', 8: 'A', 9: 'A', 10: 'A'
-      };
-      const feedback = document.getElementById('feedback' + q);
-      if (correct[q] === ans) {
-        feedback.innerHTML = "✅ Correct!";
-        feedback.style.color = "green";
-      } else {
-        feedback.innerHTML = "❌ Try again.";
-        feedback.style.color = "red";
-      }
+<script>
+  function checkAnswer(button, status) {
+    const feedback = button.parentElement.querySelector(".feedback");
+    if (status === "correct") {
+      feedback.textContent = "✅ Correct! Well done — that’s the safe IT choice.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "❌ Oops! Try again — think about IT safety rules.";
+      feedback.className = "feedback wrong";
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>

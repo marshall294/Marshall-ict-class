@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Year 3 Computing – Week 4 | Connecting Computers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#059669; /* emerald */
+      --brand-dark:#047857;
+      --muted:#0f172a;
+      --bg:#f8fafc;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: 'Inter', sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--muted);
+      line-height:1.6;
+    }
+    header{
+      background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+      color:white;
+      text-align:center;
+      padding:28px 16px;
+    }
+    header p{margin:4px 0 0; opacity:0.95}
+    section{max-width:980px;margin:22px auto;padding:16px;}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:20px;
+      margin:18px 0;
+      box-shadow:0 6px 18px rgba(6,95,70,0.06);
+    }
+    h1,h2,h3{color:var(--brand-dark);margin:0 0 12px}
+    ul{margin-left:20px}
+    .teacher-notes{
+      background:#fffbeb;
+      border-left:5px solid #f59e0b;
+      padding:12px 14px;border-radius:8px;
+    }
+    .example-box{
+      background:#f0fdf4;
+      border-left:5px solid var(--brand);
+      padding:10px 14px;margin:10px 0;border-radius:6px;
+    }
+    .activity{
+      display:grid;gap:12px;
+    }
+    .tips{font-weight:600;margin-top:6px}
+    button{
+      background:var(--brand);color:white;border:0;padding:8px 14px;border-radius:8px;
+      cursor:pointer;margin:4px 6px 4px 0;
+    }
+    button:hover{background:var(--brand-dark)}
+    .feedback{font-weight:700;margin-left:10px;display:inline-block}
+    .flex-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-family:monospace}
+    @media (max-width:600px){
+      header{padding:20px}
+      .card{padding:16px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 3 Computing — Week 4</h1>
+    <p><strong>Topic:</strong> Computing Systems and Networks – Connecting Computers</p>
+    <p><strong>Teacher:</strong> Marshall Jacob | <strong>Duration:</strong> 45 minutes</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To explain how a computer network can be used to share information.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can discuss why we need a network switch.</li>
+        <li>✔️ I can explain how messages are passed through multiple connections.</li>
+        <li>✔️ I can recognise different connections (wired, wireless, cables).</li>
+      </ul>
+    </div>
+
+    <div class="card teacher-notes">
+      <h2>Teacher Notes — Lesson Flow</h2>
+      <ol>
+        <li><strong>Starter (5 mins):</strong> Show pictures of two computers and ask: "How can they share a message?" Brainstorm answers (cable, Wi-Fi, Bluetooth).</li>
+        <li><strong>Main Activity (20 mins):</strong> Explain what a <em>switch</em> does: it helps direct messages to the right computer. Use a simple diagram (board or screen) or a live role play with pupils as "computers".</li>
+        <li><strong>Practical Activity (12 mins):</strong> Pupils form small groups with cards/strings to make a mini network. Send a paper message from one computer to another via the switch (a pupil acting as the switch decides where to pass it).</li>
+        <li><strong>Plenary (8 mins):</strong> Recap the path a message takes and ask volunteers to explain why switches help networks work well.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Network:</strong> Two or more computers connected so they can share information.</li>
+        <li><strong>Switch:</strong> A device that connects many computers and sends messages to the correct place.</li>
+        <li><strong>Connection types:</strong> Wired (Ethernet cable), wireless (Wi-Fi), and Bluetooth.</li>
+        <li><strong>Message passing:</strong> Messages can travel through several devices before reaching their destination.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Examples & Simple Diagrams</h2>
+      <div class="example-box">
+        <strong>Example 1:</strong> Computer A sends a document to Computer B → message goes A → switch → B.
+      </div>
+      <div class="example-box">
+        <strong>Example 2:</strong> If B is busy, switch sends the message to C instead (switch decides the best path).
+      </div>
+      <div class="example-box">
+        <strong>Example 3:</strong> Wireless example — a tablet uses Wi-Fi to ask for a picture on the shared printer.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Class Activity — Role Play Network</h2>
+      <div class="activity">
+        <p><strong>Materials:</strong> paper "messages", name cards (Computer A, B, C), string to show connections.</p>
+        <ol>
+          <li>Give each group 3–5 pupils a role (computers, switch, router).</li>
+          <li>Pupils pass a paper message through the network following the connections.</li>
+          <li>The pupil acting as the switch directs messages to the correct computer.</li>
+        </ol>
+        <p class="tips">Learning goal: see how messages travel and how switches help choose where a message goes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Assessment — Quick Check</h2>
+
+      <p><strong>Q1:</strong> What does a network switch do?<br>
+        <div class="flex-row">
+          <button onclick="check(1,'A')">A. Sends messages to the correct computer</button>
+          <button onclick="check(1,'B')">B. Makes food</button>
+          <span id="fb1" class="feedback"></span>
+        </div>
+      </p>
+
+      <p><strong>Q2:</strong> Which is a wired connection?<br>
+        <div class="flex-row">
+          <button onclick="check(2,'A')">A. Ethernet cable</button>
+          <button onclick="check(2,'B')">B. Radio</button>
+          <span id="fb2" class="feedback"></span>
+        </div>
+      </p>
+
+      <p><strong>Q3:</strong> How might a message travel from A to D?<br>
+        <div class="flex-row">
+          <button onclick="check(3,'A')">A. A → switch → B → switch → D</button>
+          <button onclick="check(3,'B')">B. A → TV → D</button>
+          <span id="fb3" class="feedback"></span>
+        </div>
+      </p>
+
+      <p><strong>Q4:</strong> Which is an example of a wireless connection?<br>
+        <div class="flex-row">
+          <button onclick="check(4,'A')">A. Wi-Fi</button>
+          <button onclick="check(4,'B')">B. USB cable</button>
+          <span id="fb4" class="feedback"></span>
+        </div>
+      </p>
+
+      <p><strong>Q5:</strong> Why do networks help schools?<br>
+        <div class="flex-row">
+          <button onclick="check(5,'A')">A. Because they let computers share work and printers</button>
+          <button onclick="check(5,'B')">B. Because they make classrooms colder</button>
+          <span id="fb5" class="feedback"></span>
+        </div>
+      </p>
+
+      <p><strong>Q6:</strong> True or False: A message always goes in a straight line — it may pass through many devices.<br>
+        <div class="flex-row">
+          <button onclick="check(6,'A')">A. True</button>
+          <button onclick="check(6,'B')">B. False</button>
+          <span id="fb6" class="feedback"></span>
+        </div>
+      </p>
+
+      <p><strong>Q7:</strong> Name one connection you recognise (pupil answer).<br>
+        <small>Use this as a short oral check in class — listen for answers like "Wi-Fi", "Ethernet", "Bluetooth".</small>
+      </p>
+
+    </div>
+
+    <div class="card">
+      <h2>Extension / Home Learning</h2>
+      <ul>
+        <li>Draw your own network with at least three devices and label the switch and connections.</li>
+        <li>Write one sentence explaining why switches are useful.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <script>
+    const answers = {1:'A',2:'A',3:'A',4:'A',5:'A',6:'A'};
+    function check(q, choice){
+      const fb = document.getElementById('fb'+q);
+      if(!fb) return;
+      if(answers[q] === choice){
+        fb.textContent = '✅ Correct!';
+        fb.style.color = 'green';
+      } else {
+        fb.textContent = '❌ Try again.';
+        fb.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>

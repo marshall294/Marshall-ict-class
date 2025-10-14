@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 1 ICT — Week 4 | Uses of the Keyboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    header { background: #16a34a; color: #fff; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 5px 0; font-size: 16px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h2 { color: #166534; margin-top: 0; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    button { background: #16a34a; color: white; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; margin: 4px 6px; }
+    button:hover { background: #15803d; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 1 ICT — Autumn Term Week 4</h1>
+    <p><strong>Topic:</strong> Uses of the Keyboard | <strong>Teacher:</strong> Marshall Jacob</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To identify the keyboard as a part of the computer and explain its uses.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can identify a keyboard on the computer.</li>
+        <li>✔️ I can tell what the keyboard is used for.</li>
+        <li>✔️ I can press keys carefully to type letters or numbers.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes & Explanations</h2>
+      <p>The <strong>keyboard</strong> is one of the most important parts of the computer. It is used to type letters, numbers, and symbols into the computer.</p>
+      <ul>
+        <li>The keyboard has many small buttons called <strong>keys</strong>.</li>
+        <li>When we press a key, a letter, number, or sign appears on the screen.</li>
+        <li>We use the keyboard to type words, write our names, or enter commands.</li>
+      </ul>
+      <p><strong>Examples of keyboard use:</strong></p>
+      <ul>
+        <li>Typing names and sentences in Word.</li>
+        <li>Typing numbers when doing math work.</li>
+        <li>Using the spacebar to leave spaces between words.</li>
+        <li>Using the Enter key to move to a new line.</li>
+      </ul>
+      <p>Without a keyboard, it would be very hard to tell the computer what to do.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Keyboard:</strong> A part of the computer used to type letters and numbers.</li>
+        <li><strong>Keys:</strong> The buttons on the keyboard.</li>
+        <li><strong>Typing:</strong> Pressing the keys to write on the computer.</li>
+        <li><strong>Spacebar:</strong> A long key used to leave spaces between words.</li>
+        <li><strong>Enter Key:</strong> Used to move to a new line or give a command.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Quick Check</h2>
+
+      <p><strong>Q1:</strong> What is the keyboard used for?<br>
+        <button onclick="checkAnswer(1, 'A')">A. For typing letters and numbers</button>
+        <button onclick="checkAnswer(1, 'B')">B. For watching videos</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> The small buttons on the keyboard are called?<br>
+        <button onclick="checkAnswer(2, 'A')">A. Keys</button>
+        <button onclick="checkAnswer(2, 'B')">B. Mice</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> Which key is used to move to the next line?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Enter key</button>
+        <button onclick="checkAnswer(3, 'B')">B. Shift key</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> What does the spacebar do?<br>
+        <button onclick="checkAnswer(4, 'A')">A. It leaves spaces between words</button>
+        <button onclick="checkAnswer(4, 'B')">B. It deletes letters</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> Which of these is NOT a use of the keyboard?<br>
+        <button onclick="checkAnswer(5, 'A')">A. Drawing pictures</button>
+        <button onclick="checkAnswer(5, 'B')">B. Typing names</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+
+      <p><strong>Q6:</strong> What do we call pressing keys to write on the computer?<br>
+        <button onclick="checkAnswer(6, 'A')">A. Typing</button>
+        <button onclick="checkAnswer(6, 'B')">B. Clicking</button>
+        <div id="feedback6" class="feedback"></div>
+      </p>
+
+      <p><strong>Q7:</strong> Which of these is a key on the keyboard?<br>
+        <button onclick="checkAnswer(7, 'A')">A. Spacebar</button>
+        <button onclick="checkAnswer(7, 'B')">B. Paintbrush</button>
+        <div id="feedback7" class="feedback"></div>
+      </p>
+
+      <p><strong>Q8:</strong> Without the keyboard, it would be hard to?<br>
+        <button onclick="checkAnswer(8, 'A')">A. Type or write on the computer</button>
+        <button onclick="checkAnswer(8, 'B')">B. Play music</button>
+        <div id="feedback8" class="feedback"></div>
+      </p>
+
+      <p><strong>Q9:</strong> The keyboard helps us to?<br>
+        <button onclick="checkAnswer(9, 'A')">A. Communicate with the computer</button>
+        <button onclick="checkAnswer(9, 'B')">B. Clean the screen</button>
+        <div id="feedback9" class="feedback"></div>
+      </p>
+
+      <p><strong>Q10:</strong> Which of these is found on a keyboard?<br>
+        <button onclick="checkAnswer(10, 'A')">A. Letters and numbers</button>
+        <button onclick="checkAnswer(10, 'B')">B. Crayons and paints</button>
+        <div id="feedback10" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+<script>
+function checkAnswer(q, ans) {
+  const answers = {
+    1: 'A',
+    2: 'A',
+    3: 'A',
+    4: 'A',
+    5: 'A',
+    6: 'A',
+    7: 'A',
+    8: 'A',
+    9: 'A',
+    10: 'A'
+  };
+  const feedbackEl = document.getElementById('feedback' + q);
+  if (answers[q] === ans) {
+    feedbackEl.innerText = "✅ Correct!";
+    feedbackEl.style.color = "green";
+  } else {
+    feedbackEl.innerText = "❌ Try again.";
+    feedbackEl.style.color = "red";
+  }
+}
+</script>
+</body>
+</html>

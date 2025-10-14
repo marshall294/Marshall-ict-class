@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year 1 ICT — Week 5 | Using the Keyboard to Edit Text</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    header { background: #2563eb; color: #fff; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 26px; }
+    header p { margin: 5px 0; font-size: 16px; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h2 { color: #1e3a8a; margin-top: 0; }
+    .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+    ul { margin-left: 20px; }
+    button { background: #2563eb; color: white; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; margin: 4px 6px; }
+    button:hover { background: #1e40af; }
+    .feedback { margin-top: 6px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Year 1 ICT — Week 5</h1>
+    <p><strong>Topic:</strong> Using the Keyboard to Edit Text | <strong>Teacher:</strong> Marshall Jacob</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Learning Objective</h2>
+      <p>To learn how to use the keyboard to make changes to text on the computer.</p>
+    </div>
+
+    <div class="card">
+      <h2>Success Criteria</h2>
+      <ul>
+        <li>✔️ I can use the keyboard to type and change letters or words.</li>
+        <li>✔️ I can use the Backspace or Delete key to remove unwanted letters.</li>
+        <li>✔️ I can use the Spacebar, Enter, and Shift keys correctly.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Notes & Explanations</h2>
+      <p>The keyboard helps us to write words, numbers, and symbols on the computer. We can also use it to <strong>edit text</strong> — that means to change or correct what we have typed.</p>
+      <ul>
+        <li><strong>Backspace Key:</strong> Removes letters from the left side of the cursor.</li>
+        <li><strong>Delete Key:</strong> Removes letters from the right side of the cursor.</li>
+        <li><strong>Spacebar:</strong> Adds a space between words.</li>
+        <li><strong>Enter Key:</strong> Moves the cursor to a new line.</li>
+        <li><strong>Shift Key:</strong> Helps you type capital letters and symbols.</li>
+      </ul>
+      <p><strong>Example:</strong></p>
+      <p>If you type <em>“Ths is fun”</em>, you can use the Backspace key to remove the letter “s” and type “i” to make it correct: <em>“This is fun.”</em></p>
+      <p>Editing text helps to make your work neat and correct.</p>
+    </div>
+
+    <div class="card">
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>Edit:</strong> To change or correct what you have written.</li>
+        <li><strong>Cursor:</strong> The blinking line that shows where typing will appear.</li>
+        <li><strong>Backspace/Delete:</strong> Keys used to remove text.</li>
+        <li><strong>Shift Key:</strong> Used to make capital letters or type symbols.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Quick Check</h2>
+
+      <p><strong>Q1:</strong> Which key removes letters from the left side?<br>
+        <button onclick="checkAnswer(1, 'A')">A. Backspace</button>
+        <button onclick="checkAnswer(1, 'B')">B. Spacebar</button>
+        <div id="feedback1" class="feedback"></div>
+      </p>
+
+      <p><strong>Q2:</strong> What is the use of the Spacebar?<br>
+        <button onclick="checkAnswer(2, 'A')">A. To add spaces between words</button>
+        <button onclick="checkAnswer(2, 'B')">B. To delete words</button>
+        <div id="feedback2" class="feedback"></div>
+      </p>
+
+      <p><strong>Q3:</strong> Which key helps you move to the next line?<br>
+        <button onclick="checkAnswer(3, 'A')">A. Enter</button>
+        <button onclick="checkAnswer(3, 'B')">B. Shift</button>
+        <div id="feedback3" class="feedback"></div>
+      </p>
+
+      <p><strong>Q4:</strong> Which key helps to type capital letters?<br>
+        <button onclick="checkAnswer(4, 'A')">A. Shift</button>
+        <button onclick="checkAnswer(4, 'B')">B. Tab</button>
+        <div id="feedback4" class="feedback"></div>
+      </p>
+
+      <p><strong>Q5:</strong> What does it mean to edit text?<br>
+        <button onclick="checkAnswer(5, 'A')">A. To change or correct what was typed</button>
+        <button onclick="checkAnswer(5, 'B')">B. To switch off the computer</button>
+        <div id="feedback5" class="feedback"></div>
+      </p>
+    </div>
+  </section>
+
+<script>
+function checkAnswer(q, ans) {
+  const answers = {
+    1: 'A',
+    2: 'A',
+    3: 'A',
+    4: 'A',
+    5: 'A'
+  };
+  const feedbackEl = document.getElementById('feedback' + q);
+  if (answers[q] === ans) {
+    feedbackEl.innerText = "✅ Correct!";
+    feedbackEl.style.color = "green";
+  } else {
+    feedbackEl.innerText = "❌ Try again.";
+    feedbackEl.style.color = "red";
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Riders FC | Dare to Dream 2025 Sponsorship</title>
+<style>
+  :root {
+    --primary: #0078d7;
+    --secondary: #ffd34e;
+    --accent: #00b4d8;
+    --light-bg: #f9fcff;
+    --text-dark: #1b1b1b;
+    --btn1: #0078d7;
+    --btn2: #ffd34e;
+    --btn3: #2ecc71;
+    --btn4: #ff6b6b;
+    --transition: all 0.6s ease;
+  }
+
+  * {margin:0; padding:0; box-sizing:border-box;}
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    overflow: hidden;
+  }
+
+  section {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    padding: 80px 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: var(--transition);
+    overflow-y: auto;
+  }
+
+  section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  h1, h2, h3 {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .container {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 8px;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  .btn:hover {transform: translateY(-5px) scale(1.05);}
+  .btn-primary {background: var(--btn1);}
+  .btn-secondary {background: var(--btn2); color:#000;}
+  .btn-success {background: var(--btn3);}
+  .btn-danger {background: var(--btn4);}
+
+/* HERO */
+#hero {
+  position: relative;
+  background: url('rider1.jpeg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Add dark overlay to dull the image */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* controls dullness */
+  z-index: 0;
+}
+
+/* Bright glowing text on top */
+#hero h1, #hero p, #hero button {
+  position: relative;
+  z-index: 1;
+  color: #fff; /* bright white */
+  text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.7);
+}
+
+/* Smooth fade-in animations */
+#hero h1 {
+  font-size: 3em;
+  animation: fadeDown 1s ease;
+}
+
+#hero p {
+  font-size: 1.2em;
+  margin: 20px 0;
+  max-width: 600px;
+  animation: fadeUp 1.2s ease;
+}
+
+
+  /* ABOUT */
+  #about iframe, video {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid var(--primary);
+  }
+  .toggle-buttons {margin: 20px 0;}
+  .slides img {
+    width: 100%; border-radius: 12px; display: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+.slides {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  border: 4px solid var(--primary);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  background: #fff;
+}
+
+.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps aspect ratio without distortion */
+  display: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.slides img.active {
+  display: block;
+  opacity: 1;
+}
+
+.video-frame {
+  position: relative;
+  width: 80%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  margin: 25px auto;
+  border: 4px solid var(--primary);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* <-- now shows entire video without zoom */
+  display: block;
+  background: #000;     /* fills empty space around video */
+}
+
+/* ?? Kelvin Hotel Ad Styles — Floating Video Card */
+#kelvinAd {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 20;
+  display: block;
+  width: 320px;
+  height: 260px;
+  animation: bounceMove 40s linear infinite alternate;
+}
+
+.ad-box {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: glowPulse 5s ease-in-out infinite alternate;
+}
+
+/* ?? Video frame inside card */
+.video-wrapper {
+  width: 100%;
+  height: 60%;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ? Text styles */
+.ad-box h3 {
+  margin: 5px 0 0;
+  font-size: 1.3em;
+  color: #ffd34e;
+  text-shadow: 0 0 12px rgba(255, 211, 78, 0.8);
+}
+
+.ad-box p {
+  margin: 0 0 10px;
+  font-size: 1em;
+  font-style: italic;
+}
+
+/* ?? Slow smooth diagonal motion */
+@keyframes bounceMove {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(60vw, 10vh); }
+  50%  { transform: translate(40vw, 60vh); }
+  75%  { transform: translate(5vw, 75vh); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ?? Gentle glow animation */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+  100% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.8); }
+}
+
+
+
+  /* DARE */
+  #dare {background: #eaf7ff;}
+  #dare img {width: 160px; border-radius: 12px; margin-top: 20px;}
+
+  /* BUDGET */
+  #budget .budget-boxes {
+    display: flex; justify-content:center; flex-wrap:wrap; gap:30px; margin-bottom: 30px;
+  }
+  .budget-card {
+    background:#fff; border-radius:20px; padding:25px; width:260px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1); transition: var(--transition);
+  }
+  .budget-card:hover {transform:translateY(-5px);}
+  #budget table {width:100%; border-collapse:collapse; margin-top:20px;}
+  #budget th, #budget td {
+    border:1px solid #ccc; padding:14px; font-size:1.05em;
+  }
+  #budget th {background:var(--primary); color:#fff;}
+
+  /* BENEFITS */
+  .benefits-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin-top:30px;
+  }
+  .benefit-box {
+    background: #fff;
+    border-left: 6px solid var(--primary);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.08);
+    transition: var(--transition);
+  }
+  .benefit-box:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.12);}
+
+  /* ACCOUNT */
+  .account-box {
+    background:#fff; border-radius:16px; padding:30px; max-width:500px; margin:0 auto;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1); text-align:left;
+  }
+  .account-box h3 {color:var(--primary); margin-bottom:15px;}
+  .account-box p {margin:6px 0;}
+
+  footer {
+    position: fixed; bottom: 0; width: 100%;
+    text-align: center; background: var(--primary); color: #fff;
+    padding: 10px 0; font-size: 0.9em; letter-spacing: 0.5px;
+  }
+
+  .nav-back {margin-top:25px; text-align:center;}
+
+  @media(max-width:768px){
+    #hero h1 {font-size:2.3em;}
+    #hero p {font-size:1em;}
+    .btn {padding:10px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<section id="hero" class="active">
+  <h1>Partner with Riders FC</h1>
+  <p>We seek <strong>&#8358;1,500,000</strong> sponsorship to participate in the  
+  <strong>Dare to Dream 2025</strong> National Scouting Program & Competition in Lagos.  
+  <br>Total Project Budget: <strong>&#8358;3,000,000</strong>.</p>
+  <div>
+    <button class="btn btn-primary" onclick="showPage('about')">About</button>
+    <button class="btn btn-secondary" onclick="showPage('dare')">The Program</button>
+    <button class="btn btn-success" onclick="showPage('budget')">Budget</button>
+    <button class="btn btn-danger" onclick="showPage('benefits')">Benefits</button>
+    <button class="btn btn-primary" onclick="showPage('account')">Account</button>
+  </div>
+<div id="kelvinAd">
+  <div class="ad-box">
+    <video autoplay muted loop playsinline style="width:100%; height:70%; border-radius: 20px 20px 0 0;">
+      <source src="Riders FC scoring highlight.mp4" type="video/mp4">
+    </video>
+    <h3>Kelvin Hotel Kwamba</h3>
+    <p>"Your Comfort, Our Pride"</p>
+  </div>
+</div>
+
+
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2>About Riders FC</h2>
+    <p>Riders FC is a community-driven football club dedicated to discovering, training, and empowering young talents to achieve greatness on and off the pitch.</p>
+    <div class="toggle-buttons">
+      <button class="btn btn-primary" onclick="toggleAbout('iframe')">Website</button>
+      <button class="btn btn-success" onclick="toggleAbout('slides')">Photos</button>
+      <button class="btn btn-secondary" onclick="toggleAbout('video')">Videos</button>
+    </div>
+    <div id="iframe" class="about-content">
+      <iframe src="https://riders-fc-kwamba.vercel.app/" height="400"></iframe>
+    </div>
+<div id="slides" class="about-content" style="display:none;">
+  <div class="slides">
+    <img src="rider1.jpeg" class="active" alt="Riders FC Team 1">
+    <img src="rider2.jpeg" alt="Riders FC Team 2">
+    <img src="rider3.jpeg" alt="Riders FC Team 3">
+  </div>
+</div>
+
+<div id="video" class="about-content" style="display:none;">
+  <div class="video-frame">
+    <video controls>
+      <source src="Riders FC scoring highlight.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+    <div class="nav-back">
+      <button class="btn btn-danger" onclick="showPage('hero')">Back</button>
+    </div>
+  </div>
+</section>
+
+<section id="dare">
+  <div class="container">
+    <h2>Dare to Dream 2025</h2>
+    <p>
+      The National Scouting Program gathers scouts, coaches, and talents from all 36 states of Nigeria between 
+      <strong>Nov 27 – Dec 9, 2025</strong> in Lagos. This is our opportunity to showcase talent.
+    </p>
+    <img src="dare.jpg" alt="Program Logo" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem;">
+
+    <!-- ?? Video Section -->
+    <div class="video-frame" style="max-width: 720px; margin: 0 auto;">
+      <video controls style="width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <source src="dare.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- ?? Back Button -->
+    <div class="nav-back" style="margin-top: 1.5rem; text-align: center;">
+      <button class="btn btn-danger" onclick="showPage('hero')">Back</button>
+    </div>
+  </div>
+</section>
+
+
+<section id="budget">
+  <div class="container">
+    <h2>Proposed Budget</h2>
+    <div class="budget-boxes">
+      <div class="budget-card"><h3>Total Budget</h3><p><strong>&#8358;3,000,000</strong></p></div>
+      <div class="budget-card"><h3>Sponsorship Needed</h3><p><strong>&#8358;1,500,000</strong></p></div>
+    </div>
+    <table>
+      <tr><th>Item</th><th>Amount (&#8358;)</th></tr>
+      <tr><td>Transportation</td><td>800,000</td></tr>
+      <tr><td>Feeding</td><td>700,000</td></tr>
+      <tr><td>Accommodation</td><td>1,000,000</td></tr>
+      <tr><td>Logistics &amp; Kits</td><td>500,000</td></tr>
+      <tr><th>Total</th><th>3,000,000</th></tr>
+    </table>
+    <div class="nav-back"><button class="btn btn-danger" onclick="showPage('hero')">Back</button></div>
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="container">
+    <h2>Why Sponsor Us?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-box">
+        <h3>Visibility Package</h3>
+        <ul>
+          <li>Logo on jerseys</li><li>Website feature</li><li>Public recognition</li>
+        </ul>
+      </div>
+      <div class="benefit-box">
+        <h3>Media &amp; Publicity</h3>
+        <ul>
+          <li>Brand in press releases</li><li>Social media promotion</li><li>Broadcast highlights</li>
+        </ul>
+      </div>
+      <div class="benefit-box">
+        <h3>Financial Value</h3>
+        <ul>
+          <li>Share if player is signed</li><li>Priority in future events</li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-back"><button class="btn btn-danger" onclick="showPage('hero')">Back</button></div>
+  </div>
+</section>
+
+<section id="account">
+  <div class="container">
+    <h2>Club Account Details</h2>
+    <div class="account-box">
+      <h3>Payment Information</h3>
+      <p><strong>Account Name:</strong> Riders Football Club</p>
+      <p><strong>Account Number:</strong> 0123456789</p>
+      <p><strong>Bank:</strong> Access Bank</p>
+      <p><strong>Reference:</strong> DareToDream Sponsorship</p>
+    </div>
+    <div class="nav-back"><button class="btn btn-danger" onclick="showPage('hero')">Back</button></div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Riders FC | Designed with &#10084;&#65039; for Nigerian Football Excellence
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+
+  function toggleAbout(type) {
+    document.querySelectorAll(".about-content").forEach(e => e.style.display = "none");
+    document.getElementById(type).style.display = "block";
+  }
+
+  let slideIndex = 0;
+  setInterval(() => {
+    const slides = document.querySelectorAll(".slides img");
+    if (slides.length === 0) return;
+    slides.forEach(s => s.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }, 3000);
+
+// ?? Kelvin Hotel Ad Logic — show only when hero active
+window.addEventListener('load', () => {
+  const ad = document.getElementById('kelvinAd');
+  const hero = document.getElementById('hero');
+
+  function showAd() {
+    if (hero && hero.classList.contains('active')) {
+      ad.style.display = 'block';
+    } else {
+      ad.style.display = 'none';
+    }
+  }
+
+  showAd();
+  document.querySelectorAll('button').forEach(btn =>
+    btn.addEventListener('click', () => setTimeout(showAd, 300))
+  );
+});
+</script>
+
+
+</body>
+</html>

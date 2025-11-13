@@ -187,15 +187,15 @@
   background: #000;     /* fills empty space around video */
 }
 
-/* ?? Kelvin Hotel Ad Styles — Floating Video Card */
+/* ?? Kelvin Hotel Ad Styles â€” Floating Video Card */
 #kelvinAd {
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 0%;
+  left: 0%;
   z-index: 20;
   display: block;
-  width: 320px;
-  height: 260px;
+  width: 260px;
+  height: 200px;
   animation: bounceMove 40s linear infinite alternate;
 }
 
@@ -238,9 +238,9 @@
   text-shadow: 0 0 12px rgba(255, 211, 78, 0.8);
 }
 
-.ad-box p {
+.ad-box p1 {
   margin: 0 0 10px;
-  font-size: 1em;
+  font-size: 1.3em;
   font-style: italic;
 }
 
@@ -332,13 +332,14 @@
     <button class="btn btn-danger" onclick="showPage('benefits')">Benefits</button>
     <button class="btn btn-primary" onclick="showPage('account')">Account</button>
   </div>
+  <p><strong>RC: 7279702</strong></p>
 <div id="kelvinAd">
   <div class="ad-box">
     <video autoplay muted loop playsinline style="width:100%; height:70%; border-radius: 20px 20px 0 0;">
       <source src="Riders FC scoring highlight.mp4" type="video/mp4">
     </video>
     <h3>Kelvin Hotel Kwamba</h3>
-    <p>"Your Comfort, Our Pride"</p>
+    <p1>"Your Comfort, Our Pride"</p1>
   </div>
 </div>
 
@@ -386,7 +387,7 @@
     <h2>Dare to Dream 2025</h2>
     <p>
       The National Scouting Program gathers scouts, coaches, and talents from all 36 states of Nigeria between 
-      <strong>Nov 27 – Dec 9, 2025</strong> in Lagos. This is our opportunity to showcase talent.
+      <strong>Nov 27 â€“ Dec 9, 2025</strong> in Lagos. This is our opportunity to showcase talent.
     </p>
     <img src="dare.jpg" alt="Program Logo" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem;">
 
@@ -458,8 +459,8 @@
     <div class="account-box">
       <h3>Payment Information</h3>
       <p><strong>Account Name:</strong> Riders Football Club</p>
-      <p><strong>Account Number:</strong> 0123456789</p>
-      <p><strong>Bank:</strong> Access Bank</p>
+      <p><strong>Account Number:</strong> 5601215810</p>
+      <p><strong>Bank:</strong> Fidelity Bank</p>
       <p><strong>Reference:</strong> DareToDream Sponsorship</p>
     </div>
     <div class="nav-back"><button class="btn btn-danger" onclick="showPage('hero')">Back</button></div>
@@ -490,7 +491,7 @@
     slides[slideIndex].classList.add("active");
   }, 3000);
 
-// ?? Kelvin Hotel Ad Logic — show only when hero active
+// ?? Kelvin Hotel Ad Logic â€” show only when hero active
 window.addEventListener('load', () => {
   const ad = document.getElementById('kelvinAd');
   const hero = document.getElementById('hero');

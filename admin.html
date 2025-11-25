@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJ & CO — Admin Dashboard</title>
+
+<style>
+    :root {
+        --accent:#ff7a00;
+        --bg:#fff8f2;
+        --card:#ffffff;
+        --muted:#6b7280;
+        --radius:14px;
+        --font:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+    }
+
+    body {
+        margin:0;
+        font-family:var(--font);
+        background:var(--bg);
+        padding:20px;
+        color:#111827;
+    }
+
+    .login-box {
+        max-width:380px;
+        margin:80px auto;
+        background:var(--card);
+        border-radius:var(--radius);
+        padding:20px;
+        box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    }
+    input {
+        width:100%;
+        padding:11px;
+        border-radius:10px;
+        border:1px solid rgba(0,0,0,0.08);
+        margin-top:10px;
+        font-size:15px;
+    }
+    button {
+        padding:11px;
+        border-radius:10px;
+        border:none;
+        background:var(--accent);
+        color:white;
+        font-weight:600;
+        width:100%;
+        cursor:pointer;
+        margin-top:15px;
+        font-size:15px;
+    }
+
+    .grid {
+        display:grid;
+        grid-template-columns:300px 1fr;
+        gap:20px;
+    }
+    @media(max-width:900px){
+        .grid { grid-template-columns:1fr; }
+    }
+
+    .sidebar {
+        background:var(--card);
+        border-radius:var(--radius);
+        padding:15px;
+        box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    }
+    .content {
+        background:var(--card);
+        border-radius:var(--radius);
+        padding:20px;
+        box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    }
+    .section-title {
+        font-size:20px;
+        font-weight:700;
+        margin-bottom:10px;
+    }
+
+    .product-card, .order-card {
+        border:1px solid rgba(0,0,0,0.06);
+        padding:12px;
+        border-radius:12px;
+        margin-bottom:10px;
+        background:#fff;
+    }
+    .product-card img, .order-card img {
+        width:80px;
+        height:80px;
+        object-fit:cover;
+        border-radius:10px;
+        margin-right:10px;
+    }
+    .flex { display:flex; gap:10px; }
+    .between { display:flex; justify-content:space-between; align-items:center; }
+    .muted { color:var(--muted); font-size:13px; }
+    .status-btn, .delete-btn, .edit-btn {
+        padding:6px 10px;
+        border-radius:8px;
+        border:none;
+        cursor:pointer;
+        font-size:13px;
+        font-weight:600;
+    }
+    .edit-btn { background:#2563eb; color:white; }
+    .delete-btn { background:#dc2626; color:white; }
+    .status-btn { background:#6b7280; color:white; }
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-box">
+    <h2 style="text-align:center; margin:0;">Admin Login</h2>
+    <input id="adminEmail" type="email" placeholder="Email">
+    <input id="adminPass" type="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+    <div id="loginMsg" class="muted"></div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<div id="dashboard" style="display:none;">
+    <div class="grid">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2 style="margin:0;">MJ & CO Admin</h2>
+            <hr style="margin:15px 0;">
+
+            <button onclick="showSection('products')">Products</button>
+            <button onclick="showSection('orders')">Orders</button>
+            <button style="background:#dc2626;" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- PRODUCTS SECTION -->
+            <div id="productsSection">
+                <h3 class="section-title">Products</h3>
+
+                <div class="product-card">
+                    <h4>Add / Edit Product</h4>
+                    <input id="pTitle" placeholder="Title">
+                    <input id="pPrice" placeholder="Price (₦)">
+                    <textarea id="pDesc" placeholder="Description" style="width:100%;padding:10px;margin-top:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);"></textarea>
+                    <input id="pImage" type="file" accept="image/*">
+
+                    <button id="saveProductBtn">Save Product</button>
+                    <div id="productMsg" class="muted"></div>
+                </div>
+
+                <h4>Product List</h4>
+                <div id="productList"></div>
+            </div>
+
+            <!-- ORDERS SECTION -->
+            <div id="ordersSection" style="display:none;">
+                <h3 class="section-title">Orders</h3>
+                <div id="orderList"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="module">
+/* ---------------------------
+      FIREBASE SETUP
+---------------------------- */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import { getDatabase, ref, push, set, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+import { getStorage, ref as sRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBSM1gw5QpHJ6PMPG9gCuYDQ9WZ4MUcu0A",
+  authDomain: "hotel-5c90a.firebaseapp.com",
+  databaseURL: "https://hotel-5c90a-default-rtdb.firebaseio.com",
+  projectId: "hotel-5c90a",
+  storageBucket: "hotel-5c90a.appspot.com",
+  messagingSenderId: "1018416176032",
+  appId: "1:1018416176032:web:2f57a167fa1106c8b022c5"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+const storage = getStorage(app);
+
+/* ---------------------------
+      LOGIN
+---------------------------- */
+document.getElementById('loginBtn').onclick = async () => {
+    let email = adminEmail.value;
+    let pass = adminPass.value;
+
+    try {
+        await signInWithEmailAndPassword(auth, email, pass);
+        loginScreen.style.display = "none";
+        dashboard.style.display = "block";
+    } catch (e) {
+        loginMsg.textContent = "Login failed: " + e.message;
+    }
+};
+
+window.logout = async () => {
+    await signOut(auth);
+    location.reload();
+};
+
+
+/* ---------------------------
+      SECTION SWITCHER
+---------------------------- */
+window.showSection = (name) => {
+    productsSection.style.display = name==="products" ? "block" : "none";
+    ordersSection.style.display = name==="orders" ? "block" : "none";
+};
+
+
+/* ---------------------------
+      PRODUCT MANAGEMENT
+---------------------------- */
+let editingProduct = null;
+
+saveProductBtn.onclick = async () => {
+    let title = pTitle.value;
+    let price = Number(pPrice.value);
+    let desc = pDesc.value;
+    let imageFile = pImage.files[0];
+
+    if (!title || !price) {
+        productMsg.textContent = "Please fill in required fields.";
+        return;
+    }
+
+    let imageURL = "/mnt/data/Screenshot_7.png"; // default fallback
+
+    if (imageFile) {
+        let imgRef = sRef(storage, "products/" + Date.now() + "_" + imageFile.name);
+        await uploadBytes(imgRef, imageFile);
+        imageURL = await getDownloadURL(imgRef);
+    }
+
+    if (!editingProduct) {
+        // NEW PRODUCT
+        let newRef = push(ref(db, "products"));
+        await set(newRef, { title, price, desc, image:imageURL });
+        productMsg.textContent = "Product added!";
+    } else {
+        // UPDATE PRODUCT
+        await update(ref(db, "products/" + editingProduct), { title, desc, price, image:imageURL });
+        productMsg.textContent = "Product updated!";
+        editingProduct = null;
+        saveProductBtn.textContent = "Save Product";
+    }
+
+    pTitle.value = "";
+    pPrice.value = "";
+    pDesc.value = "";
+    pImage.value = "";
+};
+
+/* Load Products */
+onValue(ref(db, "products"), (snap) => {
+    productList.innerHTML = "";
+    snap.forEach(item => {
+        let p = item.val();
+        let id = item.key;
+
+        let div = document.createElement("div");
+        div.className = "product-card flex";
+
+        div.innerHTML = `
+            <img src="${p.image}">
+            <div style="flex:1;">
+                <div class="between">
+                    <strong>${p.title}</strong>
+                    <span>₦${p.price}</span>
+                </div>
+                <p class="muted">${p.desc}</p>
+                <div style="display:flex; gap:8px;">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+        `;
+
+        div.querySelector(".edit-btn").onclick = () => {
+            editingProduct = id;
+            pTitle.value = p.title;
+            pPrice.value = p.price;
+            pDesc.value = p.desc;
+            saveProductBtn.textContent = "Update Product";
+        };
+        div.querySelector(".delete-btn").onclick = async () => {
+            await remove(ref(db, "products/" + id));
+        };
+
+        productList.appendChild(div);
+    });
+});
+
+
+/* ---------------------------
+      ORDERS MANAGEMENT
+---------------------------- */
+onValue(ref(db, "orders"), (snap) => {
+    orderList.innerHTML = "";
+
+    snap.forEach(o => {
+        let order = o.val();
+        let id = o.key;
+
+        let itemsHTML = order.items.map(i =>
+            `<div>${i.title} × ${i.qty} — ₦${i.price * i.qty}</div>`
+        ).join("");
+
+        let div = document.createElement("div");
+        div.className = "order-card";
+
+        div.innerHTML = `
+            <div class="between">
+                <strong>Order #${id}</strong>
+                <span class="muted">${new Date(order.createdAt).toLocaleString()}</span>
+            </div>
+
+            <div style="margin:8px 0;">
+                <strong>${order.customerName}</strong> (${order.phone})<br>
+                <span class="muted">${order.address}</span>
+            </div>
+
+            <div>${itemsHTML}</div>
+
+            <div class="muted" style="margin-top:8px;">Instructions: ${order.instructions || "None"}</div>
+
+            <div class="between" style="margin-top:10px;">
+                <strong>Total: ₦${order.total}</strong>
+                <span>Status: <b>${order.status}</b></span>
+            </div>
+
+            <div style="display:flex; gap:8px; margin-top:10px;">
+                <button class="status-btn">Next Status</button>
+                <button class="edit-btn">Mark Paid</button>
+            </div>
+        `;
+
+        div.querySelector(".status-btn").onclick = async () => {
+            const flow = ["pending","accepted","preparing","out-for-delivery","completed"];
+            let next = flow[Math.min(flow.indexOf(order.status)+1, flow.length-1)];
+            await update(ref(db, "orders/" + id), { status:next });
+        };
+
+        div.querySelector(".edit-btn").onclick = () => {
+            update(ref(db, "orders/" + id), { status:"paid" });
+        };
+
+        orderList.appendChild(div);
+    });
+});
+
+</script>
+</body>
+</html>

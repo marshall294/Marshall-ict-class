@@ -1,0 +1,412 @@
+<!-- save as customer.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MJ & CO — Order Yogurt & Parfait</title>
+  <style>
+    :root{
+      --accent:#ff7a00;
+      --muted:#6b7280;
+      --bg:#fff8f2;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.7);
+      --radius:14px;
+      --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{
+      margin:0; background:linear-gradient(180deg,#fff 0%, #fff8f2 100%);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:22px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      width:100%; max-width:var(--maxw);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:22px;
+      align-items:start;
+    }
+    @media (max-width: 880px){
+      .container{ grid-template-columns: 1fr; padding-bottom:40px; }
+    }
+
+    /* Left: product listing / checkout */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(16,24,40,0.06);
+      padding:18px;
+    }
+    header.site{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:14px;
+    }
+    header.site img.logo{ width:64px; height:64px; object-fit:cover; border-radius:12px; }
+    header.site h1{ font-size:20px; margin:0; }
+    .products{ display:grid; gap:14px; }
+    .product{
+      display:flex; gap:12px; align-items:center;
+      border-radius:12px; padding:10px; background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+      border:1px solid rgba(0,0,0,0.04);
+    }
+    .product img{ width:110px; height:110px; object-fit:cover; border-radius:10px; }
+    .pmeta{ flex:1; }
+    .pmeta h3{ margin:0 0 6px 0; font-size:16px; }
+    .pmeta p{ margin:0; color:var(--muted); font-size:14px; }
+    .controls{ display:flex; gap:8px; align-items:center; margin-top:8px; }
+    .qty{ display:flex; border-radius:8px; overflow:hidden; border:1px solid rgba(0,0,0,0.06); }
+    .qty button{ padding:6px 10px; border:0; background:transparent; cursor:pointer; font-weight:600; }
+    .qty span{ padding:6px 10px; min-width:42px; display:inline-block; text-align:center; background:rgba(0,0,0,0.02); }
+    .price{ font-weight:700; color:var(--accent); margin-left:auto; }
+
+    /* Right: order summary */
+    .summary{ position:sticky; top:22px; align-self:start; }
+    .summary .card{ padding:18px; }
+    .summary h2{ margin:0 0 10px 0; font-size:18px; }
+    .summary .line{ display:flex; justify-content:space-between; margin:8px 0; color:var(--muted); }
+    .summary .total{ font-size:20px; font-weight:800; color:#111827; margin-top:8px; display:flex; justify-content:space-between; }
+
+    .form-group{ display:flex; flex-direction:column; gap:6px; margin-top:10px; }
+    input, textarea, select{
+      padding:10px 12px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); font-size:14px;
+      resize:vertical;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent), #ff4d00);
+      color:white; border:0; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700; font-size:15px;
+      box-shadow:0 6px 18px rgba(255,122,0,0.18);
+    }
+    .muted{ color:var(--muted); font-size:13px; }
+    .small{ font-size:13px; color:var(--muted); margin-top:6px; }
+    .success{ color:green; font-weight:700; margin-top:8px; }
+    .error{ color:#b91c1c; font-weight:700; margin-top:8px; }
+    footer.foot{ text-align:center; margin-top:14px; color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT: Products + Details -->
+    <div>
+      <div class="card">
+        <header class="site">
+          <img class="logo" src="logo.png" alt="MJ & Co logo / share image">
+          <div>
+            <h1>MJ & CO — Fresh Yogurt & Parfait</h1>
+            <div class="muted">Order, schedule delivery, or pick up. Fast local delivery available.</div>
+          </div>
+        </header>
+
+        <section>
+          <h2 style="margin:0 0 10px 0">Menu</h2>
+          <div class="products" id="productList">
+            <!-- products rendered by JS -->
+          </div>
+        </section>
+
+        <section style="margin-top:16px;">
+          <h2 style="margin:0 0 8px 0">Special Instructions</h2>
+          <textarea id="instructions" placeholder="E.g. No sugar / extra granola / leave at gate" rows="3"></textarea>
+        </section>
+
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h2 style="margin:0 0 6px 0">Contact & Delivery</h2>
+        <div class="form-group">
+          <input id="name" placeholder="Full name" />
+          <input id="phone" placeholder="Phone number" />
+          <select id="fulfillment">
+            <option value="delivery">Delivery</option>
+            <option value="pickup">Pickup (in-store)</option>
+          </select>
+          <input id="address" placeholder="Delivery address (required for delivery)" />
+        </div>
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          <button class="btn" id="placeOrderBtn">Place Order & Pay</button>
+          <button class="btn" id="saveOrderBtn" style="background: #6b7280;">Place Order (Pay on Delivery)</button>
+        </div>
+        <div id="orderStatus" class="small"></div>
+      </div>
+
+      <footer class="foot">
+        Built for MJ & CO — powered by Firebase + Paystack.
+      </footer>
+    </div>
+
+    <!-- RIGHT: Order summary -->
+    <aside class="summary">
+      <div class="card">
+        <h2>Order Summary</h2>
+        <div id="summaryList" style="min-height:150px;"></div>
+        <div class="line"><span>Subtotal</span><span id="subtotal">₦0</span></div>
+        <div class="line"><span>Delivery</span><span id="deliveryFee">₦0</span></div>
+        <div class="total"><span>Total</span><span id="total">₦0</span></div>
+
+        <div class="form-group" style="margin-top:12px;">
+          <label class="muted">Preferred delivery time</label>
+          <input type="datetime-local" id="deliveryTime"/>
+        </div>
+
+        <div style="margin-top:12px;">
+          <small class="muted">Tip: after placing the order you'll be presented with the Paystack checkout. Replace the public key in the script with your Paystack public key to accept real payments.</small>
+        </div>
+
+      </div>
+    </aside>
+  </div>
+
+  <!-- Paystack inline script -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <!-- Firebase SDK imports (as you requested) and init -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+    import { getDatabase, ref as dbRef, push, set, update, onValue, get } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+    // storage included in your imports if you want to expand later
+    import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBSM1gw5QpHJ6PMPG9gCuYDQ9WZ4MUcu0A",
+      authDomain: "hotel-5c90a.firebaseapp.com",
+      databaseURL: "https://hotel-5c90a-default-rtdb.firebaseio.com",
+      projectId: "hotel-5c90a",
+      storageBucket: "hotel-5c90a.appspot.com",
+      messagingSenderId: "1018416176032",
+      appId: "1:1018416176032:web:2f57a167fa1106c8b022c5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+    const storage = getStorage(app);
+
+    // -----------------------
+    // Product data (initial)
+    // You can later push/manage products from an admin page.
+    // Prices are in Naira. For Paystack we convert to kobo (×100).
+    const products = [
+      { id: 'greek', title: 'Greek Yogurt (500ml)', price: 1200, desc: 'Creamy strained Greek yogurt - plain or honey', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSbe-EVNYGlLGh4FO1QjDyJLxkCpKsrYjxHQ&s' },
+      { id: 'parfait', title: 'Fruit Parfait', price: 1600, desc: 'Layers of yogurt, granola, and fresh fruit', img: 'https://feelgoodfoodie.net/wp-content/uploads/2024/11/Fruit-Yogurt-Parfait-11.jpg' },
+      { id: 'granola', title: 'Granola Bowl', price: 900, desc: 'Crunchy granola with seeds and honey', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwmfXUDTOOERyxIClG0hiSIw1jsPfm8_uTHA&s' },
+      { id: 'regular', title: 'Regular Yogurt (250ml)', price: 600, desc: 'Smooth regular yogurt', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGXbLnX8UZAO5hm8os15n0Yu69WvO9fkdbw&s' }
+    ];
+
+    // Cart state
+    const cart = {}; // id -> qty
+
+    // Utilities
+    function formatCurrency(n){ return '₦' + Number(n).toLocaleString(); }
+
+    // Render products
+    const productListEl = document.getElementById('productList');
+    const summaryListEl = document.getElementById('summaryList');
+    const subtotalEl = document.getElementById('subtotal');
+    const deliveryFeeEl = document.getElementById('deliveryFee');
+    const totalEl = document.getElementById('total');
+
+    function renderProducts(){
+      productListEl.innerHTML = '';
+      products.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <div class="pmeta">
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <div class="controls">
+              <div class="qty" data-id="${p.id}">
+                <button class="dec" data-id="${p.id}">−</button>
+                <span class="qtyVal" id="qty-${p.id}">0</span>
+                <button class="inc" data-id="${p.id}">+</button>
+              </div>
+              <div class="price">${formatCurrency(p.price)}</div>
+            </div>
+          </div>
+        `;
+        productListEl.appendChild(div);
+      });
+
+      // attach handlers
+      document.querySelectorAll('.qty button').forEach(b => {
+        b.addEventListener('click', (e) => {
+          const id = b.dataset.id;
+          const isInc = b.classList.contains('inc');
+          changeQty(id, isInc ? 1 : -1);
+        });
+      });
+    }
+
+    function changeQty(id, diff){
+      if(!cart[id]) cart[id] = 0;
+      cart[id] = Math.max(0, cart[id] + diff);
+      document.getElementById('qty-' + id).textContent = cart[id];
+      updateSummary();
+    }
+
+    function updateSummary(){
+      summaryListEl.innerHTML = '';
+      let subtotal = 0;
+      for(const id in cart){
+        const qty = cart[id];
+        if(qty <= 0) continue;
+        const p = products.find(x=>x.id===id);
+        const line = document.createElement('div');
+        line.style.display='flex';
+        line.style.justifyContent='space-between';
+        line.style.marginTop='8px';
+        line.innerHTML = `<div>${p.title} × ${qty}</div><div>${formatCurrency(p.price * qty)}</div>`;
+        summaryListEl.appendChild(line);
+        subtotal += p.price * qty;
+      }
+      subtotalEl.textContent = formatCurrency(subtotal);
+      // delivery fee simple rule
+      const fulfillment = document.getElementById('fulfillment').value;
+      const deliveryFee = (fulfillment==='delivery' && subtotal > 0) ? 300 : 0;
+      deliveryFeeEl.textContent = formatCurrency(deliveryFee);
+      totalEl.textContent = formatCurrency(subtotal + deliveryFee);
+    }
+
+    // Initial render
+    renderProducts();
+    updateSummary();
+
+    document.getElementById('fulfillment').addEventListener('change', updateSummary);
+
+    // Order placement
+    const placeOrderBtn = document.getElementById('placeOrderBtn');
+    const saveOrderBtn = document.getElementById('saveOrderBtn');
+    const orderStatusEl = document.getElementById('orderStatus');
+
+    function gatherOrderData(){
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const fulfillment = document.getElementById('fulfillment').value;
+      const instructions = document.getElementById('instructions').value.trim();
+      const deliveryTime = document.getElementById('deliveryTime').value || null;
+
+      const items = [];
+      let subtotal = 0;
+      for(const id in cart){
+        const qty = cart[id];
+        if(qty <= 0) continue;
+        const p = products.find(x=>x.id===id);
+        items.push({ id: p.id, title: p.title, price: p.price, qty });
+        subtotal += p.price * qty;
+      }
+      if(items.length === 0) throw new Error('Cart is empty');
+
+      const deliveryFee = (fulfillment === 'delivery') ? 300 : 0;
+      const total = subtotal + deliveryFee;
+
+      return {
+        customerName: name,
+        phone,
+        address: (fulfillment==='delivery') ? address : 'Pickup',
+        fulfillment,
+        instructions,
+        deliveryTime,
+        items,
+        subtotal,
+        deliveryFee,
+        total,
+        createdAt: Date.now(),
+        status: 'pending' // admin will update to accepted/completed/paid
+      };
+    }
+
+    async function saveOrderToFirebase(orderData){
+      // push to /orders
+      const ordersRef = dbRef(db, 'orders');
+      const newRef = push(ordersRef);
+      await set(newRef, orderData);
+      return newRef.key;
+    }
+
+// Flutterwave integration function (inline)
+function payWithFlutterwave(orderKey, amountNaira, email = '') {
+  const FLUTTERWAVE_PK = 'FLWPUBK_TEST-REPLACE_WITH_YOUR_KEY';
+
+  FlutterwaveCheckout({
+    public_key: FLUTTERWAVE_PK,
+    tx_ref: 'MJCO_' + orderKey + '_' + Date.now(),
+    amount: amountNaira, // Flutterwave uses the main currency unit (NGN)
+    currency: "NGN",
+    payment_options: "card, banktransfer, ussd",
+    customer: {
+      email: email || "customer@example.com",
+      name: "Customer Name"
+    },
+    customizations: {
+      title: "Business Payment",
+      description: "Payment for order " + orderKey
+    },
+    callback: function (response) {
+      // response contains payment info
+      const payRef = response.transaction_id;
+      document.getElementById('orderStatusEl').innerHTML = 
+        '<div class="success">Payment complete. Reference: ' + payRef + '</div>';
+
+      // update order in DB with payment info
+      const orderRef = dbRef(db, 'orders/' + orderKey);
+      update(orderRef, { status: 'paid', paidAt: Date.now(), paymentReference: payRef })
+        .catch(err => console.error(err));
+    },
+    onclose: function() {
+      document.getElementById('orderStatusEl').textContent = 
+        'Payment window closed. If you completed payment, admin will confirm.';
+    }
+  });
+}
+
+
+    // Place and pay
+    placeOrderBtn.addEventListener('click', async () => {
+      try{
+        orderStatusEl.textContent = 'Placing order...';
+        const orderData = gatherOrderData();
+        const key = await saveOrderToFirebase(orderData);
+
+        orderStatusEl.innerHTML = 'Order placed (ID: ' + key + '). Redirecting to payment...';
+        // Trigger Paystack
+        // note: user must replace public key earlier
+        payWithPaystack(key, orderData.total, 'customer@example.com');
+
+        // clear cart visually
+        for(const id in cart){ cart[id]=0; document.getElementById('qty-' + id).textContent=0; }
+        updateSummary();
+      }catch(err){
+        orderStatusEl.innerHTML = '<span class="error">Error: '+ err.message +'</span>';
+      }
+    });
+
+    // Place order paying on delivery
+    saveOrderBtn.addEventListener('click', async () => {
+      try{
+        orderStatusEl.textContent = 'Placing order (pay on delivery)...';
+        const orderData = gatherOrderData();
+        const key = await saveOrderToFirebase(orderData);
+        orderStatusEl.innerHTML = '<div class="success">Order placed successfully. Order ID: '+key+' — pay on delivery.</div>';
+
+        for(const id in cart){ cart[id]=0; document.getElementById('qty-' + id).textContent=0; }
+        updateSummary();
+      }catch(err){
+        orderStatusEl.innerHTML = '<span class="error">Error: '+ err.message +'</span>';
+      }
+    });
+
+    // Optional: listen for updates to this customer's orders (demo)
+    // If you later implement authentication, you can filter by UID.
+  </script>
+</body>
+</html>

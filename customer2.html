@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MJ & CO — Fresh Yogurt & Parfait</title>
+
+<style>
+body{
+  margin:0;
+  background:#fff7f0;
+  font-family:Arial, sans-serif;
+  color:#333;
+  overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+header{
+  width:100%;
+  padding:15px 20px;
+  background:#ffffffdd;
+  backdrop-filter:blur(6px);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:50;
+  display:flex;
+  flex-direction:column;       /* Stack logo, title, nav neatly */
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  border-bottom:1px solid #eee;
+}
+
+/* Logo */
+.logo-ring{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:4px solid #ff9900;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation:spin 5s linear infinite;
+}
+.logo-ring img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+}
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+/* Title centered */
+header strong{
+  font-size:20px;
+  color:#cc6600;
+  margin:8px 0 5px 0;
+  text-align:center;
+}
+
+/* Navigation ALWAYS centered & responsive */
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+nav a{
+  margin:10px 20px;
+  text-decoration:none;
+  color:#444;
+  font-weight:bold;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#e67300;
+}
+
+
+.order-btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:#ff9900;
+  color:white;
+  font-weight:bold;
+  border-radius:8px;
+  text-decoration:none;
+  transition:.3s;
+  box-shadow:0 3px 8px #0002;
+}
+.order-btn:hover{ background:#ffae32; }
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  width:100%;
+  height:90vh;
+  overflow:hidden;
+  margin-top:90px;
+}
+.hero img{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.5s ease;
+  filter:brightness(.85);
+}
+.hero img.active{ opacity:1; }
+
+.hero .cta{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+}
+
+/* ================= VIDEO SLIDER ================= */
+.video-slider{
+  width:100%;
+  max-width:900px;
+  margin:60px auto;
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 4px 14px #0002;
+  text-align:center;
+}
+
+/* Video frame fully responsive */
+video{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  border-radius:12px;
+  background:black;
+}
+
+.slider-controls{
+  margin-top:15px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
+.slider-controls button{
+  padding:10px 20px;
+  background:#ff9900;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+  box-shadow:0 3px 8px #0003;
+}
+.slider-controls button:hover{
+  background:#ffae32;
+}
+
+#playPauseBtn{
+  background:#444;
+}
+#playPauseBtn:hover{ background:#666; }
+
+/* ================= TESTIMONIES ================= */
+.testimony-section{
+  padding:50px 20px;
+  text-align:center;
+  background:#ffe9d6;
+}
+.testimony-section h2{
+  font-size:32px;
+  margin-bottom:30px;
+  color:#cc6600;
+}
+.testimony-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.testimony{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px #0002;
+  font-size:16px;
+  color:#444;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:40px 20px;
+  background:#333;
+  text-align:center;
+  color:white;
+}
+footer .logo-ring{
+  margin:0 auto 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:700px){
+  header{
+    text-align:center;
+    flex-direction:column;
+    gap:10px;
+  }
+  nav{
+    justify-content:center;
+  }
+  nav a{
+    margin:10px;
+  }
+  .hero{ height:70vh; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-ring"><img src="logo.jpg"></div>
+  <strong>MJ & CO — Fresh Yogurt & Parfait</strong>
+
+  <nav>
+    <a href="#videos">Videos</a>
+    <a href="#testimony">Testimonies</a>
+    <a href="customer.html">Order</a>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+<div class="hero">
+  <img src="m1.jpg" class="active">
+  <img src="m2.jpg">
+  <img src="m3.jpg">
+  <img src="m4.jpg">
+  <img src="m5.jpg">
+  <img src="m6.jpg">
+  <img src="m7.jpg">
+  <img src="m8.jpg">
+  <img src="m9.jpg">
+  <img src="m10.jpg">
+  <img src="m11.jpg">
+  <img src="m12.jpg">
+
+  <div class="cta">
+    <a href="customer.html" class="order-btn">Place Order Now</a>
+  </div>
+</div>
+
+
+<!-- VIDEO SLIDER -->
+<div class="video-slider" id="videos">
+
+  <video id="videoPlayer" src="v1.mp4" preload="metadata" controls></video>
+
+  <div class="slider-controls">
+    <button id="prevBtn">Prev</button>
+    <button id="playPauseBtn">Pause</button>
+    <button id="nextBtn">Next</button>
+    <a href="customer.html" class="order-btn">Order</a>
+  </div>
+
+</div>
+
+
+<!-- TESTIMONIES -->
+<div class="testimony-section" id="testimony">
+  <h2>What Our Customers Say</h2>
+
+  <div class="testimony-grid">
+    <div class="testimony">“Amazing quality! I love it.” — Sarah</div>
+    <div class="testimony">“Fast delivery and great service.” — John</div>
+    <div class="testimony">“Highly recommended! Will order again.” — Amaka</div>
+    <div class="testimony">“The best experience I've had.” — Daniel</div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo-ring"><img src="logo.jpg"></div>
+  <p>MJ & CO — Fresh Yogurt & Parfait<br>
+  Order, download invoice PDF, pay to bank, send receipt to WhatsApp +2348102341648<br><br>
+  &copy; 2025 MJ & CO. All rights reserved.</p>
+</footer>
+
+
+<script>
+/* HERO SLIDER */
+const heroSlides = document.querySelectorAll('.hero img');
+let heroIndex = 0;
+
+setInterval(()=>{
+  heroSlides[heroIndex].classList.remove('active');
+  heroIndex = (heroIndex + 1) % heroSlides.length;
+  heroSlides[heroIndex].classList.add('active');
+},4000);
+
+/* VIDEO SLIDER */
+const videoPlayer = document.getElementById("videoPlayer");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const playPauseBtn = document.getElementById("playPauseBtn");
+
+const videoList = ["v1.mp4","v2.mp4","v3.mp4","v4.mp4","v5.mp4","v6.mp4","v7.mp4","v8.mp4","v9.mp4","v10.mp4"];
+let videoIndex = 0;
+
+function loadVideo(index){
+  videoPlayer.pause();
+  videoPlayer.src = videoList[index];
+  videoPlayer.load();
+  videoPlayer.play();
+  playPauseBtn.textContent = "Pause";
+}
+
+nextBtn.onclick = ()=>{
+  videoIndex = (videoIndex + 1) % videoList.length;
+  loadVideo(videoIndex);
+};
+
+prevBtn.onclick = ()=>{
+  videoIndex = (videoIndex - 1 + videoList.length) % videoList.length;
+  loadVideo(videoIndex);
+};
+
+playPauseBtn.onclick = ()=>{
+  if(videoPlayer.paused){
+    videoPlayer.play();
+    playPauseBtn.textContent = "Pause";
+  } else {
+    videoPlayer.pause();
+    playPauseBtn.textContent = "Play";
+  }
+};
+</script>
+
+</body>
+</html>

@@ -1,113 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MJ & CO — Fresh Yogurt & Parfait</title>
 
 <style>
-body{
-  margin:0;
-  background:#fff7f0;
-  font-family:Arial, sans-serif;
-  color:#333;
-  overflow-x:hidden;
+/* GLOBAL */
+body {
+  margin: 0;
+  background: #fff7f0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* ================= HEADER ================= */
-header{
-  width:100%;
-  padding:15px 20px;
-  background:#ffffff; /* SOLID white */
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  border-bottom:1px solid #eee;
+/* HIGH-QUALITY IMAGE ENHANCEMENT */
+img, video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: saturate(1.15) contrast(1.1) brightness(1.05);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-
-/* Logo */
-.logo-ring{
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  border:4px solid #ff9900;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  animation:spin 5s linear infinite;
+/* SHINY REFLECTION */
+.enhanced-media {
+  position: relative;
+  overflow: hidden;
 }
-.logo-ring img{
-  width:80px;
-  height:80px;
-  border-radius:50%;
+.enhanced-media::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%);
+  animation: shine 3s infinite;
 }
-@keyframes spin{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
-/* Title */
-header strong{
-  font-size:20px;
-  color:#cc6600;
-  margin:8px 0 5px 0;
+/* HEADER */
+header {
+  width: 100%;
+  padding: 15px 20px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
 }
 
-/* Navigation */
-nav{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  width:100%;
+.logo-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #ff9900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 5s linear infinite;
+  overflow: hidden;
+  box-shadow: 0 0 12px #ffb861;
+}
+.logo-ring img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
-nav a{
-  margin:10px 20px;
-  text-decoration:none;
-  color:#444;
-  font-weight:bold;
-  transition:.3s;
-}
-nav a:hover{
-  color:#e67300;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.order-btn{
-  display:inline-block;
-  padding:14px 30px;
-  background:#ff9900;
-  color:white;
-  font-weight:bold;
-  border-radius:8px;
-  text-decoration:none;
-  transition:.3s;
-  box-shadow:0 3px 8px #0002;
+header strong {
+  font-size: 20px;
+  color: #cc6600;
+  margin: 8px 0 5px;
 }
-.order-btn:hover{ background:#ffae32; }
 
-/* ================= HERO ================= */
-.hero{
-  position:relative;
-  width:100%;
-  height:90vh;
-  overflow:hidden;
+nav a {
+  margin: 10px 20px;
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  transition: 0.3s;
 }
-.hero img{
-  position:absolute;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity 1.5s ease;
-  filter:brightness(.85);
+nav a:hover {
+  color: #e67300;
 }
-.hero img.active{ opacity:1; }
 
+.order-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #ff9900;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 8px #0002;
+}
+.order-btn:hover {
+  background: #ffae32;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s, transform 1.5s;
+  filter: brightness(0.9) contrast(1.1) saturate(1.2);
+}
+.hero img.active {
+  opacity: 1;
+  transform: scale(1.03);
+}
 .hero .cta{
   position:absolute;
   bottom:40px;
@@ -116,108 +141,101 @@ nav a:hover{
   text-align:center;
 }
 
-/* ================= VIDEO SLIDER ================= */
-.video-slider{
-  width:100%;
-  max-width:900px;
-  margin:60px auto;
-  background:white;
-  padding:20px;
-  border-radius:16px;
-  box-shadow:0 4px 14px #0002;
-  text-align:center;
+/* VIDEO SECTION */
+.video-slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px #0002;
+  text-align: center;
 }
 
-video{
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  border-radius:12px;
-  background:black;
+video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  background: black;
+  filter: brightness(1.1) contrast(1.15) saturate(1.1);
+  pointer-events: none; /* disables downloads via right-click */
 }
 
-.slider-controls{
-  margin-top:15px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-}
-.slider-controls button{
-  padding:10px 20px;
-  background:#ff9900;
-  border:none;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:bold;
-  box-shadow:0 3px 8px #0003;
-}
-.slider-controls button:hover{
-  background:#ffae32;
+.slider-controls {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
-#playPauseBtn{
-  background:#444;
+.slider-controls button {
+  padding: 10px 20px;
+  background: #ff9900;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 8px #0003;
 }
-#playPauseBtn:hover{ background:#666; }
-
-/* ================= TESTIMONIES ================= */
-.testimony-section{
-  padding:50px 20px;
-  text-align:center;
-  background:#ffe9d6;
-}
-.testimony-section h2{
-  font-size:32px;
-  margin-bottom:30px;
-  color:#cc6600;
-}
-.testimony-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.testimony{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 4px 12px #0002;
-  font-size:16px;
-  color:#444;
+.slider-controls button:hover {
+  background: #ffae32;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  padding:40px 20px;
-  background:#333;
-  text-align:center;
-  color:white;
+#playPauseBtn {
+  background: #444;
 }
-footer .logo-ring{
-  margin:0 auto 10px;
+#playPauseBtn:hover {
+  background: #666;
 }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:700px){
-  header{
-    text-align:center;
-    flex-direction:column;
-    gap:10px;
-  }
-  nav a{
-    margin:10px;
-  }
-  .hero{
-    height:70vh;
-  }
+/* TESTIMONY */
+.testimony-section {
+  padding: 50px 20px;
+  background: #ffe9d6;
+}
+.testimony-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #cc6600;
+}
+.testimony-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.testimony {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #0002;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+}
+footer .logo-ring {
+  margin: 0 auto 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .hero { height: 70vh; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo-ring"><img src="logo.jpg"></div>
+  <div class="logo-ring"><img src="logo.jpg" /></div>
   <strong>MJ & CO — Fresh Yogurt & Parfait</strong>
 
   <nav>
@@ -250,7 +268,9 @@ footer .logo-ring{
 <!-- VIDEO SLIDER -->
 <div class="video-slider" id="videos">
 
-  <video id="videoPlayer" src="v1.mp4" preload="metadata" controls></video>
+  <div class="enhanced-media">
+    <video id="videoPlayer" src="v1.mp4" preload="metadata" disablePictureInPicture controlsList="nodownload noplaybackrate noremoteplayback"></video>
+  </div>
 
   <div class="slider-controls">
     <button id="prevBtn">Prev</button>
@@ -258,7 +278,6 @@ footer .logo-ring{
     <button id="nextBtn">Next</button>
     <a href="customer.html" class="order-btn">Order</a>
   </div>
-
 </div>
 
 <!-- TESTIMONIES -->
@@ -275,10 +294,12 @@ footer .logo-ring{
 
 <!-- FOOTER -->
 <footer>
-  <div class="logo-ring"><img src="logo.jpg"></div>
-  <p>MJ & CO — Fresh Yogurt & Parfait<br>
-  Order, download invoice PDF, pay to bank, send receipt to WhatsApp +2348102341648<br><br>
-  &copy; 2025 MJ & CO. All rights reserved.</p>
+  <div class="logo-ring"><img src="logo.jpg" /></div>
+  <p>
+    MJ & CO — Fresh Yogurt & Parfait<br />
+    Order, download invoice PDF, pay to bank, send both PDF and receipt to WhatsApp +2348102341648<br />
+    © 2025 MJ & CO. All rights reserved.
+  </p>
 </footer>
 
 <script>
@@ -286,22 +307,25 @@ footer .logo-ring{
 const heroSlides = document.querySelectorAll('.hero img');
 let heroIndex = 0;
 
-setInterval(()=>{
+setInterval(() => {
   heroSlides[heroIndex].classList.remove('active');
   heroIndex = (heroIndex + 1) % heroSlides.length;
   heroSlides[heroIndex].classList.add('active');
-},4000);
+}, 4000);
 
 /* VIDEO SLIDER */
-const videoPlayer = document.getElementById("videoPlayer");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-const playPauseBtn = document.getElementById("playPauseBtn");
+const videoPlayer = document.getElementById('videoPlayer');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+const playPauseBtn = document.getElementById('playPauseBtn');
 
-const videoList = ["v1.mp4","v2.mp4","v3.mp4","v4.mp4","v5.mp4","v6.mp4","v7.mp4","v8.mp4","v9.mp4","v10.mp4"];
+const videoList = [
+  'v1.mp4','v2.mp4','v3.mp4','v4.mp4','v5.mp4',
+  'v6.mp4','v7.mp4','v8.mp4','v9.mp4','v10.mp4'
+];
 let videoIndex = 0;
 
-function loadVideo(index){
+function loadVideo(index) {
   videoPlayer.pause();
   videoPlayer.src = videoList[index];
   videoPlayer.load();
@@ -309,18 +333,18 @@ function loadVideo(index){
   playPauseBtn.textContent = "Pause";
 }
 
-nextBtn.onclick = ()=>{
+nextBtn.onclick = () => {
   videoIndex = (videoIndex + 1) % videoList.length;
   loadVideo(videoIndex);
 };
 
-prevBtn.onclick = ()=>{
+prevBtn.onclick = () => {
   videoIndex = (videoIndex - 1 + videoList.length) % videoList.length;
   loadVideo(videoIndex);
 };
 
-playPauseBtn.onclick = ()=>{
-  if(videoPlayer.paused){
+playPauseBtn.onclick = () => {
+  if (videoPlayer.paused) {
     videoPlayer.play();
     playPauseBtn.textContent = "Pause";
   } else {

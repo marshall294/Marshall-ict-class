@@ -18,19 +18,15 @@ body{
 header{
   width:100%;
   padding:15px 20px;
-  background:#ffffffdd;
-  backdrop-filter:blur(6px);
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:50;
+  background:#ffffff; /* SOLID white */
   display:flex;
-  flex-direction:column;       /* Stack logo, title, nav neatly */
+  flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
   border-bottom:1px solid #eee;
 }
+
 
 /* Logo */
 .logo-ring{
@@ -53,15 +49,14 @@ header{
   to{transform:rotate(360deg);}
 }
 
-/* Title centered */
+/* Title */
 header strong{
   font-size:20px;
   color:#cc6600;
   margin:8px 0 5px 0;
-  text-align:center;
 }
 
-/* Navigation ALWAYS centered & responsive */
+/* Navigation */
 nav{
   display:flex;
   justify-content:center;
@@ -77,11 +72,9 @@ nav a{
   font-weight:bold;
   transition:.3s;
 }
-
 nav a:hover{
   color:#e67300;
 }
-
 
 .order-btn{
   display:inline-block;
@@ -102,7 +95,6 @@ nav a:hover{
   width:100%;
   height:90vh;
   overflow:hidden;
-  margin-top:90px;
 }
 .hero img{
   position:absolute;
@@ -136,7 +128,6 @@ nav a:hover{
   text-align:center;
 }
 
-/* Video frame fully responsive */
 video{
   width:100%;
   height:auto;
@@ -214,13 +205,12 @@ footer .logo-ring{
     flex-direction:column;
     gap:10px;
   }
-  nav{
-    justify-content:center;
-  }
   nav a{
     margin:10px;
   }
-  .hero{ height:70vh; }
+  .hero{
+    height:70vh;
+  }
 }
 </style>
 </head>
@@ -236,7 +226,6 @@ footer .logo-ring{
     <a href="customer.html">Order</a>
   </nav>
 </header>
-
 
 <!-- HERO -->
 <div class="hero">
@@ -258,7 +247,6 @@ footer .logo-ring{
   </div>
 </div>
 
-
 <!-- VIDEO SLIDER -->
 <div class="video-slider" id="videos">
 
@@ -273,7 +261,6 @@ footer .logo-ring{
 
 </div>
 
-
 <!-- TESTIMONIES -->
 <div class="testimony-section" id="testimony">
   <h2>What Our Customers Say</h2>
@@ -286,7 +273,6 @@ footer .logo-ring{
   </div>
 </div>
 
-
 <!-- FOOTER -->
 <footer>
   <div class="logo-ring"><img src="logo.jpg"></div>
@@ -294,7 +280,6 @@ footer .logo-ring{
   Order, download invoice PDF, pay to bank, send receipt to WhatsApp +2348102341648<br><br>
   &copy; 2025 MJ & CO. All rights reserved.</p>
 </footer>
-
 
 <script>
 /* HERO SLIDER */

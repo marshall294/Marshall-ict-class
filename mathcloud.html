@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathCloud - Online Education & Website Management</title>
+  <link rel="stylesheet" href="mathcloud.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>MathCloud</h1>
+      <p>Empowering Education Through Technology</p>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service">
+          <h3>Online Classes</h3>
+          <p>Flexible schedules for sixth form, high school, and elementary school students.</p>
+          <button class="btn" onclick="requestService('Online Class')">Request Class</button>
+        </div>
+        <div class="service">
+          <h3>Website Management</h3>
+          <p>Professional website building and management for your needs.</p>
+          <button class="btn" onclick="requestService('Website Management')">Request Service</button>
+        </div>
+        <div class="service">
+          <h3>Educational Apps</h3>
+          <p>Apps for spelling, mental math, vocab, and comprehension skills.</p>
+          <button class="btn" onclick="requestService('Educational App')">Request Info</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="subscribe">
+    <div class="container">
+      <h2>Stay Updated</h2>
+      <p>Subscribe for updates on our services and offers.</p>
+      <input type="email" id="email" placeholder="Your email">
+      <button class="btn" onclick="subscribe()">Subscribe</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MathCloud</p>
+    </div>
+  </footer>
+
+  <script src="mathcloud.js"></script>
+</body>
+</html>

@@ -4,7 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MathCloud - Online Education & Website Management</title>
-  <link rel="stylesheet" href="mathcloud.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f0f8ff;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .service {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    #subscribe input {
+      padding: 10px;
+      width: 70%;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+    @media (max-width: 480px) {
+      #subscribe input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,26 +74,40 @@
     </div>
   </header>
 
-  <section id="services">
+  <section id="quote" style="text-align: center; padding: 40px 20px; background:           
     <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-grid">
-        <div class="service">
-          <h3>Online Classes</h3>
-          <p>Flexible schedules for sixth form, high school, and elementary school students.</p>
-          <button class="btn" onclick="requestService('Online Class')">Request Class</button>
-        </div>
-        <div class="service">
-          <h3>Website Management</h3>
-          <p>Professional website building and management for your needs.</p>
-          <button class="btn" onclick="requestService('Website Management')">Request Service</button>
-        </div>
-        <div class="service">
-          <h3>Educational Apps</h3>
-          <p>Apps for spelling, mental math, vocab, and comprehension skills.</p>
-          <button class="btn" onclick="requestService('Educational App')">Request Info</button>
-        </div>
-      </div>
+      <p style="font-size: 20px; font-style: italic;">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today." - Malcolm X</p>
+      <p>Start your journey with MathCloud today!</p>
+    </div>
+  </section>
+
+  <section id="online-classes">
+    <div class="container">
+      <h2>Online Classes</h2>
+      <p>Join our expert-led online classes for sixth form, high school, and elementary school students. Flexible schedules to fit your needs.</p>
+      <p><strong>Subjects:</strong> Maths, Physics, Basic Science, and more!</p>
+      <p><strong>Benefits:</strong> Boost grades, learn at your pace, and get personalized attention.</p>
+      <button class="btn" onclick="requestService('online_class')">Enroll in Online Classes</button>
+    </div>
+  </section>
+
+  <section id="website-management">
+    <div class="container">
+      <h2>Website Management</h2>
+      <p>Get a professional website that grows your business or showcase. We handle design, development, and maintenance.</p>
+      <p><strong>Features:</strong> Responsive design, SEO optimization, fast loading, and secure.</p>
+      <p><strong>Pricing:</strong> Packages starting from ₦50,000/month.</p>
+      <button class="btn" onclick="requestService('website')">Get a Website</button>
+    </div>
+  </section>
+
+  <section id="educational-apps">
+    <div class="container">
+      <h2>Educational Apps</h2>
+      <p>Explore our fun and interactive apps for learning. Boost skills in spelling, mental math, vocabulary, and comprehension.</p>
+      <p><strong>Apps:</strong> Spelling Bee, Math Whiz, Vocab Builder, and Read & Comprehend.</p>
+      <p><strong>Benefits:</strong> Learn anytime, anywhere. Fun and engaging for all ages.</p>
+      <button class="btn" onclick="requestService('app')">Explore Apps</button>
     </div>
   </section>
 
@@ -48,10 +122,34 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 MathCloud</p>
+      <p>&copy; 2026 MathCloud | <a href="#" style="color: #4CAF50;">Terms</a> | <a href="#" style="color: #4CAF50;">Privacy</a></p>
+      <p>Empowering Education Through Technology</p>
     </div>
   </footer>
 
-  <script src="mathcloud.js"></script>
+  <script>
+    const whatsappNumber = "2348102341648";
+    function requestService(service) {
+      let message = '';
+      if (service === 'online_class') {
+        message = `Hi EduSpark! 😊\n\nI'm interested in Online Classes.\nSubjects: Maths, Physics, Basic Science\nFlexible schedules. Please send more info.`'m interested in Online Classes.\nSubjects: Maths, Physics, Basic Science\nFlexible schedules. Please send more info.`;
+      } else if (service === ''website'') {
+        message = `Hi EduSpark! 😊\n\nI need a professional website.\nFeatures: Responsive, SEO, Fast, Secure\nPricing: ₦50,000/month. Please share packages.`;
+      } else if (service === ''app'') {
+        message = `Hi EduSpark! 😊\n\nI'`Hi EduSpark! 😊\n\nI'm interested in Educational Apps.\nApps: Spelling Bee, Math Whiz, Vocab Builder, Read & Comprehend\nPlease tell me more!`;
+      }
+      const url = `https:                                                               
+      window.open(url, '_blank');
+    }
+    function subscribe() {
+      const email = document.getElementById('email').value;
+      if (email) {
+        const message = `New subscription: ${email}`;
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+        document.getElementById('email').value = '';
+      }
+    }
+  </script>
 </body>
 </html>

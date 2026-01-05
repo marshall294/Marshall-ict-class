@@ -16,10 +16,9 @@
     }
 
     #text-to-read {
-      font-size: 20px;
+      font-size: 24px;
       margin-bottom: 20px;
       height: 50px;
-      transition: opacity 0.5s;
     }
 
     #start-btn {
@@ -35,6 +34,10 @@
     .highlight {
       background-color: yellow;
       transition: background-color 0.5s;
+    }
+
+    .mispronounced {
+      color: red;
     }
   </style>
 </head>
@@ -63,6 +66,7 @@
     let startTime, endTime;
     let words = [];
     let wordIndex = 0;
+    let mispronouncedWords = [];
 
     textToReadElement.textContent = textToRead[currentTextIndex];
 
@@ -71,6 +75,7 @@
       startTime = new Date().getTime();
       words = textToRead[currentTextIndex].split(' ');
       wordIndex = 0;
+      mispronouncedWords = [];
       highlightWord();
     });
 
@@ -82,19 +87,24 @@
       if (word === transcribedWord) {
         wordIndex++;
         highlightWord();
+      } else {
+        mispronouncedWords.push(word);
+        wordIndex++;
+        highlightWord(word);
       }
 
       if (wordIndex === words.length) {
         endTime = new Date().getTime();
         const accuracy = calculateAccuracy(textToRead[currentTextIndex], transcription);
         const speed = calculateSpeed(textToRead[currentTextIndex], startTime, endTime);
-        displayResults(accuracy, speed);
+        displayResults(accuracy, speed, mispronouncedWords);
         currentTextIndex++;
         if (currentTextIndex < textToRead.length) {
           setTimeout(() => {
             textToReadElement.textContent = textToRead[currentTextIndex];
             words = textToRead[currentTextIndex].split(' ');
             wordIndex = 0;
+            mispronouncedWords = [];
             highlightWord();
           }, 2000);
         } else {
@@ -125,22 +135,25 @@
       return Math.round((words.length / timeTaken) * 60); // words per minute
     }
 
-    function displayResults(accuracy, speed) {
+    function displayResults(accuracy, speed, mispronouncedWords) {
       const resultsDiv = document.getElementById('results');
       resultsDiv.innerHTML += `
         <p>Accuracy: ${accuracy.toFixed(2)}%</p>
         <p>Reading Speed: ${speed} words per minute</p>
+        <p>Mispronounced Words: ${mispronouncedWords.join(', ')}</p>
         <hr>
       `;
     }
 
-    function highlightWord() {
+    function highlightWord(word) {
       const wordsArray = textToRead[currentTextIndex].split(' ');
-      const highlightedText = wordsArray.map((word, index) => {
+      const highlightedText = wordsArray.map((w, index) => {
         if (index === wordIndex) {
-          return `<span class="highlight">${word}</span>`;
+          return `<span class="highlight">${w}</span>`;
+        } else if (word && w === word) {
+          return `<span class="mispronounced">${w}</span>`;
         } else {
-          return word;
+          return w;
         }
       }).join(' ');
       textToReadElement.innerHTML = highlightedText;

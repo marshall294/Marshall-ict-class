@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Speed Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    #text-to-read {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    #start-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Reading Speed Test</h1>
+    <p id="text-to-read">The quick brown fox jumps over the lazy dog today.</p>
+    <button id="start-btn">Start Reading</button>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+
+    const textToRead = document.getElementById('text-to-read').textContent;
+    let startTime, endTime;
+
+    document.getElementById('start-btn').addEventListener('click', () => {
+      recognition.start();
+      startTime = new Date().getTime();
+    });
+
+    recognition.onresult = (event) => {
+      const transcription = event.results[0][0].transcript;
+      endTime = new Date().getTime();
+      const accuracy = calculateAccuracy(textToRead, transcription);
+      const speed = calculateSpeed(textToRead, startTime, endTime);
+      displayResults(accuracy, speed);
+    };
+
+    recognition.onerror = (event) => {
+      console.error(event);
+    };
+
+    function calculateAccuracy(original, transcription) {
+      const originalWords = original.split(' ');
+      const transcriptionWords = transcription.split(' ');
+      let correctWords = 0;
+
+      originalWords.forEach((word, index) => {
+        if (word === transcriptionWords[index]) {
+          correctWords++;
+        }
+      });
+
+      return (correctWords / originalWords.length) * 100;
+    }
+
+    function calculateSpeed(text, startTime, endTime) {
+      const words = text.split(' ');
+      const timeTaken = (endTime - startTime) / 1000; // seconds
+      return Math.round((words.length / timeTaken) * 60); // words per minute
+    }
+
+    function displayResults(accuracy, speed) {
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `
+        <p>Accuracy: ${accuracy.toFixed(2)}%</p>
+        <p>Reading Speed: ${speed} words per minute</p>
+      `;
+    }
+  </script>
+</body>
+</html>

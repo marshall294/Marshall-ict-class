@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Year 10 IGCSE – Simplifying Linear Equations</title>
+
+<!-- MathJax for proper maths fonts -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+:root{
+  --primary:#1d4ed8;
+  --success:#15803d;
+  --danger:#b91c1c;
+  --bg:#f1f5f9;
+  --card:#ffffff;
+  --muted:#64748b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+}
+.container{max-width:1200px;margin:auto;padding:1.5rem}
+header{
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center
+}
+header h1{margin:0;font-size:clamp(1.6rem,3vw,2.2rem)}
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:1.4rem;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+.input{
+  padding:.7rem .9rem;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
+  font-size:1rem
+}
+.grid{display:grid;gap:1rem}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.question{
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:1rem
+}
+.question h3{margin:.2rem 0 .7rem 0}
+.answer{
+  width:120px;padding:.5rem;border-radius:8px;border:1px solid #cbd5e1
+}
+.correct{border-color:var(--success);background:#dcfce7}
+.wrong{border-color:var(--danger);background:#fee2e2}
+.solution{
+  margin-top:.7rem;
+  padding:.7rem;
+  border-left:4px solid var(--primary);
+  background:#eef2ff;
+  display:none
+}
+.footer{
+  margin-top:1.5rem;
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center
+}
+.btn{
+  padding:.7rem 1.3rem;border-radius:999px;border:none;
+  background:var(--primary);color:#fff;font-size:1rem;cursor:pointer
+}
+.btn.secondary{background:#e2e8f0;color:#020617}
+.badge{
+  padding:.35rem .8rem;border-radius:999px;font-size:.9rem;font-weight:600
+}
+.good{background:#dcfce7;color:#14532d}
+.mid{background:#fef9c3;color:#713f12}
+.low{background:#fee2e2;color:#7f1d1d}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Year 10 IGCSE – Simplifying Linear Equations</h1>
+  <input id="studentName" class="input" placeholder="Student name" />
+</header>
+
+<section class="card" style="margin-top:1rem">
+  <p style="color:var(--muted)">Solve all <strong>30 IGCSE exam-standard equations</strong>. Enter your answer for <strong>x</strong>. Detailed worked solutions appear after submission.</p>
+
+  <div id="quiz" class="grid grid-2"></div>
+
+  <div class="footer">
+    <button class="btn secondary" onclick="resetQuiz()">Reset</button>
+    <button class="btn" onclick="submitQuiz()">Submit</button>
+    <div id="scoreBox"></div>
+  </div>
+</section>
+</div>
+
+<script>
+const questions = [
+ {q:'x + 5 = 12', a:7, s:'Subtract 5 from both sides: x = 12 − 5 = 7'},
+ {q:'2x = 14', a:7, s:'Divide both sides by 2: x = 14 ÷ 2 = 7'},
+ {q:'3x + 4 = 19', a:5, s:'Subtract 4: 3x = 15, then divide by 3: x = 5'},
+ {q:'5x − 10 = 15', a:5, s:'Add 10: 5x = 25, divide by 5: x = 5'},
+ {q:'4x + 6 = 2x + 18', a:6, s:'Subtract 2x: 2x + 6 = 18, then x = 6'},
+ {q:'7x = 3x + 20', a:5, s:'Subtract 3x: 4x = 20, so x = 5'},
+ {q:'2(x + 3) = 14', a:4, s:'Expand: 2x + 6 = 14, so x = 4'},
+ {q:'3(x − 2) = 9', a:5, s:'Expand: 3x − 6 = 9, so x = 5'},
+ {q:'6x + 4 = 2', a:-1/3, s:'Subtract 4: 6x = −2, divide by 6: x = −1/3'},
+ {q:'5 − 2x = 1', a:2, s:'Subtract 5: −2x = −4, divide by −2: x = 2'},
+ {q:'4(x + 1) = 20', a:4, s:'Expand: 4x + 4 = 20, so x = 4'},
+ {q:'9x − 3 = 24', a:3, s:'Add 3: 9x = 27, divide by 9: x = 3'},
+ {q:'10 = 2x + 4', a:3, s:'Subtract 4: 2x = 6, divide by 2: x = 3'},
+ {q:'7(x − 1) = 21', a:4, s:'Expand: 7x − 7 = 21, so x = 4'},
+ {q:'3x + 5 = x + 17', a:6, s:'Subtract x: 2x + 5 = 17, so x = 6'},
+ {q:'8x = 4x + 12', a:3, s:'Subtract 4x: 4x = 12, x = 3'},
+ {q:'2x − 7 = 9', a:8, s:'Add 7: 2x = 16, x = 8'},
+ {q:'6(x − 2) = 12', a:4, s:'Expand: 6x − 12 = 12, so x = 4'},
+ {q:'15 = 3x', a:5, s:'Divide both sides by 3: x = 5'},
+ {q:'4x + 1 = 3x + 9', a:8, s:'Subtract 3x: x + 1 = 9, so x = 8'},
+ {q:'5(x + 2) = 25', a:3, s:'Expand: 5x + 10 = 25, so x = 3'},
+ {q:'9 − x = 3', a:6, s:'Subtract 9: −x = −6, so x = 6'},
+ {q:'12 = 4(x − 1)', a:4, s:'Expand: 4x − 4 = 12, so x = 4'},
+ {q:'7x + 2 = 23', a:3, s:'Subtract 2: 7x = 21, x = 3'},
+ {q:'2(3x + 1) = 14', a:2, s:'Expand: 6x + 2 = 14, so x = 2'},
+ {q:'10 − 2x = 4', a:3, s:'Subtract 10: −2x = −6, so x = 3'},
+ {q:'8x − 5 = 11', a:2, s:'Add 5: 8x = 16, x = 2'},
+ {q:'6 + 3x = 24', a:6, s:'Subtract 6: 3x = 18, x = 6'},
+ {q:'5x = 2x + 9', a:3, s:'Subtract 2x: 3x = 9, so x = 3'},
+ {q:'4(x − 3) = 8', a:5, s:'Expand: 4x − 12 = 8, so x = 5'}
+];
+
+const quiz = document.getElementById('quiz');
+let inputs = [];
+
+function render(){
+  quiz.innerHTML=''; inputs=[];
+  questions.forEach((q,i)=>{
+    const div=document.createElement('div');
+    div.className='question';
+    div.innerHTML=`
+      <h3>${i+1}. \\(${q.q}\\)</h3>
+      <input class="answer" placeholder="x = ?" />
+      <div class="solution">\\(${q.s}\\)</div>
+    `;
+    quiz.appendChild(div);
+    inputs.push(div);
+  });
+  MathJax.typeset();
+}
+
+function submitQuiz(){
+  let score=0;
+  inputs.forEach((div,i)=>{
+    const inp=div.querySelector('input');
+    const sol=div.querySelector('.solution');
+    const val=parseFloat(inp.value);
+    if(Math.abs(val-questions[i].a)<0.0001){
+      score++; inp.classList.add('correct');
+    }else{
+      inp.classList.add('wrong');
+    }
+    sol.style.display='block';
+  });
+  const name=document.getElementById('studentName').value||'Student';
+  let cls='mid', msg='Good attempt – review the worked solutions.';
+  if(score>=24){cls='good';msg='Excellent IGCSE-level mastery!'}
+  else if(score<=14){cls='low';msg='You need more practice – study the solutions carefully.'}
+
+  document.getElementById('scoreBox').innerHTML=`<span class="badge ${cls}">${name}: ${score}/30 – ${msg}</span>`;
+}
+
+function resetQuiz(){ render(); document.getElementById('scoreBox').innerHTML=''; }
+
+render();
+</script>
+</body>
+</html>

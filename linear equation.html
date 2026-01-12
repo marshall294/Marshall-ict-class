@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IGCSE Linear Equations – Full Self‑Tutor Course</title>
+
+<!-- MathJax for exam‑standard maths fonts -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+:root{
+  --primary:#1e40af;
+  --accent:#0284c7;
+  --success:#15803d;
+  --danger:#b91c1c;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --muted:#475569;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:linear-gradient(120deg,#eef2ff,#f8fafc);
+  color:#020617;
+}
+.container{max-width:1200px;margin:auto;padding:1.5rem}
+header h1{margin:0;font-size:clamp(1.8rem,3vw,2.4rem)}
+header p{color:var(--muted);max-width:800px}
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:1.6rem;
+  box-shadow:0 14px 34px rgba(0,0,0,.08)
+}
+.section{margin-top:2rem}
+.section h2{margin-top:0}
+.explain{
+  line-height:1.7;
+  font-size:1.05rem
+}
+.steps{
+  margin:1rem 0;padding-left:1.2rem
+}
+.steps li{margin:.5rem 0}
+.example{
+  background:#eef2ff;
+  border-left:5px solid var(--primary);
+  padding:1rem 1.2rem;
+  border-radius:14px;
+  margin:.8rem 0
+}
+.controls{display:flex;gap:.6rem;flex-wrap:wrap;margin:.6rem 0}
+.btn{
+  border:none;border-radius:999px;
+  padding:.55rem 1.1rem;font-size:.9rem;
+  background:var(--primary);color:#fff;cursor:pointer
+}
+.btn.audio{background:var(--accent)}
+.btn.secondary{background:#e2e8f0;color:#020617}
+.grid{display:grid;gap:1rem}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.question{border:1px solid #e5e7eb;border-radius:14px;padding:1rem}
+.answer{width:130px;padding:.55rem;border-radius:8px;border:1px solid #cbd5e1}
+.correct{background:#dcfce7;border-color:var(--success)}
+.wrong{background:#fee2e2;border-color:var(--danger)}
+.solution{
+  margin-top:.7rem;padding:.8rem;
+  background:#f1f5f9;border-left:4px solid var(--primary);
+  display:none
+}
+.footer{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="section">
+  <h1>IGCSE Linear Equations – Complete Self‑Tutor Course</h1>
+  <p>This page is designed for <strong>exam preparation</strong>. Every concept is explained step‑by‑step, with worked examples and guided practice. Use the audio buttons to listen to explanations one section at a time.</p>
+</header>
+
+<!-- SECTION 1 -->
+<section class="card section" id="sec1">
+  <h2>1. Understanding Linear Equations</h2>
+  <div class="controls">
+    <button class="btn audio" onclick="readSection('sec1')">🔊 Read this section</button>
+  </div>
+  <p class="explain">A <strong>linear equation</strong> is an equation where the highest power of the variable is 1. In IGCSE, the variable is usually <strong>x</strong>. The aim is to find the value of x that makes the equation true.</p>
+  <ul class="steps">
+    <li>The equation has an equals sign (=).</li>
+    <li>Both sides must always stay equal.</li>
+    <li>Whatever you do to one side, you must do to the other.</li>
+  </ul>
+  <div class="example">\(x + 5 = 12\)<br/>This equation is balanced. Our job is to isolate x.</div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="card section" id="sec2">
+  <h2>2. One‑Step Linear Equations</h2>
+  <div class="controls">
+    <button class="btn audio" onclick="readSection('sec2')">🔊 Read this section</button>
+  </div>
+  <p class="explain">One‑step equations require only <strong>one operation</strong> to find x.</p>
+  <ul class="steps">
+    <li>If x is added to a number, subtract that number.</li>
+    <li>If x is multiplied, divide.</li>
+  </ul>
+  <div class="example">
+    <strong>Example:</strong><br/>
+    \(x + 7 = 15\)<br/>
+    Step 1: Subtract 7 from both sides<br/>
+    \(x = 15 - 7 = 8\)
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="card section" id="sec3">
+  <h2>3. Two‑Step Linear Equations</h2>
+  <div class="controls">
+    <button class="btn audio" onclick="readSection('sec3')">🔊 Read this section</button>
+  </div>
+  <p class="explain">Two‑step equations need <strong>two operations</strong>. Always remove addition or subtraction first.</p>
+  <ul class="steps">
+    <li>Undo addition or subtraction.</li>
+    <li>Then undo multiplication or division.</li>
+  </ul>
+  <div class="example">
+    <strong>Example:</strong><br/>
+    \(3x + 4 = 19\)<br/>
+    Step 1: Subtract 4 → \(3x = 15\)<br/>
+    Step 2: Divide by 3 → \(x = 5\)
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="card section" id="sec4">
+  <h2>4. Equations with Brackets</h2>
+  <div class="controls">
+    <button class="btn audio" onclick="readSection('sec4')">🔊 Read this section</button>
+  </div>
+  <p class="explain">When brackets are present, <strong>expand first</strong> before solving.</p>
+  <div class="example">
+    <strong>Example:</strong><br/>
+    \(2(x + 3) = 14\)<br/>
+    Step 1: Expand → \(2x + 6 = 14\)<br/>
+    Step 2: Subtract 6 → \(2x = 8\)<br/>
+    Step 3: Divide by 2 → \(x = 4\)
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="card section" id="sec5">
+  <h2>5. Variables on Both Sides</h2>
+  <div class="controls">
+    <button class="btn audio" onclick="readSection('sec5')">🔊 Read this section</button>
+  </div>
+  <p class="explain">Sometimes x appears on both sides. You must collect all x terms on one side.</p>
+  <div class="example">
+    <strong>Example:</strong><br/>
+    \(4x + 6 = 2x + 18\)<br/>
+    Step 1: Subtract 2x → \(2x + 6 = 18\)<br/>
+    Step 2: Subtract 6 → \(2x = 12\)<br/>
+    Step 3: Divide by 2 → \(x = 6\)
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section class="card section" id="sec6">
+  <h2>6. Negative & Fractional Answers</h2>
+  <div class="controls">
+    <button class="btn audio" onclick="readSection('sec6')">🔊 Read this section</button>
+  </div>
+  <p class="explain">IGCSE exams often include negative or fractional solutions. These are perfectly valid answers.</p>
+  <div class="example">
+    <strong>Example:</strong><br/>
+    \(6x + 4 = 2\)<br/>
+    Step 1: Subtract 4 → \(6x = -2\)<br/>
+    Step 2: Divide by 6 → \(x = -\\tfrac{1}{3}\)
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="card section" id="practice">
+  <h2>Exam‑Style Practice</h2>
+  <p class="explain">Now apply what you have learned. Enter the value of x. Full worked solutions appear after submission.</p>
+  <div id="quiz" class="grid grid-2"></div>
+  <div class="footer">
+    <button class="btn secondary" onclick="resetQuiz()">Reset</button>
+    <button class="btn" onclick="submitQuiz()">Submit</button>
+    <div id="score"></div>
+  </div>
+</section>
+</div>
+
+<script>
+const questions=[
+ {q:'x + 5 = 12',a:7,s:'Subtract 5 from both sides to isolate x.'},
+ {q:'3x + 4 = 19',a:5,s:'Subtract 4, then divide by 3.'},
+ {q:'2(x + 3) = 14',a:4,s:'Expand the bracket, then solve.'},
+ {q:'4x + 6 = 2x + 18',a:6,s:'Collect x terms on one side.'},
+ {q:'6x + 4 = 2',a:-1/3,s:'Subtract 4, then divide by 6.'},
+ {q:'5x - 10 = 15',a:5,s:'Add 10, then divide by 5.'},
+ {q:'2x + 7 = 19',a:6,s:'Subtract 7, then divide by 2.'},
+ {q:'7x - 3 = 18',a:3,s:'Add 3, then divide by 7.'},
+ {q:'3(x - 2) = 9',a:5,s:'Expand, then add 2 and divide by 3.'},
+ {q:'4(x + 5) = 28',a:2,s:'Expand, then subtract and divide to solve.'},
+ {q:'6x - 9 = 15',a:4,s:'Add 9, then divide by 6.'},
+ {q:'8x + 12 = 28',a:2,s:'Subtract 12, then divide by 8.'},
+ {q:'x/3 + 5 = 9',a:12,s:'Subtract 5, then multiply by 3.'},
+ {q:'2x - 7 = 5',a:6,s:'Add 7, then divide by 2.'},
+ {q:'3x + 8 = 20',a:4,s:'Subtract 8, then divide by 3.'},
+ {q:'5x + 10 = 35',a:5,s:'Subtract 10, then divide by 5.'},
+ {q:'4x - 2 = 14',a:4,s:'Add 2, then divide by 4.'},
+ {q:'6x + 5 = 23',a:3,s:'Subtract 5, then divide by 6.'},
+ {q:'7x - 4 = 24',a:4,s:'Add 4, then divide by 7.'},
+ {q:'3(x + 6) = 21',a:1,s:'Divide by 3, then subtract 6.'},
+ {q:'2(x - 4) = 10',a:9,s:'Divide by 2, then add 4.'},
+ {q:'5x - 7 = 18',a:5,s:'Add 7, then divide by 5.'},
+ {q:'9x + 2 = 29',a:3,s:'Subtract 2, then divide by 9.'},
+ {q:'8x - 3 = 29',a:4,s:'Add 3, then divide by 8.'},
+ {q:'x/4 + 6 = 10',a:16,s:'Subtract 6, then multiply by 4.'},
+ {q:'3x - 5 = 16',a:7,s:'Add 5, then divide by 3.'},
+ {q:'2(x + 7) = 20',a:3,s:'Divide by 2, then subtract 7.'},
+ {q:'4x + 9 = 25',a:4,s:'Subtract 9, then divide by 4.'},
+ {q:'5(x - 2) = 20',a:6,s:'Divide by 5, then add 2.'},
+ {q:'6x + 8 = 26',a:3,s:'Subtract 8, then divide by 6.'},
+ {q:'7x - 5 = 23',a:4,s:'Add 5, then divide by 7.'},
+ {q:'3(x + 4) = 18',a:2,s:'Divide by 3, then subtract 4.'}
+];
+const quiz=document.getElementById('quiz');let blocks=[];
+function render(){quiz.innerHTML='';blocks=[];questions.forEach((q,i)=>{const d=document.createElement('div');d.className='question';d.innerHTML=`<h3>${i+1}. \\(${q.q}\\)</h3><input class="answer" placeholder="x = ?"/><div class="solution">${q.s}</div>`;quiz.appendChild(d);blocks.push(d);});MathJax.typeset();}
+function submitQuiz(){let sc=0;blocks.forEach((b,i)=>{const inp=b.querySelector('input');const sol=b.querySelector('.solution');const v=parseFloat(inp.value);if(Math.abs(v-questions[i].a)<0.001){sc++;inp.classList.add('correct');}else inp.classList.add('wrong');sol.style.display='block';});document.getElementById('score').innerText=`Score: ${sc}/${questions.length}`;}
+function resetQuiz(){render();document.getElementById('score').innerText='';}
+function readSection(id){const el=document.getElementById(id);const t=el.innerText;const u=new SpeechSynthesisUtterance(t);u.rate=0.95;speechSynthesis.cancel();speechSynthesis.speak(u);}render();
+</script>
+</body>
+</html>
